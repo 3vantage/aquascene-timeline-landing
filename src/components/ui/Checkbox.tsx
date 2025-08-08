@@ -86,7 +86,7 @@ const Checkbox = forwardRef<HTMLButtonElement, CheckboxProps>(({
     {
       'text-neutral-700 hover:text-neutral-900': variant === 'default' && !error && !disabled,
       'text-error': error,
-      'text-white/90 hover:text-white': (variant === 'glass' || variant === 'underwater') && !error && !disabled,
+      'text-white hover:text-cyan-200': (variant === 'glass' || variant === 'underwater') && !error && !disabled,
       'opacity-50 cursor-not-allowed': disabled,
     }
   );

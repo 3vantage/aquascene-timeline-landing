@@ -100,11 +100,13 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
       'text-neutral-500': variant === 'default' && !error && !isFocused,
       'text-primary': variant === 'default' && !error && isFocused,
       'text-error': error,
-      'text-white/70': (variant === 'glass' || variant === 'underwater') && !error && !isFocused,
-      'text-accent-emerald': (variant === 'glass' || variant === 'underwater') && !error && isFocused,
+      'text-white': (variant === 'glass' || variant === 'underwater') && !error && !isFocused,
+      'text-cyan-300': (variant === 'glass' || variant === 'underwater') && !error && isFocused,
       // Label positioning
       'top-3 text-base': !isFocused && !hasValue,
-      'top-1 text-sm scale-90 origin-left': isFocused || hasValue,
+      '-top-2 text-sm scale-90 origin-left px-1': (isFocused || hasValue) && variant === 'default',
+      '-top-2 text-sm scale-90 origin-left px-1 bg-white': (isFocused || hasValue) && variant === 'default',
+      '-top-2 text-sm scale-90 origin-left px-1': (isFocused || hasValue) && (variant === 'glass' || variant === 'underwater'),
       'left-12': leftIcon && (!isFocused && !hasValue),
     }
   );
@@ -155,7 +157,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
           <motion.label
             className={labelClasses}
             animate={isFocused || hasValue ? {
-              y: -12,
+              y: -20,
               scale: 0.85,
             } : {
               y: 0,

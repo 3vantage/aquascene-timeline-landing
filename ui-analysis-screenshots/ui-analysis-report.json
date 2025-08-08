@@ -1,0 +1,941 @@
+{
+  "timestamp": "2025-08-08T07:49:46.783Z",
+  "textAnalysis": [
+    {
+      "element": "BODY.antialiased.font-primary.bg-background.text-foreground.overflow-x-hidden",
+      "text": "EARLY ACCESS • 3D AQUASCAPE DESIGNERDesign YourDre",
+      "color": "rgb(55, 65, 81)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "fontSize": "16px",
+      "position": "static",
+      "zIndex": "auto",
+      "rect": {}
+    },
+    {
+      "element": "DIV.glass-underwater.px-6.py-3.rounded-full.flex.items-center.gap-3.border.border-cyan-400/30",
+      "text": "EARLY ACCESS • 3D AQUASCAPE DESIGNER",
+      "color": "rgb(55, 65, 81)",
+      "backgroundColor": "rgba(6, 182, 212, 0.1)",
+      "fontSize": "16px",
+      "position": "static",
+      "zIndex": "auto",
+      "rect": {}
+    },
+    {
+      "element": "BUTTON.relative.inline-flex.items-center.justify-center.font-medium.rounded-lg.transition-all.duration-200.focus:outline-none.focus-visible:ring-3.focus-visible:ring-accent-emerald.focus-visible:ring-offset-2.disabled:cursor-not-allowed.overflow-hidden.hover:scale-105.active:scale-95.bg-white.text-primary.border-2.border-primary.hover:bg-primary.hover:text-white.px-10.py-5.text-xl.h-16.glass-underwater.border-cyan-400/50.text-white.hover:bg-cyan-500/20.hover:border-cyan-400/70.px-8.py-4",
+      "text": "Watch 3D Demo",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgba(6, 182, 212, 0.1)",
+      "fontSize": "20px",
+      "position": "relative",
+      "zIndex": "auto",
+      "rect": {}
+    },
+    {
+      "element": "DIV.absolute.-top-6.-right-6.glass-underwater.p-4.rounded-2xl.border.border-cyan-400/50",
+      "text": "3D ViewReal-time",
+      "color": "rgb(55, 65, 81)",
+      "backgroundColor": "rgba(6, 182, 212, 0.1)",
+      "fontSize": "16px",
+      "position": "absolute",
+      "zIndex": "auto",
+      "rect": {}
+    },
+    {
+      "element": "DIV.absolute.-bottom-6.-left-6.glass-underwater.p-4.rounded-2xl.border.border-emerald-400/50",
+      "text": "Cost: $127Auto-calculated",
+      "color": "rgb(55, 65, 81)",
+      "backgroundColor": "rgba(6, 182, 212, 0.1)",
+      "fontSize": "16px",
+      "position": "absolute",
+      "zIndex": "auto",
+      "rect": {}
+    },
+    {
+      "element": "DIV.absolute.top-1/2.-right-8.glass-underwater.p-3.rounded-xl.border.border-orange-400/50",
+      "text": "CO₂: 2.5ppmOptimal",
+      "color": "rgb(55, 65, 81)",
+      "backgroundColor": "rgba(6, 182, 212, 0.1)",
+      "fontSize": "16px",
+      "position": "absolute",
+      "zIndex": "auto",
+      "rect": {}
+    },
+    {
+      "element": "BUTTON.glass-underwater.px-6.py-3.rounded-full.flex.items-center.gap-3.border.border-white/30.text-white.hover:border-cyan-400/70.transition-all",
+      "text": "Try Interactive Demo",
+      "color": "rgb(255, 255, 255)",
+      "backgroundColor": "rgba(6, 182, 212, 0.1)",
+      "fontSize": "16px",
+      "position": "static",
+      "zIndex": "auto",
+      "rect": {}
+    },
+    {
+      "element": "DIV.inline-flex.items-center.gap-2.glass-underwater.px-6.py-3.rounded-full.mb-6.border.border-cyan-400/30",
+      "text": "WHY CHOOSE US",
+      "color": "rgb(55, 65, 81)",
+      "backgroundColor": "rgba(6, 182, 212, 0.1)",
+      "fontSize": "16px",
+      "position": "static",
+      "zIndex": "auto",
+      "rect": {}
+    },
+    {
+      "element": "DIV.glass-deep-water.p-8.rounded-2xl.h-full.relative.overflow-hidden.hover:shadow-2xl.transition-all.duration-300.border.border-emerald-500/20.hover:border-emerald-500/40",
+      "text": "3D Reality PreviewSee your exact tank with real pl",
+      "color": "rgb(55, 65, 81)",
+      "backgroundColor": "rgba(16, 185, 129, 0.15)",
+      "fontSize": "16px",
+      "position": "relative",
+      "zIndex": "auto",
+      "rect": {}
+    },
+    {
+      "element": "DIV.inline-flex.items-center.gap-2.px-4.py-2.rounded-lg.bg-emerald-500/20.border.border-emerald-400/30",
+      "text": "Save 60% on plant costs",
+      "color": "rgb(55, 65, 81)",
+      "backgroundColor": "rgba(16, 185, 129, 0.2)",
+      "fontSize": "16px",
+      "position": "static",
+      "zIndex": "auto",
+      "rect": {}
+    },
+    {
+      "element": "DIV.glass-deep-water.p-8.rounded-2xl.h-full.relative.overflow-hidden.hover:shadow-2xl.transition-all.duration-300.border.border-emerald-500/20.hover:border-emerald-500/40",
+      "text": "Smart Cost CalculatorGet precise pricing from Bulg",
+      "color": "rgb(55, 65, 81)",
+      "backgroundColor": "rgba(16, 185, 129, 0.15)",
+      "fontSize": "16px",
+      "position": "relative",
+      "zIndex": "auto",
+      "rect": {}
+    },
+    {
+      "element": "DIV.inline-flex.items-center.gap-2.px-4.py-2.rounded-lg.bg-emerald-500/20.border.border-emerald-400/30",
+      "text": "Plan your exact budget",
+      "color": "rgb(55, 65, 81)",
+      "backgroundColor": "rgba(16, 185, 129, 0.2)",
+      "fontSize": "16px",
+      "position": "static",
+      "zIndex": "auto",
+      "rect": {}
+    },
+    {
+      "element": "DIV.glass-deep-water.p-8.rounded-2xl.h-full.relative.overflow-hidden.hover:shadow-2xl.transition-all.duration-300.border.border-emerald-500/20.hover:border-emerald-500/40",
+      "text": "Regional Expert NetworkConnect with top aquascaper",
+      "color": "rgb(55, 65, 81)",
+      "backgroundColor": "rgba(16, 185, 129, 0.15)",
+      "fontSize": "16px",
+      "position": "relative",
+      "zIndex": "auto",
+      "rect": {}
+    },
+    {
+      "element": "DIV.inline-flex.items-center.gap-2.px-4.py-2.rounded-lg.bg-emerald-500/20.border.border-emerald-400/30",
+      "text": "Learn from the best nearby",
+      "color": "rgb(55, 65, 81)",
+      "backgroundColor": "rgba(16, 185, 129, 0.2)",
+      "fontSize": "16px",
+      "position": "static",
+      "zIndex": "auto",
+      "rect": {}
+    },
+    {
+      "element": "DIV.glass-deep-water.p-8.rounded-2xl.h-full.relative.overflow-hidden.hover:shadow-2xl.transition-all.duration-300.border-2.border-orange-400/50.hover:border-orange-400/70",
+      "text": "PARTNERGreen Aqua PartnershipDirect integration wi",
+      "color": "rgb(55, 65, 81)",
+      "backgroundColor": "rgba(16, 185, 129, 0.15)",
+      "fontSize": "16px",
+      "position": "relative",
+      "zIndex": "auto",
+      "rect": {}
+    },
+    {
+      "element": "DIV.absolute.top-4.right-4.flex.items-center.gap-2.px-3.py-1.bg-orange-500/20.rounded-full.border.border-orange-400/50",
+      "text": "PARTNER",
+      "color": "rgb(55, 65, 81)",
+      "backgroundColor": "rgba(249, 115, 22, 0.2)",
+      "fontSize": "16px",
+      "position": "absolute",
+      "zIndex": "auto",
+      "rect": {}
+    },
+    {
+      "element": "DIV.inline-flex.items-center.gap-2.px-4.py-2.rounded-lg.bg-orange-500/20.border.border-orange-400/30",
+      "text": "10% discount for members",
+      "color": "rgb(55, 65, 81)",
+      "backgroundColor": "rgba(249, 115, 22, 0.2)",
+      "fontSize": "16px",
+      "position": "static",
+      "zIndex": "auto",
+      "rect": {}
+    },
+    {
+      "element": "DIV.glass-underwater.p-8.rounded-2xl.border.border-orange-400/30.max-w-4xl.mx-auto",
+      "text": "🤝Official Green Aqua Partnership🇭🇺Exclusive ben",
+      "color": "rgb(55, 65, 81)",
+      "backgroundColor": "rgba(6, 182, 212, 0.1)",
+      "fontSize": "16px",
+      "position": "static",
+      "zIndex": "auto",
+      "rect": {}
+    },
+    {
+      "element": "DIV.text-center.p-4.rounded-xl.bg-orange-500/10.border.border-orange-400/30",
+      "text": "15% DiscountOn your first Green Aqua order",
+      "color": "rgb(55, 65, 81)",
+      "backgroundColor": "rgba(249, 115, 22, 0.1)",
+      "fontSize": "16px",
+      "position": "static",
+      "zIndex": "auto",
+      "rect": {}
+    },
+    {
+      "element": "DIV.text-center.p-4.rounded-xl.bg-orange-500/10.border.border-orange-400/30",
+      "text": "Priority AccessTo new plants and products",
+      "color": "rgb(55, 65, 81)",
+      "backgroundColor": "rgba(249, 115, 22, 0.1)",
+      "fontSize": "16px",
+      "position": "static",
+      "zIndex": "auto",
+      "rect": {}
+    }
+  ],
+  "formAnalysis": [
+    {
+      "tag": "BUTTON",
+      "type": "submit",
+      "placeholder": "N/A",
+      "value": "N/A",
+      "text": "Start Designing Now",
+      "styles": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "border": "0px solid rgb(229, 231, 235)",
+        "fontSize": "20px",
+        "padding": "20px 32px",
+        "margin": "0px",
+        "opacity": "1",
+        "visibility": "visible",
+        "display": "flex",
+        "position": "relative",
+        "zIndex": "auto"
+      },
+      "rect": {
+        "x": 316,
+        "y": -2309.5,
+        "width": 280.4140625,
+        "height": 64
+      },
+      "className": "relative inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus-visible:ring-3 focus-visible:ring-accent-emerald focus-visible:ring-offset-2 disabled:cursor-not-allowed overflow-hidden hover:scale-105 active:scale-95 bg-gradient-to-r from-primary to-accent-emerald text-white shadow-emerald hover:shadow-lg border-0 px-10 py-5 text-xl h-16 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 shadow-2xl hover:shadow-emerald-500/50 text-white border-0 px-8 py-4 text-lg font-semibold transform hover:scale-105 transition-all duration-200"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "submit",
+      "placeholder": "N/A",
+      "value": "N/A",
+      "text": "Watch 3D Demo",
+      "styles": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(6, 182, 212, 0.1)",
+        "border": "1px solid rgba(103, 232, 249, 0.2)",
+        "fontSize": "20px",
+        "padding": "20px 32px",
+        "margin": "0px",
+        "opacity": "1",
+        "visibility": "visible",
+        "display": "flex",
+        "position": "relative",
+        "zIndex": "auto"
+      },
+      "rect": {
+        "x": 612.4140625,
+        "y": -2309.5,
+        "width": 240.046875,
+        "height": 64
+      },
+      "className": "relative inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus-visible:ring-3 focus-visible:ring-accent-emerald focus-visible:ring-offset-2 disabled:cursor-not-allowed overflow-hidden hover:scale-105 active:scale-95 bg-white text-primary border-2 border-primary hover:bg-primary hover:text-white px-10 py-5 text-xl h-16 glass-underwater border-cyan-400/50 text-white hover:bg-cyan-500/20 hover:border-cyan-400/70 px-8 py-4"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "submit",
+      "placeholder": "N/A",
+      "value": "N/A",
+      "text": "Try Interactive Demo",
+      "styles": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(6, 182, 212, 0.1)",
+        "border": "1px solid rgba(103, 232, 249, 0.2)",
+        "fontSize": "16px",
+        "padding": "12px 24px",
+        "margin": "0px",
+        "opacity": "1",
+        "visibility": "visible",
+        "display": "flex",
+        "position": "static",
+        "zIndex": "auto"
+      },
+      "rect": {
+        "x": 1172.0859375,
+        "y": -2328.09375,
+        "width": 239.828125,
+        "height": 51.59375
+      },
+      "className": "glass-underwater px-6 py-3 rounded-full flex items-center gap-3 border border-white/30 text-white hover:border-cyan-400/70 transition-all"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "submit",
+      "placeholder": "N/A",
+      "value": "N/A",
+      "text": "Start Designing Now",
+      "styles": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "border": "0px solid rgb(229, 231, 235)",
+        "fontSize": "18px",
+        "padding": "16px 32px",
+        "margin": "0px",
+        "opacity": "1",
+        "visibility": "visible",
+        "display": "flex",
+        "position": "static",
+        "zIndex": "auto"
+      },
+      "rect": {
+        "x": 682.8828125,
+        "y": -223.90625,
+        "width": 268.2578125,
+        "height": 60
+      },
+      "className": "inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-2xl hover:shadow-emerald-500/50 transition-all duration-300"
+    },
+    {
+      "tag": "INPUT",
+      "type": "text",
+      "placeholder": "Enter your full name",
+      "value": "N/A",
+      "text": "N/A",
+      "styles": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(255, 255, 255, 0.05)",
+        "border": "0px solid rgba(255, 255, 255, 0.2)",
+        "fontSize": "16px",
+        "padding": "12px 16px",
+        "margin": "0px",
+        "opacity": "1",
+        "visibility": "visible",
+        "display": "block",
+        "position": "static",
+        "zIndex": "auto"
+      },
+      "rect": {
+        "x": 1023,
+        "y": 224.09375,
+        "width": 538,
+        "height": 48
+      },
+      "className": "flex-1 px-4 py-3 text-base bg-transparent border-0 outline-none placeholder-transparent disabled:cursor-not-allowed text-neutral-900 bg-white/5 border-white/20 text-white placeholder:text-white/50"
+    },
+    {
+      "tag": "LABEL",
+      "type": "N/A",
+      "placeholder": "N/A",
+      "value": "N/A",
+      "text": "Your Name",
+      "styles": {
+        "color": "rgb(115, 115, 115)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "border": "0px solid rgb(229, 231, 235)",
+        "fontSize": "16px",
+        "padding": "0px",
+        "margin": "0px",
+        "opacity": "1",
+        "visibility": "visible",
+        "display": "block",
+        "position": "absolute",
+        "zIndex": "auto"
+      },
+      "rect": {
+        "x": 1039,
+        "y": 236.09375,
+        "width": 79.4921875,
+        "height": 24
+      },
+      "className": "absolute left-4 transition-all duration-200 pointer-events-none text-neutral-500 top-3 text-base"
+    },
+    {
+      "tag": "INPUT",
+      "type": "email",
+      "placeholder": "Enter your email address",
+      "value": "N/A",
+      "text": "N/A",
+      "styles": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(255, 255, 255, 0.05)",
+        "border": "0px solid rgba(255, 255, 255, 0.2)",
+        "fontSize": "16px",
+        "padding": "12px 16px",
+        "margin": "0px",
+        "opacity": "1",
+        "visibility": "visible",
+        "display": "block",
+        "position": "static",
+        "zIndex": "auto"
+      },
+      "rect": {
+        "x": 1023,
+        "y": 300.09375,
+        "width": 538,
+        "height": 48
+      },
+      "className": "flex-1 px-4 py-3 text-base bg-transparent border-0 outline-none placeholder-transparent disabled:cursor-not-allowed text-neutral-900 bg-white/5 border-white/20 text-white placeholder:text-white/50"
+    },
+    {
+      "tag": "LABEL",
+      "type": "N/A",
+      "placeholder": "N/A",
+      "value": "N/A",
+      "text": "Email Address",
+      "styles": {
+        "color": "rgb(115, 115, 115)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "border": "0px solid rgb(229, 231, 235)",
+        "fontSize": "16px",
+        "padding": "0px",
+        "margin": "0px",
+        "opacity": "1",
+        "visibility": "visible",
+        "display": "block",
+        "position": "absolute",
+        "zIndex": "auto"
+      },
+      "rect": {
+        "x": 1039,
+        "y": 312.09375,
+        "width": 102.28125,
+        "height": 24
+      },
+      "className": "absolute left-4 transition-all duration-200 pointer-events-none text-neutral-500 top-3 text-base"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "placeholder": "N/A",
+      "value": "N/A",
+      "text": "Select your experience",
+      "styles": {
+        "color": "rgb(55, 65, 81)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "border": "2px solid rgb(212, 212, 212)",
+        "fontSize": "16px",
+        "padding": "12px 16px",
+        "margin": "0px",
+        "opacity": "1",
+        "visibility": "visible",
+        "display": "flex",
+        "position": "relative",
+        "zIndex": "auto"
+      },
+      "rect": {
+        "x": 1021,
+        "y": 374.09375,
+        "width": 542,
+        "height": 52
+      },
+      "className": "relative w-full px-4 py-3 text-left bg-transparent border-2 rounded-lg transition-all duration-200 focus:outline-none focus-visible:ring-3 focus-visible:ring-accent-emerald focus-visible:ring-offset-2 flex items-center justify-between cursor-pointer bg-white border-neutral-300 hover:border-primary focus:border-primary"
+    },
+    {
+      "tag": "LABEL",
+      "type": "N/A",
+      "placeholder": "N/A",
+      "value": "N/A",
+      "text": "Experience Level",
+      "styles": {
+        "color": "rgb(115, 115, 115)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "border": "0px solid rgb(229, 231, 235)",
+        "fontSize": "16px",
+        "padding": "0px",
+        "margin": "0px",
+        "opacity": "1",
+        "visibility": "visible",
+        "display": "block",
+        "position": "absolute",
+        "zIndex": "auto"
+      },
+      "rect": {
+        "x": 1037,
+        "y": 386.09375,
+        "width": 122.171875,
+        "height": 24
+      },
+      "className": "absolute left-4 transition-all duration-200 pointer-events-none text-neutral-500 top-3 text-base"
+    },
+    {
+      "tag": "LABEL",
+      "type": "N/A",
+      "placeholder": "N/A",
+      "value": "N/A",
+      "text": "Interested Features",
+      "styles": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "border": "0px solid rgb(229, 231, 235)",
+        "fontSize": "14px",
+        "padding": "0px",
+        "margin": "0px 0px 12px",
+        "opacity": "1",
+        "visibility": "visible",
+        "display": "block",
+        "position": "static",
+        "zIndex": "auto"
+      },
+      "rect": {
+        "x": 1021,
+        "y": 450.09375,
+        "width": 542,
+        "height": 20
+      },
+      "className": "block text-sm font-medium text-white mb-3"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "placeholder": "N/A",
+      "value": "N/A",
+      "text": "N/A",
+      "styles": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "border": "2px solid rgb(212, 212, 212)",
+        "fontSize": "16px",
+        "padding": "0px",
+        "margin": "0px",
+        "opacity": "1",
+        "visibility": "visible",
+        "display": "flex",
+        "position": "relative",
+        "zIndex": "auto"
+      },
+      "rect": {
+        "x": 1021,
+        "y": 482.09375,
+        "width": 20,
+        "height": 20
+      },
+      "className": "relative flex items-center justify-center w-5 h-5 rounded border-2 transition-all duration-200 focus:outline-none focus-visible:ring-3 focus-visible:ring-accent-emerald focus-visible:ring-offset-2 bg-white border-neutral-300 hover:border-primary cursor-pointer"
+    },
+    {
+      "tag": "LABEL",
+      "type": "N/A",
+      "placeholder": "N/A",
+      "value": "N/A",
+      "text": "3D Aquascape Designer",
+      "styles": {
+        "color": "rgb(64, 64, 64)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "border": "0px solid rgb(229, 231, 235)",
+        "fontSize": "14px",
+        "padding": "0px",
+        "margin": "0px",
+        "opacity": "1",
+        "visibility": "visible",
+        "display": "inline",
+        "position": "static",
+        "zIndex": "auto"
+      },
+      "rect": {
+        "x": 1053,
+        "y": 487.09375,
+        "width": 155.53125,
+        "height": 16.5
+      },
+      "className": "text-sm cursor-pointer transition-colors duration-200 text-neutral-700 hover:text-neutral-900"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "placeholder": "N/A",
+      "value": "N/A",
+      "text": "N/A",
+      "styles": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "border": "2px solid rgb(212, 212, 212)",
+        "fontSize": "16px",
+        "padding": "0px",
+        "margin": "0px",
+        "opacity": "1",
+        "visibility": "visible",
+        "display": "flex",
+        "position": "relative",
+        "zIndex": "auto"
+      },
+      "rect": {
+        "x": 1021,
+        "y": 519.6875,
+        "width": 20,
+        "height": 20
+      },
+      "className": "relative flex items-center justify-center w-5 h-5 rounded border-2 transition-all duration-200 focus:outline-none focus-visible:ring-3 focus-visible:ring-accent-emerald focus-visible:ring-offset-2 bg-white border-neutral-300 hover:border-primary cursor-pointer"
+    },
+    {
+      "tag": "LABEL",
+      "type": "N/A",
+      "placeholder": "N/A",
+      "value": "N/A",
+      "text": "Smart Calculations",
+      "styles": {
+        "color": "rgb(64, 64, 64)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "border": "0px solid rgb(229, 231, 235)",
+        "fontSize": "14px",
+        "padding": "0px",
+        "margin": "0px",
+        "opacity": "1",
+        "visibility": "visible",
+        "display": "inline",
+        "position": "static",
+        "zIndex": "auto"
+      },
+      "rect": {
+        "x": 1053,
+        "y": 524.6875,
+        "width": 121.484375,
+        "height": 16.5
+      },
+      "className": "text-sm cursor-pointer transition-colors duration-200 text-neutral-700 hover:text-neutral-900"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "placeholder": "N/A",
+      "value": "N/A",
+      "text": "N/A",
+      "styles": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "border": "2px solid rgb(212, 212, 212)",
+        "fontSize": "16px",
+        "padding": "0px",
+        "margin": "0px",
+        "opacity": "1",
+        "visibility": "visible",
+        "display": "flex",
+        "position": "relative",
+        "zIndex": "auto"
+      },
+      "rect": {
+        "x": 1021,
+        "y": 557.28125,
+        "width": 20,
+        "height": 20
+      },
+      "className": "relative flex items-center justify-center w-5 h-5 rounded border-2 transition-all duration-200 focus:outline-none focus-visible:ring-3 focus-visible:ring-accent-emerald focus-visible:ring-offset-2 bg-white border-neutral-300 hover:border-primary cursor-pointer"
+    },
+    {
+      "tag": "LABEL",
+      "type": "N/A",
+      "placeholder": "N/A",
+      "value": "N/A",
+      "text": "Community Features",
+      "styles": {
+        "color": "rgb(64, 64, 64)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "border": "0px solid rgb(229, 231, 235)",
+        "fontSize": "14px",
+        "padding": "0px",
+        "margin": "0px",
+        "opacity": "1",
+        "visibility": "visible",
+        "display": "inline",
+        "position": "static",
+        "zIndex": "auto"
+      },
+      "rect": {
+        "x": 1053,
+        "y": 562.28125,
+        "width": 133.8203125,
+        "height": 16.5
+      },
+      "className": "text-sm cursor-pointer transition-colors duration-200 text-neutral-700 hover:text-neutral-900"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "placeholder": "N/A",
+      "value": "N/A",
+      "text": "N/A",
+      "styles": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "border": "2px solid rgb(212, 212, 212)",
+        "fontSize": "16px",
+        "padding": "0px",
+        "margin": "0px",
+        "opacity": "1",
+        "visibility": "visible",
+        "display": "flex",
+        "position": "relative",
+        "zIndex": "auto"
+      },
+      "rect": {
+        "x": 1021,
+        "y": 594.875,
+        "width": 20,
+        "height": 20
+      },
+      "className": "relative flex items-center justify-center w-5 h-5 rounded border-2 transition-all duration-200 focus:outline-none focus-visible:ring-3 focus-visible:ring-accent-emerald focus-visible:ring-offset-2 bg-white border-neutral-300 hover:border-primary cursor-pointer"
+    },
+    {
+      "tag": "LABEL",
+      "type": "N/A",
+      "placeholder": "N/A",
+      "value": "N/A",
+      "text": "Mobile App",
+      "styles": {
+        "color": "rgb(64, 64, 64)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "border": "0px solid rgb(229, 231, 235)",
+        "fontSize": "14px",
+        "padding": "0px",
+        "margin": "0px",
+        "opacity": "1",
+        "visibility": "visible",
+        "display": "inline",
+        "position": "static",
+        "zIndex": "auto"
+      },
+      "rect": {
+        "x": 1053,
+        "y": 599.875,
+        "width": 73.0625,
+        "height": 16.5
+      },
+      "className": "text-sm cursor-pointer transition-colors duration-200 text-neutral-700 hover:text-neutral-900"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "placeholder": "N/A",
+      "value": "N/A",
+      "text": "N/A",
+      "styles": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "border": "2px solid rgb(212, 212, 212)",
+        "fontSize": "16px",
+        "padding": "0px",
+        "margin": "0px",
+        "opacity": "1",
+        "visibility": "visible",
+        "display": "flex",
+        "position": "relative",
+        "zIndex": "auto"
+      },
+      "rect": {
+        "x": 1021,
+        "y": 632.46875,
+        "width": 20,
+        "height": 20
+      },
+      "className": "relative flex items-center justify-center w-5 h-5 rounded border-2 transition-all duration-200 focus:outline-none focus-visible:ring-3 focus-visible:ring-accent-emerald focus-visible:ring-offset-2 bg-white border-neutral-300 hover:border-primary cursor-pointer"
+    },
+    {
+      "tag": "LABEL",
+      "type": "N/A",
+      "placeholder": "N/A",
+      "value": "N/A",
+      "text": "AI Assistant",
+      "styles": {
+        "color": "rgb(64, 64, 64)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "border": "0px solid rgb(229, 231, 235)",
+        "fontSize": "14px",
+        "padding": "0px",
+        "margin": "0px",
+        "opacity": "1",
+        "visibility": "visible",
+        "display": "inline",
+        "position": "static",
+        "zIndex": "auto"
+      },
+      "rect": {
+        "x": 1053,
+        "y": 637.46875,
+        "width": 75.9140625,
+        "height": 16.5
+      },
+      "className": "text-sm cursor-pointer transition-colors duration-200 text-neutral-700 hover:text-neutral-900"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "placeholder": "N/A",
+      "value": "N/A",
+      "text": "N/A",
+      "styles": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "border": "2px solid rgb(212, 212, 212)",
+        "fontSize": "14px",
+        "padding": "0px",
+        "margin": "0px",
+        "opacity": "1",
+        "visibility": "visible",
+        "display": "flex",
+        "position": "relative",
+        "zIndex": "auto"
+      },
+      "rect": {
+        "x": 1021,
+        "y": 682.0625,
+        "width": 20,
+        "height": 20
+      },
+      "className": "relative flex items-center justify-center w-5 h-5 rounded border-2 transition-all duration-200 focus:outline-none focus-visible:ring-3 focus-visible:ring-accent-emerald focus-visible:ring-offset-2 bg-white border-neutral-300 hover:border-primary cursor-pointer"
+    },
+    {
+      "tag": "LABEL",
+      "type": "N/A",
+      "placeholder": "N/A",
+      "value": "N/A",
+      "text": "I consent to receive updates a",
+      "styles": {
+        "color": "rgb(64, 64, 64)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "border": "0px solid rgb(229, 231, 235)",
+        "fontSize": "14px",
+        "padding": "0px",
+        "margin": "0px",
+        "opacity": "1",
+        "visibility": "visible",
+        "display": "inline",
+        "position": "static",
+        "zIndex": "auto"
+      },
+      "rect": {
+        "x": 1053,
+        "y": 683.5625,
+        "width": 444.4765625,
+        "height": 36.5
+      },
+      "className": "text-sm cursor-pointer transition-colors duration-200 text-neutral-700 hover:text-neutral-900"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "button",
+      "placeholder": "N/A",
+      "value": "N/A",
+      "text": "N/A",
+      "styles": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "border": "2px solid rgb(212, 212, 212)",
+        "fontSize": "14px",
+        "padding": "0px",
+        "margin": "0px",
+        "opacity": "1",
+        "visibility": "visible",
+        "display": "flex",
+        "position": "relative",
+        "zIndex": "auto"
+      },
+      "rect": {
+        "x": 1021,
+        "y": 746.0625,
+        "width": 20,
+        "height": 20
+      },
+      "className": "relative flex items-center justify-center w-5 h-5 rounded border-2 transition-all duration-200 focus:outline-none focus-visible:ring-3 focus-visible:ring-accent-emerald focus-visible:ring-offset-2 bg-white border-neutral-300 hover:border-primary cursor-pointer"
+    },
+    {
+      "tag": "LABEL",
+      "type": "N/A",
+      "placeholder": "N/A",
+      "value": "N/A",
+      "text": "I'd like to receive aquascapin",
+      "styles": {
+        "color": "rgb(45, 45, 45)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "border": "0px solid rgb(229, 231, 235)",
+        "fontSize": "14px",
+        "padding": "0px",
+        "margin": "0px",
+        "opacity": "1",
+        "visibility": "visible",
+        "display": "inline",
+        "position": "static",
+        "zIndex": "auto"
+      },
+      "rect": {
+        "x": 1053,
+        "y": 747.5625,
+        "width": 435.96875,
+        "height": 16.5
+      },
+      "className": "text-sm cursor-pointer transition-colors duration-200 text-neutral-700 hover:text-neutral-900"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "submit",
+      "placeholder": "N/A",
+      "value": "N/A",
+      "text": "Reserve My Spot",
+      "styles": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "border": "0px solid rgb(229, 231, 235)",
+        "fontSize": "18px",
+        "padding": "16px 32px",
+        "margin": "0px",
+        "opacity": "0.6",
+        "visibility": "visible",
+        "display": "inline-flex",
+        "position": "relative",
+        "zIndex": "auto"
+      },
+      "rect": {
+        "x": 1021,
+        "y": 806.0625,
+        "width": 542,
+        "height": 60
+      },
+      "className": "relative inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 focus:outline-none focus-visible:ring-3 focus-visible:ring-accent-emerald focus-visible:ring-offset-2 disabled:cursor-not-allowed overflow-hidden hover:scale-105 active:scale-95 cursor-not-allowed opacity-60 bg-gradient-to-r from-primary to-accent-emerald text-white shadow-emerald hover:shadow-lg border-0 px-8 py-4 text-lg h-13 w-full bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 disabled:from-gray-600 disabled:to-gray-700 text-white border-0 font-semibold"
+    },
+    {
+      "tag": "BUTTON",
+      "type": "submit",
+      "placeholder": "N/A",
+      "value": "N/A",
+      "text": "Start Your Success Story",
+      "styles": {
+        "color": "rgb(255, 255, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "border": "0px solid rgb(229, 231, 235)",
+        "fontSize": "18px",
+        "padding": "16px 32px",
+        "margin": "0px",
+        "opacity": "1",
+        "visibility": "visible",
+        "display": "inline-flex",
+        "position": "static",
+        "zIndex": "auto"
+      },
+      "rect": {
+        "x": 802.828125,
+        "y": 2462.0625,
+        "width": 306.34375,
+        "height": 60
+      },
+      "className": "inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-2xl hover:shadow-emerald-500/50 transition-all duration-300"
+    }
+  ],
+  "screenshots": [
+    "1-full-page-initial.png",
+    "2-form-focus.png",
+    "3-mobile-view.png"
+  ]
+}

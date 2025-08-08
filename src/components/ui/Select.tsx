@@ -121,11 +121,13 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>(({
       'text-neutral-500': variant === 'default' && !error && !isFocused,
       'text-primary': variant === 'default' && !error && isFocused,
       'text-error': error,
-      'text-white/70': (variant === 'glass' || variant === 'underwater') && !error && !isFocused,
-      'text-accent-emerald': (variant === 'glass' || variant === 'underwater') && !error && isFocused,
+      'text-white': (variant === 'glass' || variant === 'underwater') && !error && !isFocused,
+      'text-cyan-300': (variant === 'glass' || variant === 'underwater') && !error && isFocused,
       // Label positioning
       'top-3 text-base': !isFocused && !selectedOption,
-      'top-1 text-sm scale-90 origin-left': isFocused || selectedOption,
+      '-top-2 text-sm scale-90 origin-left px-1': (isFocused || selectedOption) && variant === 'default',
+      '-top-2 text-sm scale-90 origin-left px-1 bg-white': (isFocused || selectedOption) && variant === 'default',
+      '-top-2 text-sm scale-90 origin-left px-1': (isFocused || selectedOption) && (variant === 'glass' || variant === 'underwater'),
     }
   );
 
@@ -199,7 +201,7 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>(({
           <motion.label
             className={labelClasses}
             animate={isFocused || selectedOption ? {
-              y: -12,
+              y: -20,
               scale: 0.85,
             } : {
               y: 0,
