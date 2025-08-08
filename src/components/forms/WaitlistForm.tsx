@@ -204,7 +204,7 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
   return (
     <motion.form
       onSubmit={handleSubmit(onSubmit)}
-      className={`glass-deep-water p-4 sm:p-6 md:p-8 rounded-2xl space-y-4 sm:space-y-6 ${className}`}
+      className={`waitlist-form glass-deep-water p-4 sm:p-6 md:p-8 rounded-2xl space-y-4 sm:space-y-6 ${className}`}
       variants={staggerContainer}
       initial="initial"
       animate="animate"

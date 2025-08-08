@@ -105,6 +105,34 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Ensure high contrast for critical elements */
+.hero-text-primary {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.waitlist-form {
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.form-input {
+  color: #FFFFFF !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.form-label {
+  color: #FFFFFF !important;
+  font-weight: 500 !important;
 }
 
 /* Improved focus states for accessibility */

@@ -111,7 +111,7 @@ const HeroSection: React.FC = () => {
 
               <motion.h1
                 variants={staggerItem}
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold text-white mb-4 sm:mb-6 leading-tight"
+                className="hero-text-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold text-white mb-4 sm:mb-6 leading-tight"
               >
                 <span className="block text-balance">
                   <span className="bg-gradient-to-r from-primary via-accent-mint to-secondary bg-clip-text text-transparent">

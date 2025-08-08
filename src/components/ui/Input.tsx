@@ -84,7 +84,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
   );
 
   const inputClasses = clsx(
-    'flex-1 px-4 py-3 text-base bg-transparent border-0 outline-none placeholder-transparent',
+    'flex-1 px-4 py-3 text-base bg-transparent border-0 outline-none placeholder-transparent form-input',
     'disabled:cursor-not-allowed',
     {
       'text-neutral-900': variant === 'default',
@@ -95,7 +95,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
   );
 
   const labelClasses = clsx(
-    'absolute left-4 transition-all duration-200 pointer-events-none',
+    'absolute left-4 transition-all duration-200 pointer-events-none form-label',
     {
       'text-neutral-500': variant === 'default' && !error && !isFocused,
       'text-primary': variant === 'default' && !error && isFocused,
