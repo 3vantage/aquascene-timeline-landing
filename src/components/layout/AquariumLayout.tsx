@@ -23,13 +23,32 @@ const AquariumLayout: React.FC<AquariumLayoutProps> = ({ children }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Convert scroll depth to aquarium depth sections
+  // Convert scroll depth to aquarium depth sections with smooth transitions
   const getAquariumDepth = (depth: number) => {
-    if (depth < 20) return 0;  // Surface - bright blue
-    if (depth < 40) return 20; // Shallow - medium blue  
-    if (depth < 60) return 40; // Mid-water - deeper blue
-    if (depth < 80) return 60; // Deep - dark blue
-    return 80; // Abyss - deepest blue
+    return Math.min(100, depth); // Use actual scroll percentage for smooth transitions
+  };
+
+  // Dynamic text contrast based on aquarium zones
+  const getZoneStyles = (depth: number) => {
+    if (depth < 12) {
+      return {
+        textColor: 'rgba(25, 25, 112, 0.9)',
+        backgroundColor: 'rgba(255, 255, 255, 0.15)',
+        borderColor: 'rgba(25, 25, 112, 0.3)'
+      };
+    } else if (depth < 25) {
+      return {
+        textColor: 'rgba(255, 255, 255, 0.95)',
+        backgroundColor: 'rgba(255, 255, 255, 0.12)',
+        borderColor: 'rgba(255, 255, 255, 0.25)'
+      };
+    } else {
+      return {
+        textColor: 'rgba(255, 255, 255, 1)',
+        backgroundColor: 'rgba(255, 255, 255, 0.08)',
+        borderColor: 'rgba(255, 255, 255, 0.2)'
+      };
+    }
   };
 
   return (
@@ -40,27 +59,48 @@ const AquariumLayout: React.FC<AquariumLayoutProps> = ({ children }) => {
         className="z-0" 
       />
       
-      {/* Content with backdrop for readability */}
+      {/* Content with dynamic contrast management */}
       <div className="relative z-10">
-        {React.Children.map(children, (child, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: index * 0.1 }}
-            className="relative backdrop-blur-sm"
-            style={{
-              background: `linear-gradient(
-                135deg,
-                rgba(255, 255, 255, ${0.05 - scrollDepth * 0.0003}) 0%,
-                rgba(255, 255, 255, ${0.02 - scrollDepth * 0.0001}) 100%
-              )`
-            }}
-          >
-            {child}
-          </motion.div>
-        ))}
+        {React.Children.map(children, (child, index) => {
+          const sectionDepth = (scrollDepth + index * 20) % 100; // Each section has slightly different depth
+          const zoneStyles = getZoneStyles(sectionDepth);
+          
+          return (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              className="relative"
+              style={{
+                background: `linear-gradient(135deg, 
+                  ${zoneStyles.backgroundColor} 0%, 
+                  ${zoneStyles.backgroundColor.replace(/[\d.]+\)/, (match) => {
+                    const opacity = parseFloat(match.slice(0, -1));
+                    return `${opacity * 0.7})`;
+                  })} 100%
+                )`,
+                backdropFilter: 'blur(12px)',
+                borderTop: `1px solid ${zoneStyles.borderColor}`,
+                borderBottom: `1px solid ${zoneStyles.borderColor}`,
+                color: zoneStyles.textColor
+              }}
+            >
+              {/* Dynamic content styling provider */}
+              <div 
+                className="aquarium-content"
+                style={{
+                  '--dynamic-text-color': zoneStyles.textColor,
+                  '--dynamic-bg-color': zoneStyles.backgroundColor,
+                  '--dynamic-border-color': zoneStyles.borderColor
+                } as React.CSSProperties}
+              >
+                {child}
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
 
       {/* Depth indicator for debugging (remove in production) */}
