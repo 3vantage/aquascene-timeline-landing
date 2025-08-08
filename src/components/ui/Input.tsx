@@ -62,9 +62,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
     'border-2 rounded-lg overflow-hidden',
     {
       // Default variant
-      'bg-white border-neutral-300 focus-within:border-primary focus-within:shadow-md': 
+      'glass-underwater border-primary/30 focus-within:border-primary focus-within:shadow-md': 
         variant === 'default' && !error,
-      'bg-white border-error focus-within:border-error focus-within:shadow-lg focus-within:shadow-error/20': 
+      'glass-underwater border-error/50 focus-within:border-error focus-within:shadow-lg focus-within:shadow-error/20': 
         variant === 'default' && error,
       
       // Glass variant
@@ -87,7 +87,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
     'flex-1 px-4 py-3 text-base bg-transparent border-0 outline-none placeholder-transparent form-input',
     'disabled:cursor-not-allowed',
     {
-      'text-neutral-900': variant === 'default',
+      'text-white': variant === 'default',
       'text-white placeholder-white/50': variant === 'glass' || variant === 'underwater',
       'pl-12': leftIcon,
       'pr-12': rightIcon,
@@ -97,7 +97,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
   const labelClasses = clsx(
     'absolute left-4 transition-all duration-200 pointer-events-none form-label',
     {
-      'text-neutral-500': variant === 'default' && !error && !isFocused,
+      'text-accent-mint': variant === 'default' && !error && !isFocused,
       'text-primary': variant === 'default' && !error && isFocused,
       'text-error': error,
       'text-white': (variant === 'glass' || variant === 'underwater') && !error && !isFocused,
@@ -128,7 +128,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
             <div className={clsx(
               'w-5 h-5',
               {
-                'text-neutral-400': variant === 'default' && !isFocused && !error,
+                'text-accent-light': variant === 'default' && !isFocused && !error,
                 'text-primary': variant === 'default' && isFocused && !error,
                 'text-error': error,
                 'text-white/50': (variant === 'glass' || variant === 'underwater') && !isFocused && !error,
@@ -175,7 +175,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
             <div className={clsx(
               'w-5 h-5',
               {
-                'text-neutral-400': variant === 'default' && !isFocused && !error,
+                'text-accent-light': variant === 'default' && !isFocused && !error,
                 'text-primary': variant === 'default' && isFocused && !error,
                 'text-error': error,
                 'text-white/50': (variant === 'glass' || variant === 'underwater') && !isFocused && !error,
@@ -231,7 +231,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
             ) : (
               <span className={clsx(
                 {
-                  'text-neutral-500': variant === 'default',
+                  'text-accent-mint': variant === 'default',
                   'text-white/70': variant === 'glass' || variant === 'underwater',
                 }
               )}>

@@ -49,11 +49,11 @@ const Checkbox = forwardRef<HTMLButtonElement, CheckboxProps>(({
     'relative flex items-center justify-center w-5 h-5 rounded border-2 transition-all duration-200 focus:outline-none focus-visible:ring-3 focus-visible:ring-accent-emerald focus-visible:ring-offset-2',
     {
       // Default variant
-      'bg-white border-neutral-300 hover:border-primary': 
+      'glass-underwater border-primary/30 hover:border-primary': 
         variant === 'default' && !checked && !error && !disabled,
       'bg-primary border-primary text-white': 
         variant === 'default' && checked && !error,
-      'bg-white border-error hover:border-error': 
+      'glass-underwater border-error/50 hover:border-error': 
         variant === 'default' && !checked && error && !disabled,
       'bg-error border-error text-white': 
         (variant === 'default' && checked && error) || 
@@ -84,7 +84,7 @@ const Checkbox = forwardRef<HTMLButtonElement, CheckboxProps>(({
   const labelClasses = clsx(
     'text-sm cursor-pointer transition-colors duration-200',
     {
-      'text-neutral-700 hover:text-neutral-900': variant === 'default' && !error && !disabled,
+      'text-white hover:text-accent-mint': variant === 'default' && !error && !disabled,
       'text-error': error,
       'text-white hover:text-cyan-200': (variant === 'glass' || variant === 'underwater') && !error && !disabled,
       'opacity-50 cursor-not-allowed': disabled,
@@ -158,7 +158,7 @@ const Checkbox = forwardRef<HTMLButtonElement, CheckboxProps>(({
               className={clsx(
                 'mt-1 text-xs',
                 {
-                  'text-neutral-500': variant === 'default' && !error,
+                  'text-accent-mint': variant === 'default' && !error,
                   'text-error': error,
                   'text-white/60': (variant === 'glass' || variant === 'underwater') && !error,
                 }

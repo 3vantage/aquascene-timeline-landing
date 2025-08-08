@@ -84,9 +84,9 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>(({
     'flex items-center justify-between cursor-pointer',
     {
       // Default variant
-      'bg-white border-neutral-300 hover:border-primary focus:border-primary': 
+      'glass-underwater border-primary/30 hover:border-primary focus:border-primary': 
         variant === 'default' && !error && !disabled,
-      'bg-white border-error focus:border-error': 
+      'glass-underwater border-error/50 focus:border-error': 
         variant === 'default' && error && !disabled,
       
       // Glass variant
@@ -108,8 +108,8 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>(({
   const textClasses = clsx(
     'text-base flex-1 min-w-0',
     {
-      'text-neutral-900': variant === 'default' && selectedOption,
-      'text-neutral-500': variant === 'default' && !selectedOption,
+      'text-white': variant === 'default' && selectedOption,
+      'text-accent-mint': variant === 'default' && !selectedOption,
       'text-white': (variant === 'glass' || variant === 'underwater') && selectedOption,
       'text-white/50': (variant === 'glass' || variant === 'underwater') && !selectedOption,
     }
@@ -118,7 +118,7 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>(({
   const labelClasses = clsx(
     'absolute left-4 transition-all duration-200 pointer-events-none',
     {
-      'text-neutral-500': variant === 'default' && !error && !isFocused,
+      'text-accent-mint': variant === 'default' && !error && !isFocused,
       'text-primary': variant === 'default' && !error && isFocused,
       'text-error': error,
       'text-white': (variant === 'glass' || variant === 'underwater') && !error && !isFocused,
@@ -143,7 +143,7 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>(({
   const optionClasses = (option: SelectOption, isSelected: boolean) => clsx(
     'w-full px-4 py-3 text-left text-base cursor-pointer transition-colors duration-150 flex items-center justify-between',
     {
-      'text-neutral-900 hover:bg-neutral-50': variant === 'default' && !isSelected && !option.disabled,
+      'text-white hover:bg-primary/20': variant === 'default' && !isSelected && !option.disabled,
       'text-primary bg-primary/10': variant === 'default' && isSelected,
       'text-white/90 hover:bg-white/10': (variant === 'glass' || variant === 'underwater') && !isSelected && !option.disabled,
       'text-accent-emerald bg-accent-emerald/20': (variant === 'glass' || variant === 'underwater') && isSelected,
@@ -184,7 +184,7 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>(({
             className={clsx(
               'w-5 h-5 ml-2 flex-shrink-0',
               {
-                'text-neutral-400': variant === 'default' && !isFocused && !error,
+                'text-accent-light': variant === 'default' && !isFocused && !error,
                 'text-primary': variant === 'default' && isFocused && !error,
                 'text-error': error,
                 'text-white/50': (variant === 'glass' || variant === 'underwater') && !isFocused && !error,

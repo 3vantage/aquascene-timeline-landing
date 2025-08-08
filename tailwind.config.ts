@@ -125,43 +125,43 @@ const config: Config = {
         xs: '2px',
       },
       colors: {
-        // Professional Aquascaping Colors - Natural Waters Theme
+        // VIBRANT NEON COLORS - MAXIMUM CONTRAST ON BLACK BACKGROUND
         primary: {
-          DEFAULT: '#1B4332', // Deep Forest
-          light: '#2D5A3D',   // Sage Green
-          dark: '#0D2818',    // Deeper Forest
+          DEFAULT: '#00FF88', // Electric Green - POPS!
+          light: '#33FFAA',   // Bright Mint - VISIBLE!
+          dark: '#00CC6A',    // Deep Electric Green - CONTRAST!
         },
         secondary: {
-          DEFAULT: '#2B4F60', // Ocean Depth
-          light: '#4A6B7A',   // Lighter Ocean
-          dark: '#1A3240',    // Deeper Ocean
+          DEFAULT: '#00D4FF', // Electric Cyan - BRIGHT!
+          light: '#33E0FF',   // Bright Sky Blue - VIVID!
+          dark: '#00AACC',    // Deep Electric Cyan - STRONG!
         },
         accent: {
-          DEFAULT: '#E76F51', // Warm Coral
-          light: '#F4A261',   // Golden Sand
-          mint: '#52B2B2',    // Aqua Mint
-          wood: '#8B7355',    // Driftwood
+          DEFAULT: '#FF4081', // Hot Pink - VIBRANT!
+          light: '#FF6BB3',   // Electric Pink - NEON!
+          mint: '#00FFD4',    // Neon Mint - GLOWING!
+          wood: '#FFAA33',    // Bright Orange - POPPING!
         },
         neutral: {
-          50: '#FEFEFE',      // Cloud White
-          100: '#F8F9FA',     // Soft Pearl
-          200: '#F1F3F4',     // Light neutral
-          300: '#E5E7EB',     // Subtle dividers
-          400: '#9CA3AF',     // Medium gray
-          500: '#6C757D',     // Warm Gray
-          600: '#4B5563',     // Dark secondary
-          700: '#2D3436',     // Charcoal
-          800: '#1A1D23',     // Deep Slate
-          900: '#0F1419',     // Deepest
+          50: '#FFFFFF',      // Pure White - MAX CONTRAST
+          100: '#F0F0F0',     // Light Gray - VISIBLE
+          200: '#E0E0E0',     // Medium Light - CLEAR
+          300: '#D0D0D0',     // Light Gray - READABLE
+          400: '#B0B0B0',     // Medium Gray - VISIBLE
+          500: '#808080',     // Mid Gray - CONTRAST
+          600: '#606060',     // Dark Gray - VISIBLE
+          700: '#404040',     // Darker Gray - SUBTLE
+          800: '#202020',     // Very Dark - BACKGROUND
+          900: '#101010',     // Near Black - DEEP
         },
-        success: '#40A06A', // Natural green
-        warning: '#FFA726', // Warm amber
-        error: '#E53935',   // Clear red
-        info: '#42A5F5',    // Gentle blue
+        success: '#00FF66',   // Neon Green - BRIGHT!
+        warning: '#FFD700',   // Bright Gold - VIVID!
+        error: '#FF3366',     // Hot Red - ALERT!
+        info: '#33AAFF',      // Bright Blue - CLEAR!
         glass: {
-          100: 'rgba(255, 255, 255, 0.85)',
-          200: 'rgba(255, 255, 255, 0.9)',
-          300: 'rgba(255, 255, 255, 0.95)',
+          100: 'rgba(255, 255, 255, 0.1)',
+          200: 'rgba(255, 255, 255, 0.15)',
+          300: 'rgba(255, 255, 255, 0.2)',
         }
       },
       fontFamily: {
@@ -216,15 +216,15 @@ const config: Config = {
           backfaceVisibility: 'hidden',
         },
         '.text-gradient': {
-          backgroundImage: 'linear-gradient(45deg, #1B4332, #E76F51, #52B2B2)',
+          backgroundImage: 'linear-gradient(45deg, #00FF88, #FF4081, #00FFD4)',
           backgroundClip: 'text',
           color: 'transparent',
         },
         '.text-primary': {
-          color: '#1B4332',
+          color: '#00FF88',
         },
         '.text-accent': {
-          color: '#E76F51',
+          color: '#FF4081',
         },
         '.scrollbar-hide': {
           '-ms-overflow-style': 'none',

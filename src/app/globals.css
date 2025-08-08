@@ -6,32 +6,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Source+Sans+Pro:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Professional Natural Waters Color Palette */
-  --color-primary: #1B4332;
-  --color-primary-light: #2D5A3D;
-  --color-primary-dark: #0D2818;
-  --color-secondary: #2B4F60;
-  --color-secondary-light: #4A6B7A;
-  --color-secondary-dark: #1A3240;
-  --color-accent: #E76F51;
-  --color-accent-light: #F4A261;
-  --color-accent-mint: #52B2B2;
-  --color-accent-wood: #8B7355;
-  --color-success: #40A06A;
-  --color-warning: #FFA726;
-  --color-error: #E53935;
-  --color-info: #42A5F5;
-  --color-plant-green: #16A34A;
-  --color-plant-red: #DC2626;
-  --color-substrate-brown: #92400E;
-  --color-rock-gray: #6B7280;
+  /* VIBRANT NEON COLOR PALETTE - DESIGNED TO POP ON BLACK BACKGROUND */
+  --color-primary: #00FF88; /* Electric Green */
+  --color-primary-light: #33FFAA;   /* Bright Mint */
+  --color-primary-dark: #00CC6A;    /* Deep Electric Green */
+  --color-secondary: #00D4FF; /* Electric Cyan */
+  --color-secondary-light: #33E0FF;   /* Bright Sky Blue */
+  --color-secondary-dark: #00AACC;    /* Deep Electric Cyan */
+  --color-accent: #FF4081; /* Hot Pink */
+  --color-accent-light: #FF6BB3;   /* Electric Pink */
+  --color-accent-mint: #00FFD4;    /* Neon Mint */
+  --color-accent-wood: #FFAA33;    /* Bright Orange */
+  --color-success: #00FF66;
+  --color-warning: #FFD700; /* Bright Gold */
+  --color-error: #FF3366; /* Hot Red */
+  --color-info: #33AAFF; /* Bright Blue */
+  --color-plant-green: #44FF44; /* Neon Green */
+  --color-plant-red: #FF4444; /* Bright Red */
+  --color-substrate-brown: #FF8844; /* Bright Orange */
+  --color-rock-gray: #CCCCCC; /* Light Gray */
   
-  /* Neutral Colors */
-  --color-background: #FEFEFE;
-  --color-foreground: #2D3436;
-  --color-muted: #F8F9FA;
-  --color-surface: #F1F3F4;
-  --color-border: #E5E7EB;
+  /* High Contrast Neutral Colors for Black Background */
+  --color-background: #000000; /* Pure Black */
+  --color-foreground: #FFFFFF; /* Pure White */
+  --color-muted: #1A1A1A; /* Dark Gray */
+  --color-surface: #2A2A2A; /* Medium Gray */
+  --color-border: #444444; /* Light Gray Border */
   
   
   /* Professional Typography Stack */
@@ -84,17 +84,19 @@
   --ease-spring: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Professional Dark Mode Theme */
-@media (prefers-color-scheme: dark) {
+/* FORCE VIBRANT DARK MODE FOR MAXIMUM CONTRAST */
+@media (prefers-color-scheme: dark), (prefers-color-scheme: light) {
   :root {
-    --color-background: #0F1419;
-    --color-foreground: #F8F9FA;
-    --color-muted: #1A1D23;
-    --color-surface: #2D3436;
-    --color-border: #4B5563;
-    --color-primary: #2D5A3D;
-    --color-secondary: #4A6B7A;
-    --color-accent: #F4A261;
+    --color-background: #000000; /* Pure Black */
+    --color-foreground: #FFFFFF; /* Pure White */
+    --color-muted: #1A1A1A; /* Dark Gray */
+    --color-surface: #2A2A2A; /* Medium Gray */
+    --color-border: #555555; /* Bright Gray Border */
+    --color-primary: #00FF88; /* Electric Green */
+    --color-secondary: #00D4FF; /* Electric Cyan */
+    --color-accent: #FF4081; /* Hot Pink */
+    --color-accent-light: #FF6BB3; /* Electric Pink */
+    --color-accent-mint: #00FFD4; /* Neon Mint */
   }
 }
 
@@ -110,14 +112,115 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: var(--color-background);
-  color: var(--color-foreground);
+  background: var(--color-background) !important;
+  color: var(--color-foreground) !important;
   font-family: var(--font-primary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   min-height: 100vh;
+}
+
+/* FORCE BRIGHT TEXT EVERYWHERE */
+h1, h2, h3, h4, h5, h6 {
+  color: #FFFFFF !important;
+}
+
+p, span, div, label {
+  color: #FFFFFF !important;
+}
+
+/* Override any dark text classes */
+.text-gray-600,
+.text-gray-700,
+.text-gray-800,
+.text-gray-900,
+.text-neutral-600,
+.text-neutral-700,
+.text-neutral-800,
+.text-neutral-900,
+.text-slate-600,
+.text-slate-700,
+.text-slate-800,
+.text-slate-900,
+.text-black {
+  color: #FFFFFF !important;
+}
+
+/* Force bright accent colors */
+.text-primary {
+  color: var(--color-primary) !important;
+}
+
+.text-secondary {
+  color: var(--color-secondary) !important;
+}
+
+.text-accent {
+  color: var(--color-accent) !important;
+}
+
+.text-accent-light {
+  color: var(--color-accent-light) !important;
+}
+
+.text-accent-mint {
+  color: var(--color-accent-mint) !important;
+}
+
+/* VIBRANT NEON GLOW EFFECTS */
+.neon-glow-primary {
+  color: var(--color-primary) !important;
+  text-shadow: 0 0 5px var(--color-primary), 0 0 10px var(--color-primary), 0 0 15px var(--color-primary) !important;
+}
+
+.neon-glow-secondary {
+  color: var(--color-secondary) !important;
+  text-shadow: 0 0 5px var(--color-secondary), 0 0 10px var(--color-secondary), 0 0 15px var(--color-secondary) !important;
+}
+
+.neon-glow-accent {
+  color: var(--color-accent) !important;
+  text-shadow: 0 0 5px var(--color-accent), 0 0 10px var(--color-accent), 0 0 15px var(--color-accent) !important;
+}
+
+/* PULSING COLORS FOR INTERACTIVE ELEMENTS */
+.pulse-primary {
+  animation: pulse-primary 2s ease-in-out infinite;
+}
+
+.pulse-secondary {
+  animation: pulse-secondary 2s ease-in-out infinite;
+}
+
+.pulse-accent {
+  animation: pulse-accent 2s ease-in-out infinite;
+}
+
+@keyframes pulse-primary {
+  0%, 100% { color: var(--color-primary); text-shadow: 0 0 5px var(--color-primary); }
+  50% { color: var(--color-primary-light); text-shadow: 0 0 15px var(--color-primary), 0 0 25px var(--color-primary); }
+}
+
+@keyframes pulse-secondary {
+  0%, 100% { color: var(--color-secondary); text-shadow: 0 0 5px var(--color-secondary); }
+  50% { color: var(--color-secondary-light); text-shadow: 0 0 15px var(--color-secondary), 0 0 25px var(--color-secondary); }
+}
+
+@keyframes pulse-accent {
+  0%, 100% { color: var(--color-accent); text-shadow: 0 0 5px var(--color-accent); }
+  50% { color: var(--color-accent-light); text-shadow: 0 0 15px var(--color-accent), 0 0 25px var(--color-accent); }
+}
+
+/* ENSURE ALL LINKS AND INTERACTIVE ELEMENTS ARE BRIGHT */
+a, button {
+  color: inherit;
+}
+
+a:hover, button:hover {
+  color: var(--color-accent-light) !important;
+  text-shadow: 0 0 10px var(--color-accent-light) !important;
 }
 
 /* Ensure high contrast for critical elements */
