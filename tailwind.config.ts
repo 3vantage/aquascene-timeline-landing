@@ -125,27 +125,49 @@ const config: Config = {
         xs: '2px',
       },
       colors: {
-        aqua: {
-          50: '#f0fdff',
-          100: '#ccfbfe',
-          200: '#9af6fd',
-          300: '#5deafa',
-          400: '#14d5f0',
-          500: '#00bcd4',
-          600: '#0295b0',
-          700: '#0a778e',
-          800: '#156073',
-          900: '#175062',
-          950: '#083344',
+        // Professional Aquascaping Colors - Natural Waters Theme
+        primary: {
+          DEFAULT: '#1B4332', // Deep Forest
+          light: '#2D5A3D',   // Sage Green
+          dark: '#0D2818',    // Deeper Forest
         },
+        secondary: {
+          DEFAULT: '#2B4F60', // Ocean Depth
+          light: '#4A6B7A',   // Lighter Ocean
+          dark: '#1A3240',    // Deeper Ocean
+        },
+        accent: {
+          DEFAULT: '#E76F51', // Warm Coral
+          light: '#F4A261',   // Golden Sand
+          mint: '#52B2B2',    // Aqua Mint
+          wood: '#8B7355',    // Driftwood
+        },
+        neutral: {
+          50: '#FEFEFE',      // Cloud White
+          100: '#F8F9FA',     // Soft Pearl
+          200: '#F1F3F4',     // Light neutral
+          300: '#E5E7EB',     // Subtle dividers
+          400: '#9CA3AF',     // Medium gray
+          500: '#6C757D',     // Warm Gray
+          600: '#4B5563',     // Dark secondary
+          700: '#2D3436',     // Charcoal
+          800: '#1A1D23',     // Deep Slate
+          900: '#0F1419',     // Deepest
+        },
+        success: '#40A06A', // Natural green
+        warning: '#FFA726', // Warm amber
+        error: '#E53935',   // Clear red
+        info: '#42A5F5',    // Gentle blue
         glass: {
-          100: 'rgba(255, 255, 255, 0.1)',
-          200: 'rgba(255, 255, 255, 0.2)',
-          300: 'rgba(255, 255, 255, 0.3)',
+          100: 'rgba(255, 255, 255, 0.85)',
+          200: 'rgba(255, 255, 255, 0.9)',
+          300: 'rgba(255, 255, 255, 0.95)',
         }
       },
       fontFamily: {
-        display: ['Inter', 'system-ui', 'sans-serif'],
+        primary: ['Inter', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'system-ui', 'sans-serif'],
+        heading: ['Poppins', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        accent: ['"Source Serif Pro"', 'Georgia', '"Times New Roman"', 'serif'],
       },
       spacing: {
         '18': '4.5rem',
@@ -194,9 +216,15 @@ const config: Config = {
           backfaceVisibility: 'hidden',
         },
         '.text-gradient': {
-          backgroundImage: 'linear-gradient(45deg, #06b6d4, #3b82f6, #8b5cf6)',
+          backgroundImage: 'linear-gradient(45deg, #1B4332, #E76F51, #52B2B2)',
           backgroundClip: 'text',
           color: 'transparent',
+        },
+        '.text-primary': {
+          color: '#1B4332',
+        },
+        '.text-accent': {
+          color: '#E76F51',
         },
         '.scrollbar-hide': {
           '-ms-overflow-style': 'none',

@@ -6,43 +6,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Source+Sans+Pro:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Enhanced Vibrant Aquatic Color Palette */
-  --color-primary: #0D7377;
-  --color-primary-light: #14A085;
-  --color-primary-dark: #053F5C;
-  --color-secondary: #06B6D4;
-  --color-secondary-light: #67E8F9;
-  --color-secondary-dark: #0E7490;
-  --color-accent: #10B981;
-  --color-accent-light: #6EE7B7;
-  --color-accent-coral: #F97316;
-  --color-accent-emerald: #059669;
-  --color-accent-cyan: #06B6D4;
-  --color-accent-teal: #0D9488;
-  --color-accent-blue: #3B82F6;
-  --color-accent-indigo: #6366F1;
+  /* Professional Natural Waters Color Palette */
+  --color-primary: #1B4332;
+  --color-primary-light: #2D5A3D;
+  --color-primary-dark: #0D2818;
+  --color-secondary: #2B4F60;
+  --color-secondary-light: #4A6B7A;
+  --color-secondary-dark: #1A3240;
+  --color-accent: #E76F51;
+  --color-accent-light: #F4A261;
+  --color-accent-mint: #52B2B2;
+  --color-accent-wood: #8B7355;
+  --color-success: #40A06A;
+  --color-warning: #FFA726;
+  --color-error: #E53935;
+  --color-info: #42A5F5;
   --color-plant-green: #16A34A;
   --color-plant-red: #DC2626;
   --color-substrate-brown: #92400E;
   --color-rock-gray: #6B7280;
   
   /* Neutral Colors */
-  --color-background: #FFFFFF;
-  --color-foreground: #374151;
+  --color-background: #FEFEFE;
+  --color-foreground: #2D3436;
   --color-muted: #F8F9FA;
-  --color-surface: #FAFAFA;
+  --color-surface: #F1F3F4;
   --color-border: #E5E7EB;
   
-  /* Status Colors */
-  --color-success: #28A745;
-  --color-warning: #FFC107;
-  --color-error: #DC3545;
-  --color-info: #17A2B8;
   
-  /* Enhanced Typography Stack */
-  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-secondary: 'Poppins', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-accent: 'Montserrat', 'Playfair Display', Georgia, 'Times New Roman', serif;
+  /* Professional Typography Stack */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-accent: 'Source Serif Pro', Georgia, 'Times New Roman', serif;
   --font-display: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
   
   /* Spacing & Sizes */
@@ -77,17 +72,17 @@
   --ease-spring: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Enhanced Dark Mode Aquatic Theme */
+/* Professional Dark Mode Theme */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: #0F172A;
-    --color-foreground: #F1F5F9;
-    --color-muted: #1E293B;
-    --color-surface: #334155;
-    --color-border: #475569;
-    --color-primary: #14A085;
-    --color-secondary: #0891B2;
-    --color-accent: #10B981;
+    --color-background: #0F1419;
+    --color-foreground: #F8F9FA;
+    --color-muted: #1A1D23;
+    --color-surface: #2D3436;
+    --color-border: #4B5563;
+    --color-primary: #2D5A3D;
+    --color-secondary: #4A6B7A;
+    --color-accent: #F4A261;
   }
 }
 

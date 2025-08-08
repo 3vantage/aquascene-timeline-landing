@@ -30,16 +30,16 @@ const HeroSection: React.FC = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Enhanced underwater background */}
+      {/* Professional natural background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/40 via-blue-800/30 to-teal-900/50" />
-        <div className="absolute inset-0 bg-gradient-radial from-transparent via-cyan-500/10 to-blue-900/20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/15 to-accent-mint/10" />
+        <div className="absolute inset-0 bg-gradient-radial from-transparent via-accent-light/5 to-primary-dark/10" />
         
-        {/* Water caustic effects */}
+        {/* Natural caustic effects */}
         <motion.div 
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 opacity-15"
           style={{
-            backgroundImage: 'radial-gradient(circle at 20% 50%, cyan 2px, transparent 2px), radial-gradient(circle at 80% 20%, emerald 2px, transparent 2px), radial-gradient(circle at 60% 80%, blue 2px, transparent 2px)',
+            backgroundImage: 'radial-gradient(circle at 20% 50%, #52B2B2 2px, transparent 2px), radial-gradient(circle at 80% 20%, #2D5A3D 2px, transparent 2px), radial-gradient(circle at 60% 80%, #E76F51 2px, transparent 2px)',
             backgroundSize: '40px 40px, 60px 60px, 80px 80px'
           }}
           animate={{
@@ -54,7 +54,7 @@ const HeroSection: React.FC = () => {
         {Array.from({ length: 8 }).map((_, i) => (
           <motion.div
             key={i}
-            className="absolute bg-gradient-to-b from-cyan-300/30 via-emerald-200/15 to-transparent"
+            className="absolute bg-gradient-to-b from-accent-mint/20 via-accent-light/10 to-transparent"
             style={{
               width: i % 2 === 0 ? '3px' : '1px',
               height: '100vh',
@@ -91,18 +91,18 @@ const HeroSection: React.FC = () => {
                 variants={staggerItem}
                 className="flex items-center justify-center lg:justify-start mb-6"
               >
-                <div className="glass-underwater px-3 sm:px-6 py-2 sm:py-3 rounded-full flex items-center gap-2 sm:gap-3 border border-cyan-400/30">
+                <div className="glass-underwater px-3 sm:px-6 py-2 sm:py-3 rounded-full flex items-center gap-2 sm:gap-3 border border-accent-light/30">
                   <motion.div
                     animate={{ rotate: 360 }}
                     transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
                   >
-                    <CubeTransparentIcon className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400" />
+                    <CubeTransparentIcon className="w-4 h-4 sm:w-5 sm:h-5 text-accent-mint" />
                   </motion.div>
                   <span className="text-xs sm:text-sm font-semibold text-white tracking-wide">
                     <span className="hidden sm:inline">EARLY ACCESS • </span>3D AQUASCAPE DESIGNER
                   </span>
                   <motion.div 
-                    className="w-2 h-2 bg-emerald-400 rounded-full"
+                    className="w-2 h-2 bg-accent-mint rounded-full"
                     animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   />
@@ -114,15 +114,15 @@ const HeroSection: React.FC = () => {
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold text-white mb-4 sm:mb-6 leading-tight"
               >
                 <span className="block text-balance">
-                  <span className="bg-gradient-to-r from-cyan-300 via-emerald-300 to-blue-300 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-primary via-accent-mint to-secondary bg-clip-text text-transparent">
                     Design Your
                   </span>
                   <br />
                   <span className="text-white font-light">Dream</span>{' '}
-                  <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent relative">
+                  <span className="bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent relative">
                     Aquascape
                     <motion.div
-                      className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full"
+                      className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-accent to-accent-light rounded-full"
                       initial={{ width: 0 }}
                       animate={{ width: '100%' }}
                       transition={{ delay: 1, duration: 1.5, ease: 'easeOut' }}
@@ -133,7 +133,7 @@ const HeroSection: React.FC = () => {
 
               <motion.p
                 variants={staggerItem}
-                className="text-base sm:text-lg md:text-xl lg:text-2xl text-cyan-100/90 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 text-pretty font-light leading-relaxed px-2 sm:px-0"
+                className="text-base sm:text-lg md:text-xl lg:text-2xl text-neutral-50/90 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 text-pretty font-light leading-relaxed px-2 sm:px-0"
               >
                 Plan Before You Plant <span className="hidden sm:inline">• Save Money, Avoid Mistakes</span> • Join {aquascaperCount}+ <span className="hidden sm:inline">Bulgarian & Hungarian </span>Aquascapers
               </motion.p>
@@ -143,16 +143,16 @@ const HeroSection: React.FC = () => {
                 className="mb-8 sm:mb-10 max-w-xl mx-auto lg:mx-0"
               >
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 text-xs sm:text-sm">
-                  <div className="flex items-center justify-center sm:justify-start gap-2 text-emerald-300">
-                    <div className="w-2 h-2 bg-emerald-400 rounded-full flex-shrink-0" />
+                  <div className="flex items-center justify-center sm:justify-start gap-2 text-accent-mint">
+                    <div className="w-2 h-2 bg-accent-mint rounded-full flex-shrink-0" />
                     <span>3D Visualization</span>
                   </div>
-                  <div className="flex items-center justify-center sm:justify-start gap-2 text-cyan-300">
-                    <div className="w-2 h-2 bg-cyan-400 rounded-full flex-shrink-0" />
+                  <div className="flex items-center justify-center sm:justify-start gap-2 text-accent-light">
+                    <div className="w-2 h-2 bg-accent-light rounded-full flex-shrink-0" />
                     <span>Cost Calculator</span>
                   </div>
-                  <div className="flex items-center justify-center sm:justify-start gap-2 text-blue-300">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full flex-shrink-0" />
+                  <div className="flex items-center justify-center sm:justify-start gap-2 text-secondary-light">
+                    <div className="w-2 h-2 bg-secondary-light rounded-full flex-shrink-0" />
                     <span>Expert Community</span>
                   </div>
                 </div>
@@ -166,7 +166,7 @@ const HeroSection: React.FC = () => {
                   size="xl"
                   onClick={scrollToWaitlist}
                   rightIcon={<ArrowRightIcon className="w-4 h-4 sm:w-5 sm:h-5" />}
-                  className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 shadow-2xl hover:shadow-emerald-500/50 text-white border-0 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-semibold transform hover:scale-105 transition-all duration-200 min-h-[48px] touch-manipulation"
+                  className="bg-gradient-to-r from-accent to-accent-light hover:from-accent/90 hover:to-accent-light/90 shadow-2xl hover:shadow-accent/30 text-white border-0 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-semibold transform hover:scale-105 transition-all duration-200 min-h-[48px] touch-manipulation"
                 >
                   <span className="hidden sm:inline">Start Designing Now</span>
                   <span className="sm:hidden">Start Designing</span>
@@ -176,7 +176,7 @@ const HeroSection: React.FC = () => {
                   variant="secondary"
                   size="xl"
                   onClick={startDemo}
-                  className="glass-underwater border-cyan-400/50 text-white hover:bg-cyan-500/20 hover:border-cyan-400/70 px-6 sm:px-8 py-3 sm:py-4 min-h-[48px] touch-manipulation"
+                  className="glass-underwater border-accent-light/50 text-white hover:bg-accent-light/20 hover:border-accent-light/70 px-6 sm:px-8 py-3 sm:py-4 min-h-[48px] touch-manipulation"
                   rightIcon={<PlayIcon className="w-4 h-4 sm:w-5 sm:h-5" />}
                 >
                   <span className="hidden sm:inline">Watch 3D Demo</span>
@@ -211,7 +211,7 @@ const HeroSection: React.FC = () => {
                     ))}
                   </div>
                   <div className="text-left">
-                    <div className="text-cyan-200 text-base sm:text-lg font-semibold">
+                    <div className="text-accent-light text-base sm:text-lg font-semibold">
                       <motion.span
                         key={aquascaperCount}
                         initial={{ scale: 1.2 }}
@@ -221,7 +221,7 @@ const HeroSection: React.FC = () => {
                         {aquascaperCount.toLocaleString()}
                       </motion.span>+ <span className="hidden xs:inline">Aquascapers </span>Waiting
                     </div>
-                    <div className="text-white/70 text-xs sm:text-sm">
+                    <div className="text-neutral-100/70 text-xs sm:text-sm">
                       <span className="hidden sm:inline">From Bulgaria, Hungary & </span>Central Europe
                     </div>
                   </div>
@@ -229,13 +229,13 @@ const HeroSection: React.FC = () => {
                 
                 {/* Recent signups indicator */}
                 <motion.div 
-                  className="flex items-center justify-center lg:justify-start gap-2 text-emerald-300 text-xs sm:text-sm"
+                  className="flex items-center justify-center lg:justify-start gap-2 text-accent-mint text-xs sm:text-sm"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 2 }}
                 >
                   <motion.div 
-                    className="w-2 h-2 bg-emerald-400 rounded-full flex-shrink-0"
+                    className="w-2 h-2 bg-accent-mint rounded-full flex-shrink-0"
                     animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   />
@@ -260,12 +260,12 @@ const HeroSection: React.FC = () => {
                   >
                     {/* 3D Aquarium Container */}
                     <motion.div
-                      className="relative h-full glass-deep-water rounded-xl sm:rounded-2xl p-4 sm:p-6 overflow-hidden border border-cyan-400/30"
+                      className="relative h-full glass-deep-water rounded-xl sm:rounded-2xl p-4 sm:p-6 overflow-hidden border border-accent-light/20"
                       animate={{
                         boxShadow: [
-                          '0 25px 50px rgba(6, 182, 212, 0.3)',
-                          '0 35px 70px rgba(16, 185, 129, 0.4)',
-                          '0 25px 50px rgba(6, 182, 212, 0.3)',
+                          '0 25px 50px rgba(231, 111, 81, 0.2)',
+                          '0 35px 70px rgba(82, 178, 178, 0.25)',
+                          '0 25px 50px rgba(231, 111, 81, 0.2)',
                         ]
                       }}
                       transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
@@ -300,7 +300,7 @@ const HeroSection: React.FC = () => {
                         
                         {/* Advanced plant system */}
                         <motion.div
-                          className="absolute bottom-20 left-20 w-6 h-32 bg-gradient-to-t from-emerald-800 via-emerald-600 to-emerald-400 rounded-t-full shadow-lg"
+                          className="absolute bottom-20 left-20 w-6 h-32 bg-gradient-to-t from-primary-dark via-primary to-accent-mint rounded-t-full shadow-lg"
                           animate={{
                             rotate: [0, 3, -2, 4, 0],
                             scaleY: [1, 1.15, 0.95, 1.1, 1],
@@ -310,7 +310,7 @@ const HeroSection: React.FC = () => {
                         />
                         
                         <motion.div
-                          className="absolute bottom-20 center-8 w-4 h-28 bg-gradient-to-t from-green-800 via-green-600 to-lime-400 rounded-t-full shadow-md"
+                          className="absolute bottom-20 center-8 w-4 h-28 bg-gradient-to-t from-primary-dark via-primary to-accent-mint rounded-t-full shadow-md"
                           animate={{
                             rotate: [0, -2, 3, -1, 0],
                             scaleY: [1, 0.9, 1.2, 0.85, 1]
@@ -319,7 +319,7 @@ const HeroSection: React.FC = () => {
                         />
                         
                         <motion.div
-                          className="absolute bottom-20 right-16 w-5 h-24 bg-gradient-to-t from-red-900 via-red-700 to-red-400 rounded-t-full shadow-md"
+                          className="absolute bottom-20 right-16 w-5 h-24 bg-gradient-to-t from-accent-wood via-accent to-accent-light rounded-t-full shadow-md"
                           animate={{
                             rotate: [0, 2, -3, 1, 0],
                             scaleY: [1, 1.1, 0.9, 1.05, 1]
@@ -331,7 +331,7 @@ const HeroSection: React.FC = () => {
                         {Array.from({ length: 6 }).map((_, i) => (
                           <motion.div
                             key={i}
-                            className={`absolute w-8 h-4 ${i % 2 === 0 ? 'bg-orange-500' : 'bg-blue-400'} rounded-full shadow-sm`}
+                            className={`absolute w-8 h-4 ${i % 2 === 0 ? 'bg-accent' : 'bg-accent-mint'} rounded-full shadow-sm`}
                             animate={{
                               x: [30 + i * 20, 280 - i * 15, 150 + i * 10, 320 - i * 25, 30 + i * 20],
                               y: [60 + i * 8, 90 - i * 5, 130 + i * 3, 70 - i * 8, 60 + i * 8],
@@ -344,7 +344,7 @@ const HeroSection: React.FC = () => {
                               delay: i * 0.8
                             }}
                           >
-                            <div className={`absolute right-0 top-1/2 w-3 h-3 ${i % 2 === 0 ? 'bg-orange-600' : 'bg-blue-500'} transform -translate-y-1/2 rounded-l-full`} />
+                            <div className={`absolute right-0 top-1/2 w-3 h-3 ${i % 2 === 0 ? 'bg-accent/80' : 'bg-accent-mint/80'} transform -translate-y-1/2 rounded-l-full`} />
                           </motion.div>
                         ))}
                         
@@ -374,7 +374,7 @@ const HeroSection: React.FC = () => {
                         
                         {/* Dynamic water surface */}
                         <motion.div
-                          className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-transparent via-cyan-300/40 via-white/50 via-cyan-300/40 to-transparent rounded-t-xl"
+                          className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-transparent via-accent-mint/30 via-white/40 via-accent-mint/30 to-transparent rounded-t-xl"
                           animate={{
                             x: ['-100%', '200%'],
                             scaleX: [1, 1.5, 0.8, 1.2, 1]
@@ -386,39 +386,39 @@ const HeroSection: React.FC = () => {
 
                     {/* Advanced UI indicators */}
                     <motion.div
-                      className="absolute -top-4 sm:-top-6 -right-4 sm:-right-6 glass-underwater p-2 sm:p-4 rounded-xl sm:rounded-2xl border border-cyan-400/50"
+                      className="absolute -top-4 sm:-top-6 -right-4 sm:-right-6 glass-underwater p-2 sm:p-4 rounded-xl sm:rounded-2xl border border-accent-light/40"
                       animate={{ y: [0, -8, 0], rotate: [0, 3, 0] }}
                       transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
                       whileHover={{ scale: 1.05 }}
                     >
                       <div className="text-white text-xs sm:text-sm font-semibold flex items-center gap-1 sm:gap-2">
-                        <CubeTransparentIcon className="w-3 h-3 sm:w-4 sm:h-4 text-cyan-400" />
+                        <CubeTransparentIcon className="w-3 h-3 sm:w-4 sm:h-4 text-accent-light" />
                         <span className="hidden xs:inline">3D View</span>
                         <span className="xs:hidden">3D</span>
                       </div>
-                      <div className="text-cyan-200 text-xs hidden sm:block">Real-time</div>
+                      <div className="text-accent-light text-xs hidden sm:block">Real-time</div>
                     </motion.div>
                     
                     <motion.div
-                      className="absolute -bottom-4 sm:-bottom-6 -left-4 sm:-left-6 glass-underwater p-2 sm:p-4 rounded-xl sm:rounded-2xl border border-emerald-400/50"
+                      className="absolute -bottom-4 sm:-bottom-6 -left-4 sm:-left-6 glass-underwater p-2 sm:p-4 rounded-xl sm:rounded-2xl border border-accent-mint/40"
                       animate={{ y: [0, 8, 0], rotate: [0, -3, 0] }}
                       transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
                       whileHover={{ scale: 1.05 }}
                     >
                       <div className="text-white text-xs sm:text-sm font-semibold flex items-center gap-1 sm:gap-2">
-                        <SparklesIcon className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-400" />
+                        <SparklesIcon className="w-3 h-3 sm:w-4 sm:h-4 text-accent-mint" />
                         <span className="hidden xs:inline">Cost: </span>$127
                       </div>
-                      <div className="text-emerald-200 text-xs hidden sm:block">Auto-calculated</div>
+                      <div className="text-accent-mint text-xs hidden sm:block">Auto-calculated</div>
                     </motion.div>
                     
                     <motion.div
-                      className="absolute top-1/2 -right-6 sm:-right-8 glass-underwater p-2 sm:p-3 rounded-lg sm:rounded-xl border border-orange-400/50"
+                      className="absolute top-1/2 -right-6 sm:-right-8 glass-underwater p-2 sm:p-3 rounded-lg sm:rounded-xl border border-accent/40"
                       animate={{ x: [0, 5, 0], scale: [1, 1.1, 1] }}
                       transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
                     >
                       <div className="text-white text-xs font-medium"><span className="hidden xs:inline">CO₂: </span>2.5ppm</div>
-                      <div className="text-orange-200 text-xs hidden sm:block">Optimal</div>
+                      <div className="text-accent-light text-xs hidden sm:block">Optimal</div>
                     </motion.div>
 
                     {/* Interactive demo overlay */}
@@ -428,7 +428,7 @@ const HeroSection: React.FC = () => {
                       onClick={startDemo}
                     >
                       <motion.button
-                        className="glass-underwater px-4 sm:px-6 py-2 sm:py-3 rounded-full flex items-center gap-2 sm:gap-3 border border-white/30 text-white hover:border-cyan-400/70 transition-all min-h-[44px] touch-manipulation"
+                        className="glass-underwater px-4 sm:px-6 py-2 sm:py-3 rounded-full flex items-center gap-2 sm:gap-3 border border-white/30 text-white hover:border-accent-light/70 transition-all min-h-[44px] touch-manipulation"
                         whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.95 }}
                       >
@@ -441,7 +441,7 @@ const HeroSection: React.FC = () => {
                   // Interactive demo view would go here
                   <motion.div
                     key="demo"
-                    className="relative aspect-[4/3] max-w-sm sm:max-w-lg md:max-w-xl lg:max-w-2xl mx-auto glass-deep-water rounded-xl sm:rounded-2xl p-4 sm:p-8 flex items-center justify-center border border-cyan-400/30"
+                    className="relative aspect-[4/3] max-w-sm sm:max-w-lg md:max-w-xl lg:max-w-2xl mx-auto glass-deep-water rounded-xl sm:rounded-2xl p-4 sm:p-8 flex items-center justify-center border border-accent-light/20"
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                   >
@@ -449,13 +449,13 @@ const HeroSection: React.FC = () => {
                       <motion.div
                         animate={{ rotate: 360 }}
                         transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
-                        className="w-16 h-16 border-4 border-cyan-400 border-t-transparent rounded-full mx-auto mb-4"
+                        className="w-16 h-16 border-4 border-accent-light border-t-transparent rounded-full mx-auto mb-4"
                       />
                       <p className="text-base sm:text-lg font-semibold mb-2">Loading 3D Aquascape Builder...</p>
-                      <p className="text-cyan-200 text-xs sm:text-sm px-2 sm:px-0">Full interactive demo coming with early access!</p>
+                      <p className="text-accent-light text-xs sm:text-sm px-2 sm:px-0">Full interactive demo coming with early access!</p>
                       <button 
                         onClick={() => setIsDemoActive(false)}
-                        className="mt-4 text-cyan-400 hover:text-cyan-300 text-sm underline"
+                        className="mt-4 text-accent-light hover:text-accent-mint text-sm underline"
                       >
                         Back to preview
                       </button>
@@ -474,7 +474,7 @@ const HeroSection: React.FC = () => {
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
       >
-        <div className="glass-underwater p-2 sm:p-3 rounded-full border border-cyan-400/30">
+        <div className="glass-underwater p-2 sm:p-3 rounded-full border border-accent-light/30">
           <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
