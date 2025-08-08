@@ -1,0 +1,190 @@
+{
+  "timestamp": "2025-08-08T16-45-57-074Z",
+  "url": "http://localhost:3000",
+  "desktop": {
+    "device": "desktop",
+    "performance": {
+      "domContentLoaded": 0,
+      "loadComplete": 0,
+      "firstPaint": 252,
+      "firstContentfulPaint": 252,
+      "domSize": 185,
+      "totalScripts": 12,
+      "totalStylesheets": 1,
+      "totalImages": 0,
+      "score": 90
+    },
+    "accessibility": {
+      "issues": [
+        {
+          "type": "heading-hierarchy",
+          "severity": "medium",
+          "description": "Heading hierarchy issues found"
+        },
+        {
+          "type": "unlabeled-inputs",
+          "count": 1,
+          "severity": "high",
+          "description": "Form inputs without proper labels"
+        }
+      ],
+      "score": 75
+    },
+    "seo": {
+      "title": "Tenant Dashboard - PyAirtable",
+      "titleLength": 29,
+      "metaDescription": "Comprehensive tenant management dashboard for PyAirtable organizations",
+      "metaDescriptionLength": 70,
+      "h1Count": 1,
+      "h1Text": [
+        "PyAirtable AI Assistant"
+      ],
+      "hasViewport": true,
+      "hasCanonical": false,
+      "hasOgTags": false,
+      "hasTwitterTags": false,
+      "imagesWithoutAlt": 0,
+      "linksWithoutText": 0,
+      "score": 80
+    },
+    "bestPractices": {
+      "hasHttps": false,
+      "hasServiceWorker": true,
+      "usesModernImageFormats": false,
+      "hasConsoleErrors": false,
+      "hasUnusedCss": false,
+      "hasUnusedJs": false,
+      "hasLargeDom": false,
+      "hasExternalScripts": 0,
+      "hasInlineStyles": 5,
+      "consoleErrorCount": 0,
+      "score": 70
+    },
+    "issues": [
+      {
+        "type": "heading-hierarchy",
+        "severity": "medium",
+        "description": "Heading hierarchy issues found"
+      },
+      {
+        "type": "unlabeled-inputs",
+        "count": 1,
+        "severity": "high",
+        "description": "Form inputs without proper labels"
+      },
+      {
+        "type": "no-https",
+        "severity": "critical",
+        "description": "Site not served over HTTPS"
+      }
+    ]
+  },
+  "mobile": {
+    "device": "mobile",
+    "performance": {
+      "domContentLoaded": 0,
+      "loadComplete": 0,
+      "firstPaint": 56,
+      "firstContentfulPaint": 56,
+      "domSize": 185,
+      "totalScripts": 12,
+      "totalStylesheets": 1,
+      "totalImages": 0,
+      "score": 90
+    },
+    "accessibility": {
+      "issues": [
+        {
+          "type": "heading-hierarchy",
+          "severity": "medium",
+          "description": "Heading hierarchy issues found"
+        },
+        {
+          "type": "unlabeled-inputs",
+          "count": 1,
+          "severity": "high",
+          "description": "Form inputs without proper labels"
+        }
+      ],
+      "score": 75
+    },
+    "seo": {
+      "title": "Tenant Dashboard - PyAirtable",
+      "titleLength": 29,
+      "metaDescription": "Comprehensive tenant management dashboard for PyAirtable organizations",
+      "metaDescriptionLength": 70,
+      "h1Count": 1,
+      "h1Text": [
+        "PyAirtable AI Assistant"
+      ],
+      "hasViewport": true,
+      "hasCanonical": false,
+      "hasOgTags": false,
+      "hasTwitterTags": false,
+      "imagesWithoutAlt": 0,
+      "linksWithoutText": 0,
+      "score": 80
+    },
+    "bestPractices": {
+      "hasHttps": false,
+      "hasServiceWorker": true,
+      "usesModernImageFormats": false,
+      "hasConsoleErrors": false,
+      "hasUnusedCss": false,
+      "hasUnusedJs": false,
+      "hasLargeDom": false,
+      "hasExternalScripts": 0,
+      "hasInlineStyles": 5,
+      "consoleErrorCount": 0,
+      "score": 70
+    },
+    "issues": [
+      {
+        "type": "heading-hierarchy",
+        "severity": "medium",
+        "description": "Heading hierarchy issues found"
+      },
+      {
+        "type": "unlabeled-inputs",
+        "count": 1,
+        "severity": "high",
+        "description": "Form inputs without proper labels"
+      },
+      {
+        "type": "no-https",
+        "severity": "critical",
+        "description": "Site not served over HTTPS"
+      }
+    ]
+  },
+  "summary": {
+    "desktopScore": 79,
+    "mobileScore": 79,
+    "criticalIssues": [
+      {
+        "type": "no-https",
+        "severity": "critical",
+        "description": "Site not served over HTTPS"
+      },
+      {
+        "type": "no-https",
+        "severity": "critical",
+        "description": "Site not served over HTTPS"
+      }
+    ],
+    "recommendations": [
+      {
+        "category": "Accessibility",
+        "priority": "High",
+        "issue": "4 accessibility issues found",
+        "solution": "Add alt text to images, improve form labels, fix heading hierarchy"
+      },
+      {
+        "category": "SEO",
+        "priority": "Medium",
+        "issue": "SEO optimization needed",
+        "solution": "Optimize title and meta description, improve heading structure"
+      }
+    ]
+  }
+}

@@ -1,20 +1,34 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm, Controller, useWatch } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { waitlistSchema, WaitlistFormData } from '@/lib/validations';
+import { 
+  validateEmailRealTime, 
+  FormProgressTracker, 
+  SpamDetector,
+  FormRateLimiter,
+  enhancedWaitlistSchema,
+  EnhancedWaitlistFormData 
+} from '@/lib/enhanced-validation';
+import { waitlistAnalytics } from '@/lib/analytics';
+import { useABTest, getVariantConfig } from '@/lib/ab-testing';
+import { initializeButtonTextTest } from '@/lib/ab-tests/button-text-test';
 import Button from '@/components/ui/Button';
 import Input from '@/components/ui/Input';
 import Checkbox from '@/components/ui/Checkbox';
 import Select from '@/components/ui/Select';
+import SecurityBadges from '@/components/ui/SecurityBadges';
 import { fadeInUp, staggerContainer, staggerItem } from '@/lib/animation-config';
 import { 
   CheckCircleIcon, 
   ExclamationCircleIcon,
   SparklesIcon,
-  ShareIcon
+  ShareIcon,
+  ShieldCheckIcon,
+  ClockIcon
 } from '@heroicons/react/24/outline';
 
 interface WaitlistFormProps {
@@ -30,44 +44,244 @@ interface SubmissionResult {
 const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionResult, setSubmissionResult] = useState<SubmissionResult | null>(null);
+  const [retryCount, setRetryCount] = useState(0);
+  const [emailValidation, setEmailValidation] = useState({ isValid: false, message: '', level: 'error' as const });
+  const [formProgress, setFormProgress] = useState(0);
+  const [spamDetection, setSpamDetection] = useState({ isSpam: false, confidence: 0, reasons: [] as string[] });
+  const [showSpamWarning, setShowSpamWarning] = useState(false);
+  
+  // Initialize utilities
+  const progressTracker = new FormProgressTracker(['basic-info', 'preferences', 'consent'], ['name', 'email', 'experience', 'interests', 'gdprConsent']);
+  const spamDetector = new SpamDetector();
+  const rateLimiter = new FormRateLimiter();
+
+  // Initialize A/B test and track form start
+  useEffect(() => {
+    initializeButtonTextTest();
+    waitlistAnalytics.trackFormStarted('waitlist');
+  }, []);
+
+  // Get A/B test variant for button
+  const buttonTestResult = useABTest('waitlist_button_text');
+  const buttonText = getVariantConfig(buttonTestResult, 'buttonText', 'Reserve My Spot');
+  const buttonSubtext = getVariantConfig(buttonTestResult, 'buttonSubtext', undefined);
+  const buttonIcon = getVariantConfig(buttonTestResult, 'buttonIcon', '✨');
 
   const {
     register,
     handleSubmit,
     control,
     formState: { errors, isValid },
-    reset
-  } = useForm<WaitlistFormData>({
-    resolver: zodResolver(waitlistSchema),
+    reset,
+    watch
+  } = useForm<EnhancedWaitlistFormData>({
+    resolver: zodResolver(enhancedWaitlistSchema),
     mode: 'onChange',
     defaultValues: {
       interests: [],
       gdprConsent: false,
       marketingConsent: false,
+      honeypot: '',
+      honeypot2: '',
+      timestamp: Date.now()
     }
   });
+  
+  // Watch form values for real-time validation
+  const watchedEmail = useWatch({ control, name: 'email' });
+  const watchedName = useWatch({ control, name: 'name' });
+  const watchedExperience = useWatch({ control, name: 'experience' });
+  const watchedInterests = useWatch({ control, name: 'interests' });
+  const watchedGdprConsent = useWatch({ control, name: 'gdprConsent' });
 
-  const onSubmit = async (data: WaitlistFormData) => {
-    setIsSubmitting(true);
+  // Real-time email validation
+  useEffect(() => {
+    if (watchedEmail) {
+      const validation = validateEmailRealTime(watchedEmail);
+      setEmailValidation(validation);
+      
+      // Track email validation events
+      waitlistAnalytics.trackEmailValidation(
+        validation.isValid,
+        validation.level,
+        validation.message
+      );
+    }
+  }, [watchedEmail]);
+
+  // Update form progress
+  useEffect(() => {
+    progressTracker.setFieldComplete('name', !!(watchedName && watchedName.length >= 2));
+    progressTracker.setFieldComplete('email', !!(watchedEmail && emailValidation.isValid));
+    progressTracker.setFieldComplete('experience', !!watchedExperience);
+    progressTracker.setFieldComplete('interests', !!(watchedInterests && watchedInterests.length > 0));
+    progressTracker.setFieldComplete('gdprConsent', !!watchedGdprConsent);
+    
+    const progress = progressTracker.getProgress();
+    setFormProgress(progress.percentage);
+    
+    // Track form progress analytics
+    const completedFields = [
+      watchedName && watchedName.length >= 2 ? 'name' : null,
+      watchedEmail && emailValidation.isValid ? 'email' : null,
+      watchedExperience ? 'experience' : null,
+      watchedInterests && watchedInterests.length > 0 ? 'interests' : null,
+      watchedGdprConsent ? 'gdprConsent' : null
+    ].filter(Boolean) as string[];
+    
+    if (completedFields.length > 0) {
+      waitlistAnalytics.trackFormProgress(progress.percentage, completedFields);
+    }
+  }, [watchedName, watchedEmail, watchedExperience, watchedInterests, watchedGdprConsent, emailValidation.isValid]);
+
+  // Spam detection
+  useEffect(() => {
+    if (watchedName && watchedEmail) {
+      const detection = spamDetector.detectSpam({
+        name: watchedName,
+        email: watchedEmail
+      });
+      setSpamDetection(detection);
+      setShowSpamWarning(detection.isSpam);
+      
+      // Track spam detection analytics
+      if (detection.confidence > 30) { // Only track significant detections
+        waitlistAnalytics.trackSpamDetection(
+          detection.confidence,
+          detection.reasons,
+          detection.isSpam
+        );
+      }
+    }
+  }, [watchedName, watchedEmail]);
+
+  const submitWithRetry = async (data: EnhancedWaitlistFormData, attempt = 0): Promise<SubmissionResult> => {
+    const maxRetries = 3;
     
     try {
-      // For static deployment, use a client-side solution
-      // In a real deployment, you would use services like Formspree, Netlify Forms, etc.
+      // Submit to API endpoint with timeout
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
       
-      // Simulate API delay for better UX
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Generate a mock position for demo purposes
-      const position = Math.floor(Math.random() * 1000) + 1;
-      
-      // Store submission data in localStorage (for demo purposes)
-      const submissions = JSON.parse(localStorage.getItem('waitlist-submissions') || '[]');
-      submissions.push({
-        ...data,
-        position,
-        timestamp: new Date().toISOString()
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+        signal: controller.signal
       });
-      localStorage.setItem('waitlist-submissions', JSON.stringify(submissions));
+      
+      clearTimeout(timeoutId);
+      
+      const result = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to join waitlist');
+      }
+      
+      return {
+        success: true,
+        position: result.position
+      };
+      
+    } catch (error) {
+      console.error(`Submission attempt ${attempt + 1} failed:`, error);
+      
+      // Check if we should retry
+      if (attempt < maxRetries) {
+        // Handle different error types
+        const isNetworkError = error instanceof TypeError || 
+                              (error instanceof Error && error.name === 'AbortError');
+        const isServerError = error instanceof Error && 
+                              error.message.includes('50') || 
+                              error.message.includes('timeout');
+        
+        if (isNetworkError || isServerError) {
+          // Wait before retry with exponential backoff
+          const delay = Math.min(1000 * Math.pow(2, attempt), 8000);
+          await new Promise(resolve => setTimeout(resolve, delay));
+          
+          setRetryCount(attempt + 1);
+          return submitWithRetry(data, attempt + 1);
+        }
+      }
+      
+      // Max retries reached or non-retryable error
+      return {
+        success: false,
+        error: error instanceof Error ? 
+          (error.name === 'AbortError' ? 'Request timed out. Please try again.' : error.message) :
+          'Something went wrong. Please try again.'
+      };
+    }
+  };
+
+  const onSubmit = async (data: EnhancedWaitlistFormData) => {
+    setIsSubmitting(true);
+    const submissionStartTime = Date.now();
+    
+    // Track form submission attempt
+    waitlistAnalytics.trackFormSubmitted(
+      data.experience,
+      data.interests,
+      data.referralSource,
+      submissionStartTime
+    );
+    
+    try {
+      // Rate limiting check
+      const rateLimitCheck = rateLimiter.checkAttempt(data.email);
+      if (!rateLimitCheck.allowed) {
+        setSubmissionResult({
+          success: false,
+          error: `Too many attempts. Please wait ${Math.ceil(rateLimitCheck.resetIn / 60000)} minutes before trying again.`
+        });
+        return;
+      }
+
+      // Final spam detection
+      const finalSpamCheck = spamDetector.detectSpam(data);
+      if (finalSpamCheck.isSpam && finalSpamCheck.confidence > 70) {
+        setSubmissionResult({
+          success: false,
+          error: 'Submission blocked due to suspicious activity. Please contact support if this is an error.'
+        });
+        return;
+      }
+
+      // Honeypot check
+      if (data.honeypot || data.honeypot2) {
+        setSubmissionResult({
+          success: false,
+          error: 'Spam detected.'
+        });
+        return;
+      }
+      
+      // Use retry mechanism for submission
+      setRetryCount(0); // Reset retry count
+      const result = await submitWithRetry(data);
+      
+      if (!result.success) {
+        setSubmissionResult(result);
+        return;
+      }
+      
+      const position = result.position;
+      
+      // Track successful conversion
+      waitlistAnalytics.trackWaitlistJoin(
+        position,
+        data.experience,
+        data.interests
+      );
+      
+      // Track A/B test conversion
+      if (buttonTestResult.isInTest) {
+        const { recordConversion } = await import('@/lib/ab-tests/button-text-test');
+        recordConversion();
+      }
       
       setSubmissionResult({
         success: true,
@@ -77,12 +291,22 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
       
     } catch (error) {
       console.error('Form submission error:', error);
+      
+      // Track submission error
+      waitlistAnalytics.trackError(
+        'form_submission',
+        error instanceof Error ? error.message : 'Unknown error',
+        error instanceof Error ? error.stack : undefined
+      );
+      
+      // This shouldn't happen with the retry mechanism, but just in case
       setSubmissionResult({
         success: false,
-        error: 'Something went wrong. Please try again.'
+        error: 'An unexpected error occurred. Please try again.'
       });
     } finally {
       setIsSubmitting(false);
+      setRetryCount(0); // Reset retry count
     }
   };
 
@@ -186,16 +410,31 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
       >
         <div className="text-center">
           <ExclamationCircleIcon className="w-12 h-12 sm:w-16 sm:h-16 text-error mx-auto mb-6" />
-          <h3 className="heading-h3 text-white mb-4">Something went wrong</h3>
+          <h3 className="heading-h3 text-white mb-4">Oops! Something went wrong</h3>
           <p className="text-body text-white/80 mb-8">{submissionResult.error}</p>
-          <Button
-            onClick={() => setSubmissionResult(null)}
-            variant="primary"
-            className="button-premium min-h-[56px] w-full sm:w-auto touch-manipulation px-8 py-4"
-            aria-describedby="submission-error"
-          >
-            Try Again
-          </Button>
+          
+          <div className="space-y-4">
+            <Button
+              onClick={() => setSubmissionResult(null)}
+              variant="primary"
+              className="button-premium min-h-[56px] w-full touch-manipulation px-8 py-4"
+              aria-describedby="submission-error"
+            >
+              Try Again
+            </Button>
+            
+            <div className="text-center">
+              <p className="text-small text-white/60 leading-relaxed">
+                Still having issues?{' '}
+                <a 
+                  href="mailto:support@3vantage.com" 
+                  className="text-cyan-400 hover:text-cyan-300 underline touch-target"
+                >
+                  Contact Support
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
       </motion.div>
     );
@@ -210,6 +449,65 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
       initial="initial"
       animate="animate"
     >
+      {/* Form Progress Indicator */}
+      <motion.div 
+        variants={staggerItem}
+        className="mb-6"
+      >
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-sm font-medium text-cyan-300">Form Progress</span>
+          <span className="text-sm text-cyan-200">{Math.round(formProgress)}% Complete</span>
+        </div>
+        <div className="w-full bg-blue-900/30 rounded-full h-2">
+          <motion.div
+            className="bg-gradient-to-r from-emerald-500 to-cyan-500 h-2 rounded-full"
+            initial={{ width: 0 }}
+            animate={{ width: `${formProgress}%` }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          />
+        </div>
+      </motion.div>
+
+      {/* Spam Detection Warning */}
+      <AnimatePresence>
+        {showSpamWarning && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            className="glass-underwater border border-orange-400/50 rounded-lg p-4 mb-4"
+          >
+            <div className="flex items-center gap-2 text-orange-300">
+              <ShieldCheckIcon className="w-5 h-5" />
+              <span className="text-sm font-medium">Security Check Active</span>
+            </div>
+            <p className="text-orange-200/80 text-sm mt-1">
+              Our spam detection is monitoring this form. Please ensure all information is accurate.
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Honeypot Fields (hidden from users) */}
+      <div style={{ position: 'absolute', left: '-9999px' }}>
+        <input
+          {...register('honeypot')}
+          type="text"
+          name="company"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+        />
+        <input
+          {...register('honeypot2')}
+          type="email"
+          name="email_confirm"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+        />
+      </div>
+
       {/* Name Field */}
       <motion.div variants={staggerItem}>
         <Input
@@ -239,6 +537,31 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
           required
           autoComplete="email"
         />
+        
+        {/* Real-time email validation feedback */}
+        <AnimatePresence>
+          {watchedEmail && watchedEmail.length > 0 && !errors.email && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="mt-2"
+            >
+              <div className={`flex items-center gap-2 text-sm ${
+                emailValidation.level === 'success' 
+                  ? 'text-emerald-400' 
+                  : emailValidation.level === 'warning'
+                  ? 'text-orange-400'
+                  : 'text-red-400'
+              }`}>
+                {emailValidation.level === 'success' && <CheckCircleIcon className="w-4 h-4" />}
+                {emailValidation.level === 'warning' && <ExclamationCircleIcon className="w-4 h-4" />}
+                {emailValidation.level === 'error' && <ExclamationCircleIcon className="w-4 h-4" />}
+                <span>{emailValidation.message}</span>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
 
       {/* Experience Level */}
@@ -331,6 +654,11 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
         />
       </motion.div>
 
+      {/* Security Trust Signals */}
+      <motion.div variants={staggerItem} className="pt-2">
+        <SecurityBadges variant="compact" />
+      </motion.div>
+
       {/* Submit Button */}
       <motion.div variants={staggerItem} className="pt-4 sm:pt-6">
         <Button
@@ -338,9 +666,21 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
           size="lg"
           disabled={!isValid || isSubmitting}
           className="button-premium w-full bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 disabled:from-gray-600 disabled:to-gray-700 text-white border-0 font-semibold min-h-[56px] px-8 py-4 text-lg touch-manipulation"
-          leftIcon={<SparklesIcon className="w-5 h-5" />}
+          leftIcon={<span className="text-xl">{buttonIcon}</span>}
         >
-          {isSubmitting ? 'Joining Waitlist...' : 'Reserve My Spot'}
+          <div className="flex flex-col items-center">
+            <span>
+              {isSubmitting 
+                ? (retryCount > 0 ? `Retrying... (${retryCount}/3)` : 'Joining Waitlist...') 
+                : buttonText}
+            </span>
+            {buttonSubtext && !isSubmitting && (
+              <span className="text-xs opacity-80 mt-1">{buttonSubtext}</span>
+            )}
+            {isSubmitting && retryCount > 0 && (
+              <span className="text-xs opacity-80 mt-1">Connection issues detected, retrying...</span>
+            )}
+          </div>
         </Button>
       </motion.div>
 

@@ -81,7 +81,7 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>(({
 
   const selectClasses = clsx(
     'relative w-full px-4 py-3 text-left bg-transparent border-2 rounded-lg transition-all duration-200 focus:outline-none focus-visible:ring-3 focus-visible:ring-accent-emerald focus-visible:ring-offset-2',
-    'flex items-center justify-between cursor-pointer',
+    'flex items-center justify-between cursor-pointer min-h-[48px]',
     {
       // Default variant
       'glass-underwater border-primary/30 hover:border-primary focus:border-primary': 
@@ -141,7 +141,7 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>(({
   );
 
   const optionClasses = (option: SelectOption, isSelected: boolean) => clsx(
-    'w-full px-4 py-3 text-left text-base cursor-pointer transition-colors duration-150 flex items-center justify-between',
+    'w-full px-4 py-3 text-left text-base cursor-pointer transition-colors duration-150 flex items-center justify-between min-h-[48px]',
     {
       'text-white hover:bg-primary/20': variant === 'default' && !isSelected && !option.disabled,
       'text-primary bg-primary/20 neon-glow-primary': variant === 'default' && isSelected,

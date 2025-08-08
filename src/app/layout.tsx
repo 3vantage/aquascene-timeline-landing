@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ErrorBoundary from "@/components/error/ErrorBoundary";
+import { PerformanceMonitor } from "@/components/performance/PerformanceMonitor";
 
 export const metadata: Metadata = {
   title: "Design Your Dream Aquascape - 3D Aquascaping Platform",
@@ -32,9 +34,14 @@ export default function RootLayout({
         </div>
         
         {/* Main content */}
-        <main id="main-content" className="relative z-10">
-          {children}
-        </main>
+        <ErrorBoundary>
+          <main id="main-content" className="relative z-10">
+            {children}
+          </main>
+        </ErrorBoundary>
+        
+        {/* Performance Monitor */}
+        <PerformanceMonitor showInProduction={false} position="bottom-right" />
         
         {/* Bubble effects */}
         <div className="fixed inset-0 pointer-events-none -z-40">

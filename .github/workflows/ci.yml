@@ -1,0 +1,167 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run lint
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+      - run: npm ci
+      - run: npx playwright install --with-deps
+      - run: npm run build
+      - run: npm run test:e2e
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: test-results
+          path: test-results/
+          retention-days: 30
+
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run build
+      - run: npm run start &
+      - run: sleep 15
+      - name: Wait for server to be ready
+        run: |
+          timeout 60 bash -c 'until curl -f http://localhost:3000; do sleep 2; done' || exit 1
+      - name: Run Lighthouse CI
+        run: |
+          npm install -g @lhci/cli
+          lhci autorun --config=lighthouserc.json
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+      - name: Generate Performance Report
+        run: |
+          echo "## 🚀 Performance Results" > performance-report.md
+          echo "" >> performance-report.md
+          if [ -d ".lighthouseci" ]; then
+            echo "### Lighthouse Scores" >> performance-report.md
+            echo "" >> performance-report.md
+            find .lighthouseci -name "*.json" -type f | head -1 | xargs cat | jq -r '
+              "| Category | Score |",
+              "|----------|-------|",
+              "| Performance | " + (.categories.performance.score * 100 | round | tostring) + "% |",
+              "| Accessibility | " + (.categories.accessibility.score * 100 | round | tostring) + "% |",
+              "| Best Practices | " + (.categories."best-practices".score * 100 | round | tostring) + "% |",
+              "| SEO | " + (.categories.seo.score * 100 | round | tostring) + "% |"
+            ' >> performance-report.md
+            echo "" >> performance-report.md
+            echo "### Core Web Vitals" >> performance-report.md
+            echo "" >> performance-report.md
+            find .lighthouseci -name "*.json" -type f | head -1 | xargs cat | jq -r '
+              "| Metric | Value | Status |",
+              "|--------|-------|--------|",
+              "| First Contentful Paint | " + (.audits."first-contentful-paint".displayValue // "N/A") + " | " + (if (.audits."first-contentful-paint".score // 0) >= 0.9 then "✅" else "⚠️" end) + " |",
+              "| Largest Contentful Paint | " + (.audits."largest-contentful-paint".displayValue // "N/A") + " | " + (if (.audits."largest-contentful-paint".score // 0) >= 0.9 then "✅" else "⚠️" end) + " |",
+              "| Cumulative Layout Shift | " + (.audits."cumulative-layout-shift".displayValue // "N/A") + " | " + (if (.audits."cumulative-layout-shift".score // 0) >= 0.9 then "✅" else "⚠️" end) + " |",
+              "| Total Blocking Time | " + (.audits."total-blocking-time".displayValue // "N/A") + " | " + (if (.audits."total-blocking-time".score // 0) >= 0.9 then "✅" else "⚠️" end) + " |"
+            ' >> performance-report.md
+          fi
+      - name: Comment Performance Results on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            if (fs.existsSync('performance-report.md')) {
+              const report = fs.readFileSync('performance-report.md', 'utf8');
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: report
+              });
+            }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-results
+          path: .lighthouseci
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        with:
+          name: performance-report
+          path: performance-report.md
+          retention-days: 30
+
+  build:
+    runs-on: ubuntu-latest
+    needs: [lint, test]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run build
+      - name: Check bundle size
+        run: |
+          echo "Checking bundle size..."
+          find .next -name "*.js" -type f -exec du -sh {} \; | sort -h | tail -20
+      - uses: actions/upload-artifact@v3
+        with:
+          name: build-output
+          path: .next
+          retention-days: 7
+
+  deploy-preview:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/download-artifact@v3
+        with:
+          name: build-output
+          path: .next
+      - name: Deploy to Vercel Preview
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          npm i -g vercel
+          vercel --token=$VERCEL_TOKEN --confirm
+
+  deploy-production:
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    needs: [build, lighthouse]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/download-artifact@v3
+        with:
+          name: build-output
+          path: .next
+      - name: Deploy to Vercel Production
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          npm i -g vercel
+          vercel --token=$VERCEL_TOKEN --prod --confirm

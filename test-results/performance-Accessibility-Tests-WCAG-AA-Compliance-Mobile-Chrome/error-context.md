@@ -1,0 +1,384 @@
+# Page snapshot
+
+```yaml
+- link "Skip to main content":
+  - /url: "#main-content"
+- main:
+  - main:
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - img
+    - paragraph: Hero Aquarium Background
+    - img
+    - text: 3D AQUASCAPE DESIGNER
+    - heading "Design Your Dream Aquascape" [level=1]
+    - paragraph: Plan Before You Plant • Join 2487+ Aquascapers
+    - text: 3D Visualization Cost Calculator Expert Community
+    - button "Start Designing"
+    - button "3D Demo"
+    - text: 🇧🇬 🇭🇺 🇷🇴 🇸🇮 🇦🇹 2,487+ Waiting Central Europe 3 joined recently 3D $127 2.5ppm
+    - button "Demo"
+    - img
+    - text: A B C +
+    - paragraph: Join
+    - paragraph: 1,247
+    - paragraph: aquascaping enthusiasts
+    - heading "Recent Activity" [level=3]
+    - text: S
+    - paragraph: Sarah M. from California joined the waitlist
+    - paragraph: 2 minutes ago
+    - text: A
+    - paragraph: Alex K. from Budapest joined the waitlist
+    - paragraph: 5 minutes ago
+    - text: M
+    - paragraph: Maria S. from Sofia joined the waitlist
+    - paragraph: 8 minutes ago
+    - text: J
+    - paragraph: John D. from Prague joined the waitlist
+    - paragraph: 12 minutes ago
+    - text: E
+    - paragraph: Elena R. from Bucharest joined the waitlist
+    - paragraph: 15 minutes ago
+    - text: 🏆 Featured in AquaScaping Weekly ⭐ 4.9★ from 500+ reviews 🏪 Used by 50+ aquarium stores 🔒 SSL Secured 2,500+ Active Users +12% this week 15,000+ Designs Created +8% this week 98% Success Rate Consistent 4.9/5 User Rating +0.2 this month
+    - heading "Design Your Dream Aquascape in 3D" [level=1]
+    - paragraph: Join the waitlist for early access to the most advanced aquascaping tool. Plan before you plant. Save money, avoid mistakes.
+    - text: 2,500+ users waiting
+    - img
+    - text: No credit card required ⭐ 4.9/5 from 500+ reviews 💰
+    - heading "Save Money" [level=3]
+    - paragraph: Avoid costly plant and equipment mistakes
+    - text: ⏱️
+    - heading "Save Time" [level=3]
+    - paragraph: Plan layouts 10x faster than traditional methods
+    - text: 🎯
+    - heading "Perfect Results" [level=3]
+    - paragraph: Professional-grade tools for stunning aquascapes
+    - heading "Everything You Need for Perfect Aquascapes" [level=2]
+    - paragraph: Professional-grade tools that eliminate guesswork and guarantee stunning results every time
+    - img
+    - heading "3D Visualization Engine Popular" [level=3]
+    - paragraph: Design your aquascape in stunning 3D. See exactly how your layout will look before you start planting. Rotate, zoom, and explore every angle.
+    - img
+    - heading "Smart Plant Database" [level=3]
+    - paragraph: Access 500+ aquatic plants with detailed care requirements, growth patterns, and compatibility data. Never choose the wrong plant again.
+    - img
+    - heading "Lighting & CO2 Calculator" [level=3]
+    - paragraph: Get precise lighting and CO2 recommendations based on your tank size, plant selection, and desired growth rate. Optimize for success.
+    - img
+    - heading "Cost Estimation Tool" [level=3]
+    - paragraph: Know exactly how much your aquascape will cost before you buy. Compare prices from multiple suppliers and stay within budget.
+    - img
+    - heading "Growth Simulation" [level=3]
+    - paragraph: See how your aquascape will evolve over time. Simulate plant growth, trimming schedules, and long-term maintenance needs.
+    - img
+    - heading "Community Sharing" [level=3]
+    - paragraph: Share your designs with the aquascaping community. Get feedback, inspiration, and connect with fellow enthusiasts worldwide.
+    - heading "Ready to Transform Your Aquascaping?" [level=3]
+    - paragraph: Join 2,500+ aquascapers who are already planning their dream aquascapes with our revolutionary 3D tools.
+    - img
+    - text: 100% Free to Join
+    - img
+    - text: No Spam, Ever
+    - img
+    - text: Early Access Guaranteed
+    - heading "⏰ Early Access Ends In:" [level=3]
+    - text: 06 Days 23 Hours 59 Minutes 54 Seconds
+    - paragraph: Don't miss your chance to be among the first users!
+    - text: 🔥 LIMITED SPOTS Limited 47 spots remaining
+    - paragraph: Be among the first 500 early access users
+    - text: 🚨
+    - heading "Early access spots are filling up fast" [level=3]
+    - paragraph: Join now to secure your place
+    - text: 🌟 EARLY BIRD EXCLUSIVE
+    - heading "First 500 Users Get:" [level=3]
+    - text: 🎁
+    - heading "Free Premium Templates" [level=4]
+    - paragraph: Worth $49 value
+    - text: 🏆
+    - heading "Lifetime 50% Discount" [level=4]
+    - paragraph: On all premium features
+    - text: 👥
+    - heading "Exclusive Community Access" [level=4]
+    - paragraph: Private Discord channel
+    - text: 📞
+    - heading "Direct Support Line" [level=4]
+    - paragraph: Priority customer support
+    - text: 🔬
+    - heading "Beta Feature Access" [level=4]
+    - paragraph: Test new features first
+    - text: 📚
+    - heading "Complete Masterclass" [level=4]
+    - paragraph: Professional aquascaping course
+    - paragraph: "Total value: $297 - Yours FREE as an early user!"
+    - text: 📰 As seen on AquaScaping Weekly 🏪 Featured by Aquarium Co-Op 🌱 Recommended by Green Aqua 🏆 IAPLC Community Approved WHY CHOOSE US
+    - heading "Stop Wasting Money on Failed Aquascapes" [level=2]
+    - paragraph: See exactly what works before you spend a single lev or forint
+    - img
+    - heading "3D Reality Preview" [level=3]
+    - paragraph: See your exact tank with real plant growth patterns. Know if plants will thrive in your specific conditions.
+    - img
+    - heading "Smart Cost Calculator" [level=3]
+    - paragraph: Get precise pricing from Bulgarian and Hungarian suppliers. No more guessing or overspending.
+    - img
+    - heading "Regional Expert Network" [level=3]
+    - paragraph: Connect with top aquascapers in Sofia, Budapest, and across Central Europe. Get local advice that works.
+    - img
+    - heading "Green Aqua Partnership" [level=3]
+    - paragraph: Direct integration with Europe's leading aquascaping store. Get exclusive discounts and priority access to new plants.
+    - text: 🤝
+    - heading "Official Green Aqua Partnership" [level=3]
+    - text: 🇭🇺
+    - paragraph: Exclusive benefits for Hungarian aquascapers through Europe's leading aquascaping store
+    - heading "15% Discount" [level=4]
+    - paragraph: On your first Green Aqua order
+    - heading "Priority Access" [level=4]
+    - paragraph: To new plants and products
+    - heading "Expert Support" [level=4]
+    - paragraph: Direct line to Green Aqua team
+    - heading "Ready to Stop Wasting Money on Failed Aquascapes?" [level=3]
+    - paragraph: Join 2,500+ smart aquascapers who design with confidence and save 60% on plant costs.
+    - button "Start Designing Now"
+    - text: + 15% Green Aqua discount included
+    - heading "Trusted by 2,500+ Aquascapers" [level=2]
+    - paragraph: From hobbyists to professionals, our tools are transforming how people design aquascapes across Europe
+    - img
+    - text: JD
+    - heading "John Davidson" [level=4]
+    - paragraph: Professional Aquascaper
+    - paragraph: Prague, Czech Republic
+    - img
+    - img
+    - img
+    - img
+    - img
+    - paragraph: 2 weeks ago
+    - blockquote: "\"This tool revolutionized my aquascaping workflow! The 3D visualization saved me countless hours and helped me avoid costly mistakes. My clients are amazed by the precision.\""
+    - img
+    - text: MS
+    - heading "Maria Stoeva" [level=4]
+    - paragraph: Hobbyist & Enthusiast
+    - paragraph: Sofia, Bulgaria
+    - img
+    - img
+    - img
+    - img
+    - img
+    - paragraph: 1 week ago
+    - blockquote: "\"Finally, a modern solution for aquarium planning! As someone who's made expensive mistakes before, this is exactly what the aquascaping community needed.\""
+    - img
+    - text: AK
+    - heading "Alex Kovač" [level=4]
+    - paragraph: Aquarium Store Owner
+    - paragraph: Budapest, Hungary
+    - img
+    - img
+    - img
+    - img
+    - img
+    - paragraph: 3 days ago
+    - blockquote: "\"The 3D visualization feature is incredible. My customers love seeing their aquascape designs before committing. Sales have increased by 40% since we started using this.\""
+    - img
+    - text: ER
+    - heading "Elena Rodriguez" [level=4]
+    - paragraph: Aquascaping Consultant
+    - paragraph: Bucharest, Romania
+    - img
+    - img
+    - img
+    - img
+    - img
+    - paragraph: 5 days ago
+    - blockquote: "\"Professional-grade tools that are actually user-friendly. The plant database and compatibility checker alone are worth the wait. Can't recommend this enough!\""
+    - img
+    - text: PH
+    - heading "Peter Hansen" [level=4]
+    - paragraph: Contest Aquascaper
+    - paragraph: Vienna, Austria
+    - img
+    - img
+    - img
+    - img
+    - img
+    - paragraph: 1 month ago
+    - blockquote: "\"Used this for my last IAPLC entry and placed in the top 100! The precision and detail possible with these tools are unmatched. Game-changer for serious aquascapers.\""
+    - img
+    - text: DM
+    - heading "Diana Müller" [level=4]
+    - paragraph: Aquatic Plant Specialist
+    - paragraph: Zurich, Switzerland
+    - img
+    - img
+    - img
+    - img
+    - img
+    - paragraph: 2 weeks ago
+    - blockquote: "\"The plant growth simulation feature is phenomenal. I can now predict how my aquascapes will evolve over time. This is the future of aquascaping design.\""
+    - button "Previous testimonial":
+      - img
+    - button "Next testimonial":
+      - img
+    - button "Go to testimonial 1"
+    - button "Go to testimonial 2"
+    - button "Go to testimonial 3"
+    - button "Go to testimonial 4"
+    - button "Go to testimonial 5"
+    - button "Go to testimonial 6"
+    - text: Auto-playing
+    - img
+    - text: JD
+    - heading "John Davidson" [level=4]
+    - paragraph: Professional Aquascaper
+    - paragraph: Prague, Czech Republic
+    - img
+    - img
+    - img
+    - img
+    - img
+    - paragraph: 2 weeks ago
+    - blockquote: "\"This tool revolutionized my aquascaping workflow! The 3D visualization saved me countless hours and helped me avoid costly mistakes. My clients are amazed by the precision.\""
+    - img
+    - text: MS
+    - heading "Maria Stoeva" [level=4]
+    - paragraph: Hobbyist & Enthusiast
+    - paragraph: Sofia, Bulgaria
+    - img
+    - img
+    - img
+    - img
+    - img
+    - paragraph: 1 week ago
+    - blockquote: "\"Finally, a modern solution for aquarium planning! As someone who's made expensive mistakes before, this is exactly what the aquascaping community needed.\""
+    - img
+    - text: AK
+    - heading "Alex Kovač" [level=4]
+    - paragraph: Aquarium Store Owner
+    - paragraph: Budapest, Hungary
+    - img
+    - img
+    - img
+    - img
+    - img
+    - paragraph: 3 days ago
+    - blockquote: "\"The 3D visualization feature is incredible. My customers love seeing their aquascape designs before committing. Sales have increased by 40% since we started using this.\""
+    - text: 4.9/5 Average Rating 98% Success Rate 500+ Reviews JOIN THE WAITLIST
+    - heading "Join 2,500+ Smart Aquascapers" [level=2]
+    - paragraph: Stop guessing. Start designing with confidence.
+    - text: 2,500+ Early Adopters 12 Countries 98% Satisfaction Rate
+    - img
+    - text: Priority access to beta features
+    - img
+    - text: Exclusive aquascaping guides and tips
+    - img
+    - text: Direct feedback channel to our team
+    - img
+    - text: Special launch pricing discounts A B C D Join the Community 2,500+ aquascapers already signed up Form Progress 0% Complete
+    - textbox "Your Namerequired"
+    - text: Your Name*
+    - textbox "Email Addressrequired"
+    - text: Email Address*
+    - button "Experience Levelrequired": Select your experience
+    - text: Experience Level*
+    - group "Interested Features":
+      - text: Interested Features
+      - checkbox "3D Aquascape Designer"
+      - text: 3D Aquascape Designer
+      - checkbox "Smart Calculations"
+      - text: Smart Calculations
+      - checkbox "Community Features"
+      - text: Community Features
+      - checkbox "Mobile App"
+      - text: Mobile App
+      - checkbox "AI Assistant"
+      - text: AI Assistant
+    - checkbox "I consent to receive updates about the 3vantage platform launch and understand I can unsubscribe at any time."
+    - text: I consent to receive updates about the 3vantage platform launch and understand I can unsubscribe at any time.
+    - checkbox "I'd like to receive aquascaping tips and exclusive content (optional)."
+    - text: I'd like to receive aquascaping tips and exclusive content (optional). 🔒 Secure & Encrypted We'll never spam you
+    - button "🚀 Join Waitlist Now Limited Early Access" [disabled]
+    - paragraph:
+      - text: By joining, you agree to our
+      - link "Privacy Policy":
+        - /url: "#"
+      - text: and
+      - link "Terms of Service":
+        - /url: "#"
+    - text: SUCCESS STORIES
+    - heading "Real Results from Central European Aquascapers" [level=2]
+    - paragraph: See how local aquascapers are already winning contests and saving money
+    - text: "\" 1st Place Winner Sofia 🇧🇬"
+    - blockquote: Won 1st place at Bulgarian Aquascaping Championship using the 3D preview. Saved over 400 lev by knowing exactly what to buy.
+    - text: V Viktor Petrov Contest Winner • Sofia, Bulgaria " Budapest 🇭🇺
+    - blockquote: My plants actually thrived for the first time! The regional growing conditions data was spot-on for Hungarian water.
+    - text: 90% plant survival rate A Anna Kovács Aquascaping Enthusiast • Budapest " Official Partner
+    - blockquote: Our customers are having 70% more success with their first tanks. This tool is a game-changer for beginners.
+    - text: 70% higher success rate G Green Aqua Team Partner Store • Hungary " Plovdiv 🇧🇬
+    - blockquote: I can now design 5 tanks in the time it used to take for 1. My clients love seeing the 3D preview before we build.
+    - text: 5x faster design process D Dimitar Georgiev Pro Aquascaper • Plovdiv
+    - heading "Join These Successful Aquascapers" [level=3]
+    - paragraph: Be part of Central Europe's most advanced aquascaping community and see real results like these.
+    - button "Start Your Success Story"
+    - text: "Scroll: 0% | Aquarium Depth: 0%"
+- text: Performance Monitor
+- img
+- alert
+```

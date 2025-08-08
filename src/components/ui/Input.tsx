@@ -84,7 +84,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
   );
 
   const inputClasses = clsx(
-    'flex-1 px-4 py-3 text-base bg-transparent border-0 outline-none placeholder-transparent form-input',
+    'flex-1 px-4 py-3 text-base bg-transparent border-0 outline-none placeholder-transparent form-input min-h-[48px]',
     'disabled:cursor-not-allowed',
     {
       'text-white': variant === 'default',

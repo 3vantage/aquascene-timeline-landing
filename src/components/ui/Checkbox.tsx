@@ -46,7 +46,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({
   };
 
   const checkboxClasses = clsx(
-    'relative flex items-center justify-center w-5 h-5 rounded border-2 transition-all duration-200 focus:outline-none focus-visible:ring-3 focus-visible:ring-accent-emerald focus-visible:ring-offset-2',
+    'relative flex items-center justify-center w-6 h-6 min-w-[48px] min-h-[48px] p-3 rounded border-2 transition-all duration-200 focus:outline-none focus-visible:ring-3 focus-visible:ring-accent-emerald focus-visible:ring-offset-2',
     {
       // Default variant
       'glass-underwater border-primary/30 hover:border-primary': 
@@ -128,7 +128,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({
           transition={{ duration: 0.2, ease: 'easeInOut' }}
           className="absolute inset-0 flex items-center justify-center"
         >
-          <CheckIcon className="w-3 h-3" strokeWidth={3} />
+          <CheckIcon className="w-4 h-4" strokeWidth={3} />
         </motion.div>
 
         {/* Focus ring for underwater variant */}

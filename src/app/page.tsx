@@ -3,6 +3,12 @@ import dynamic from 'next/dynamic';
 import HeroSection from '@/components/sections/HeroSection';
 import AquariumLayout from '@/components/layout/AquariumLayout';
 
+// Import conversion optimization components
+import SocialProof from '@/components/social-proof/SocialProof';
+import Testimonials from '@/components/social-proof/Testimonials';
+import UrgencyElements from '@/components/social-proof/UrgencyElements';
+import ValueProposition from '@/components/ValueProposition';
+
 // Lazy load components that are below the fold to improve initial load time
 const FeaturesSection = dynamic(() => import('@/components/sections/FeaturesSection'), {
   ssr: true, // Enable SSR for SEO
@@ -58,16 +64,36 @@ export default function HomePage() {
   return (
     <main className="relative">
       <AquariumLayout>
-        {/* Hero Section - Surface level */}
+        {/* Hero Section with Enhanced Value Proposition */}
         <HeroSection />
+        
+        {/* Social Proof Elements - Above the fold */}
+        <section className="section-spacing bg-gradient-to-br from-neutral-50/5 to-accent/5">
+          <div className="container mx-auto px-4">
+            <SocialProof />
+          </div>
+        </section>
+        
+        {/* Enhanced Value Proposition */}
+        <ValueProposition />
+        
+        {/* Urgency and Scarcity Elements */}
+        <section className="section-spacing bg-gradient-to-br from-accent/5 to-primary/5">
+          <div className="container mx-auto px-4">
+            <UrgencyElements />
+          </div>
+        </section>
         
         {/* Features Section - Shallow water */}
         <FeaturesSection />
         
+        {/* Enhanced Testimonials with Carousel */}
+        <Testimonials />
+        
         {/* Waitlist Section - Mid-water */}
         <WaitlistSection />
         
-        {/* Testimonials Section - Deep water */}
+        {/* Original Testimonials Section - Keep for A/B testing */}
         <TestimonialsSection />
       </AquariumLayout>
       

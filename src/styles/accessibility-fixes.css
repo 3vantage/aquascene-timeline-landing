@@ -234,17 +234,50 @@ button[aria-expanded="true"] {
   [role="checkbox"],
   [role="radio"],
   a {
-    min-height: 44px;
-    min-width: 44px;
+    min-height: 48px;
+    min-width: 48px;
     padding: 0.75rem;
   }
   
   /* Ensure adequate spacing between touch targets */
+  .touch-target-group > * {
+    margin: 4px;
+  }
+  
   button + button,
   button + a,
   a + button,
-  a + a {
+  a + a,
+  .btn + .btn,
+  input + button,
+  select + button {
     margin-left: 8px;
+    margin-top: 8px;
+  }
+  
+  /* Form field spacing */
+  .form-group + .form-group,
+  .field + .field,
+  .input-group + .input-group {
+    margin-top: 1rem;
+  }
+  
+  /* Checkbox and radio button groups */
+  .checkbox-group input[type="checkbox"],
+  .radio-group input[type="radio"] {
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .checkbox-group label,
+  .radio-group label {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+    min-height: 48px;
+    line-height: 48px;
+    padding-left: 2rem;
+    cursor: pointer;
   }
 }
 
@@ -352,7 +385,7 @@ button[aria-expanded="true"] {
   }
 }
 
-/* Keyboard Navigation Improvements */
+/* Enhanced Keyboard Navigation */
 .keyboard-user button:focus,
 .keyboard-user input:focus,
 .keyboard-user select:focus,
@@ -361,6 +394,154 @@ button[aria-expanded="true"] {
   outline: 3px solid var(--color-accent-emerald);
   outline-offset: 2px;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+/* Skip Links Enhancements */
+.skip-links {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.skip-link {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  background: white;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.skip-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 12px 20px;
+  margin: 8px;
+  outline: 3px solid var(--color-accent-emerald);
+  outline-offset: 2px;
+}
+
+/* Keyboard Shortcuts Indicators */
+.keyboard-shortcut {
+  position: relative;
+}
+
+.keyboard-shortcut::after {
+  content: attr(data-shortcut);
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+  z-index: 100;
+}
+
+.keyboard-shortcut:focus::after,
+.keyboard-shortcut:hover::after {
+  opacity: 1;
+}
+
+/* Keyboard Navigation Helpers */
+.focusable-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.focusable-group > *:focus {
+  outline: 3px solid var(--color-accent-emerald);
+  outline-offset: 2px;
+  z-index: 10;
+  position: relative;
+}
+
+/* Roving Tab Index Implementation */
+.roving-tabindex [tabindex="0"] {
+  background-color: rgba(16, 185, 129, 0.1);
+  border: 2px solid var(--color-accent-emerald);
+}
+
+.roving-tabindex [tabindex="-1"] {
+  border: 2px solid transparent;
+}
+
+/* Focus Management for Dynamic Content */
+.focus-visible {
+  outline: 3px solid var(--color-accent-emerald);
+  outline-offset: 2px;
+}
+
+.focus-trap-active {
+  position: relative;
+}
+
+.focus-trap-active::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 2px dashed var(--color-accent-emerald);
+  border-radius: 8px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Enhanced Link Styling for Keyboard Navigation */
+a:focus-visible {
+  outline: 3px solid var(--color-accent-emerald);
+  outline-offset: 2px;
+  border-radius: 4px;
+  background-color: rgba(16, 185, 129, 0.1);
+  text-decoration: none;
+}
+
+/* Better Button Focus States */
+button:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 2px;
+  transform: scale(1.02);
+  z-index: 10;
+  position: relative;
+}
+
+/* Form Element Focus Enhancements */
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-accent-emerald);
+  outline-offset: 2px;
+  border-color: var(--color-accent-emerald);
+  box-shadow: 
+    0 0 0 1px var(--color-accent-emerald),
+    0 0 8px rgba(16, 185, 129, 0.3);
+  transform: scale(1.01);
+}
+
+/* Custom Focus Ring for Complex Components */
+.custom-focus-ring:focus-within {
+  outline: 3px solid var(--color-accent-emerald);
+  outline-offset: 2px;
+  border-radius: 8px;
 }
 
 /* Form Fieldset Styling */

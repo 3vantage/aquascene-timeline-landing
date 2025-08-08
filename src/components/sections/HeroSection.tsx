@@ -6,6 +6,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Button from '@/components/ui/Button';
 import { staggerContainer, staggerItem } from '@/lib/animation-config';
 import { ArrowRightIcon, SparklesIcon, PlayIcon, CubeTransparentIcon } from '@heroicons/react/24/outline';
+import HeroBackground from '@/components/animations/HeroBackground';
+import WaterRipples from '@/components/animations/WaterRipples';
 
 // Lazy load the heavy AquariumBuilderPreview component
 const AquariumBuilderPreview = dynamic(() => import('@/components/sections/AquariumBuilderPreview'), {
@@ -42,9 +44,12 @@ const HeroSection: React.FC = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden section-spacing">
-      {/* Professional natural background */}
+      {/* Enhanced Aquarium Background */}
+      <HeroBackground className="absolute inset-0" />
+      <WaterRipples className="absolute inset-0" intensity={1.2} count={6} />
+      
+      {/* Additional atmospheric effects */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/15 to-accent-mint/10" />
         <div className="absolute inset-0 bg-gradient-radial from-transparent via-accent-light/5 to-primary-dark/10" />
         
         {/* Natural caustic effects */}

@@ -1,0 +1,176 @@
+{
+  "timestamp": "2025-08-08T16:54:22.103Z",
+  "url": "http://localhost:3000",
+  "funnelMetrics": {
+    "landingPageScore": 90,
+    "formOptimizationScore": 75,
+    "mobileConversionScore": 38,
+    "successStateScore": 50,
+    "overallConversionScore": 51
+  },
+  "landingPage": {
+    "aboveFoldCTAs": 1,
+    "totalCTAs": 1,
+    "headings": [
+      {
+        "level": "H1",
+        "text": "PyAirtable AI Assistant",
+        "aboveFold": true
+      },
+      {
+        "level": "H3",
+        "text": "PyAirtable Assistant",
+        "aboveFold": true
+      },
+      {
+        "level": "H3",
+        "text": "Try These Examples",
+        "aboveFold": true
+      },
+      {
+        "level": "H3",
+        "text": "💡 Pro Tips",
+        "aboveFold": true
+      },
+      {
+        "level": "H3",
+        "text": "🚀 System Status",
+        "aboveFold": true
+      }
+    ],
+    "trustSignals": {
+      "testimonials": 0,
+      "logos": 0,
+      "badges": 0,
+      "securityIndicators": 0,
+      "socialProof": 0
+    },
+    "friction": {
+      "formFields": 1,
+      "requiredFields": 0,
+      "formSteps": 0,
+      "loadingElements": 0,
+      "popups": 0
+    },
+    "ctas": [
+      {
+        "text": "No text",
+        "type": "BUTTON",
+        "position": {
+          "aboveFold": true,
+          "distanceFromTop": 589
+        },
+        "style": {
+          "backgroundColor": "rgb(37, 99, 235)",
+          "color": "rgb(248, 250, 252)",
+          "fontSize": "14px",
+          "padding": "0px"
+        },
+        "isVisible": true
+      }
+    ],
+    "distractions": {
+      "externalLinks": 0,
+      "navigationLinks": 0,
+      "socialMediaLinks": 0,
+      "totalLinks": 0
+    },
+    "pageStats": {
+      "totalElements": 185,
+      "totalText": 1323,
+      "readingTime": 1
+    }
+  },
+  "formExperience": {
+    "totalFields": 1,
+    "fieldTypes": [
+      {
+        "type": "text",
+        "name": "",
+        "placeholder": "Try asking: 'Analyze my Facebook posts table' or 'Create a formula to calculate engagement rate'",
+        "required": false,
+        "id": ""
+      }
+    ],
+    "interactionFlow": [
+      {
+        "step": 1,
+        "field": "unknown",
+        "interactionSuccessful": false,
+        "error": "locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input, select, textarea').first()\u001b[22m\n\u001b[2m    - locator resolved to <input disabled value=\"\" maxlength=\"2000\" placeholder=\"Try asking: 'Analyze my Facebook posts table' or 'Create a formula to calculate engagement rate'\" class=\"flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity…/>\u001b[22m\n\u001b[2m    - fill(\"Test Input\")\u001b[22m\n\u001b[2m  - attempting fill action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying fill action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying fill action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    60 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m       - element is not enabled\u001b[22m\n\u001b[2m     - retrying fill action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+      }
+    ],
+    "validationBehavior": [],
+    "completionTime": 30335
+  },
+  "mobileExperience": {
+    "touchTargets": [
+      {
+        "element": "INPUT",
+        "width": 255,
+        "height": 40,
+        "area": 10200,
+        "meetsMobileStandards": false,
+        "position": {
+          "top": 699,
+          "left": 33
+        }
+      },
+      {
+        "element": "BUTTON",
+        "width": 40,
+        "height": 40,
+        "area": 1600,
+        "meetsMobileStandards": false,
+        "position": {
+          "top": 699,
+          "left": 296
+        }
+      }
+    ],
+    "mobileFriction": {
+      "horizontalScrollNeeded": false,
+      "elementsOffScreen": 0,
+      "textTooSmall": 14
+    },
+    "mobileAboveFold": {
+      "visibleCTAs": 0,
+      "visibleFormFields": 0
+    },
+    "viewport": {
+      "width": 375,
+      "height": 667
+    }
+  },
+  "successState": {
+    "attempted": false,
+    "successful": false,
+    "error": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button[type=\"submit\"], input[type=\"submit\"], button:has-text(\"Join\"), button:has-text(\"Sign\"), button:has-text(\"Submit\")').first()\u001b[22m\n\u001b[2m    - locator resolved to <button disabled type=\"submit\" class=\"inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not enabled\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+  },
+  "conversionOpportunities": [
+    {
+      "type": "Social Proof",
+      "priority": "High",
+      "impact": "Medium",
+      "description": "Add customer testimonials or reviews",
+      "expectedLift": "10-15%"
+    },
+    {
+      "type": "Mobile Touch Targets",
+      "priority": "High",
+      "impact": "Medium",
+      "description": "Increase touch target sizes for mobile",
+      "expectedLift": "5-10%"
+    }
+  ],
+  "frictionPoints": [],
+  "trustSignalGaps": [
+    "No customer testimonials",
+    "No security/trust badges",
+    "No social proof indicators"
+  ],
+  "mobileBarriers": [
+    "2 touch targets too small for mobile",
+    "14 text elements too small to read"
+  ]
+}

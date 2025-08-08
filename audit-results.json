@@ -1,0 +1,61 @@
+{
+  "timestamp": "2025-08-08T14:26:04.423Z",
+  "url": "http://localhost:3005",
+  "performance": {
+    "loadTime": 12321,
+    "domContentLoaded": null,
+    "fullyLoaded": null,
+    "firstPaint": 11184,
+    "firstContentfulPaint": 11184,
+    "interactionTime": 4817
+  },
+  "accessibility": {
+    "issues": [
+      "Form input 1 missing label",
+      "Form input 2 missing label",
+      "Many elements missing focus indicators"
+    ]
+  },
+  "design": {
+    "issues": [
+      "7 buttons smaller than recommended 44px touch target"
+    ]
+  },
+  "mobile": {
+    "issues": [
+      "Potential element overlapping on mobile"
+    ]
+  },
+  "ux": {
+    "formValidation": false
+  },
+  "technical": {
+    "totalElements": 1861,
+    "totalImages": 0,
+    "totalScripts": 23,
+    "totalStylesheets": 1,
+    "viewportMeta": "width=device-width, initial-scale=1",
+    "hasServiceWorker": true,
+    "consoleErrors": 0
+  },
+  "recommendations": [
+    {
+      "type": "performance",
+      "priority": "high",
+      "issue": "Slow initial load time",
+      "suggestion": "Optimize images, reduce bundle size, implement lazy loading"
+    },
+    {
+      "type": "accessibility",
+      "priority": "high",
+      "issue": "Accessibility violations found",
+      "suggestion": "Fix missing alt tags, form labels, and focus indicators"
+    },
+    {
+      "type": "mobile",
+      "priority": "high",
+      "issue": "Mobile responsiveness problems",
+      "suggestion": "Fix horizontal scroll, improve text readability, prevent element overlapping"
+    }
+  ]
+}

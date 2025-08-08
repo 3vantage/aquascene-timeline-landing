@@ -54,10 +54,10 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   const sizeClasses = {
-    sm: 'px-4 py-2 text-sm h-9',
-    md: 'px-6 py-3 text-base h-11',
-    lg: 'px-8 py-4 text-lg h-13',
-    xl: 'px-10 py-5 text-xl h-16'
+    sm: 'px-4 py-3 text-sm min-h-[48px] h-12',
+    md: 'px-6 py-3 text-base min-h-[48px] h-12',
+    lg: 'px-8 py-4 text-lg min-h-[52px] h-14',
+    xl: 'px-10 py-5 text-xl min-h-[56px] h-16'
   };
 
   return (

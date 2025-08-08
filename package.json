@@ -9,7 +9,13 @@
     "lint": "next lint",
     "type-check": "tsc --noEmit",
     "analyze": "ANALYZE=true npm run build",
-    "build:analyze": "cross-env ANALYZE=true next build"
+    "build:analyze": "cross-env ANALYZE=true next build",
+    "lighthouse": "lhci autorun --config=lighthouserc.json",
+    "lighthouse:mobile": "lhci autorun --config=lighthouserc.json --preset=mobile",
+    "performance:audit": "npm run build && npm run start & sleep 10 && npm run lighthouse",
+    "test:e2e": "playwright test",
+    "test:performance": "playwright test tests/performance.spec.ts",
+    "monitor:errors": "node -e \"console.log(require('./src/lib/error-logger').errorLogger.generateReport())\""
   },
   "dependencies": {
     "@headlessui/react": "^2.2.7",
@@ -25,12 +31,15 @@
     "framer-motion": "^11.0.0",
     "lucide-react": "^0.400.0",
     "next": "15.4.6",
+    "puppeteer": "^24.16.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-email": "^4.2.8",
     "react-hook-form": "^7.62.0",
+    "react-intersection-observer": "^9.16.0",
     "resend": "^6.0.0",
     "tailwind-merge": "^2.0.0",
+    "web-vitals": "^5.1.0",
     "zod": "^4.0.15"
   },
   "devDependencies": {
