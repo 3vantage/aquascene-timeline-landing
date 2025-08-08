@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aquascene Timeline - The Evolution of Aquatic Life</title>
+    <meta name="description" content="Experience the mesmerizing journey of aquatic ecosystem development through interactive animations and immersive storytelling." />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background: linear-gradient(135deg, #0c4a6e 0%, #075985 50%, #0369a1 100%);
+        overflow-x: hidden;
+      }
+      #root {
+        min-height: 100vh;
+      }
+      .cursor-magnetic {
+        cursor: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
