@@ -3,7 +3,7 @@ import HeroSection from '@/components/sections/HeroSection';
 import FeaturesSection from '@/components/sections/FeaturesSection';
 import WaitlistSection from '@/components/sections/WaitlistSection';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
-import BubbleSystem from '@/components/animations/BubbleSystem';
+import AquariumLayout from '@/components/layout/AquariumLayout';
 
 // Force static generation for export
 export const dynamic = 'force-static';
@@ -46,20 +46,19 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <main className="relative">
-      {/* Underwater background effects */}
-      <BubbleSystem />
-      
-      {/* Hero Section */}
-      <HeroSection />
-      
-      {/* Features Section */}
-      <FeaturesSection />
-      
-      {/* Waitlist Section */}
-      <WaitlistSection />
-      
-      {/* Testimonials Section */}
-      <TestimonialsSection />
+      <AquariumLayout>
+        {/* Hero Section - Surface level */}
+        <HeroSection />
+        
+        {/* Features Section - Shallow water */}
+        <FeaturesSection />
+        
+        {/* Waitlist Section - Mid-water */}
+        <WaitlistSection />
+        
+        {/* Testimonials Section - Deep water */}
+        <TestimonialsSection />
+      </AquariumLayout>
       
       {/* JSON-LD Structured Data */}
       <script

@@ -84,14 +84,14 @@
   --ease-spring: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* FORCE VIBRANT DARK MODE FOR MAXIMUM CONTRAST */
+/* AQUARIUM MODE - IMMERSIVE UNDERWATER EXPERIENCE */
 @media (prefers-color-scheme: dark), (prefers-color-scheme: light) {
   :root {
-    --color-background: #000000; /* Pure Black */
+    --color-background: rgba(15, 50, 80, 0.4); /* Deep Ocean Blue */
     --color-foreground: #FFFFFF; /* Pure White */
-    --color-muted: #1A1A1A; /* Dark Gray */
-    --color-surface: #2A2A2A; /* Medium Gray */
-    --color-border: #555555; /* Bright Gray Border */
+    --color-muted: rgba(25, 80, 120, 0.6); /* Ocean Depth */
+    --color-surface: rgba(70, 130, 180, 0.4); /* Steel Blue Surface */
+    --color-border: rgba(135, 206, 250, 0.5); /* Light Blue Border */
     --color-primary: #00FF88; /* Electric Green */
     --color-secondary: #00D4FF; /* Electric Cyan */
     --color-accent: #FF4081; /* Hot Pink */
@@ -112,7 +112,13 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: var(--color-background) !important;
+  background: linear-gradient(180deg, 
+    rgba(135, 206, 250, 0.1) 0%,
+    rgba(70, 130, 180, 0.2) 25%,
+    rgba(25, 80, 120, 0.3) 50%,
+    rgba(15, 50, 80, 0.4) 75%,
+    rgba(10, 30, 50, 0.5) 100%
+  ) !important;
   color: var(--color-foreground) !important;
   font-family: var(--font-primary);
   line-height: 1.6;
