@@ -1,0 +1,237 @@
+{
+  "timestamp": "2025-08-08T16:47:52.627Z",
+  "url": "http://localhost:3000",
+  "desktop": {
+    "pageStructure": {
+      "title": "Tenant Dashboard - PyAirtable",
+      "url": "http://localhost:3000/chat",
+      "hasLogo": false,
+      "hasNavigation": false,
+      "hasCTA": true,
+      "hasForm": true,
+      "hasFooter": false,
+      "totalSections": 0
+    },
+    "content": {
+      "headings": {
+        "h1": [
+          "PyAirtable AI Assistant"
+        ],
+        "h2": [],
+        "h3": [
+          "PyAirtable Assistant",
+          "Try These Examples",
+          "💡 Pro Tips",
+          "🚀 System Status"
+        ]
+      },
+      "paragraphs": [
+        "Ask questions about your Airtable data, create formulas, and get AI-powered insights. Your intelligent companion for data analysis and automation.",
+        "\"Show me the top 10 posts by engagement\"",
+        "\"What's the average response time this month?\"",
+        "\"Find all records created last week\"",
+        "\"Create a formula to calculate ROI\""
+      ],
+      "buttons": [
+        {
+          "text": "",
+          "type": "submit",
+          "disabled": true,
+          "classes": "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10"
+        }
+      ],
+      "links": []
+    },
+    "formAnalysis": {
+      "forms": [
+        {
+          "action": "http://localhost:3000/chat",
+          "method": "get",
+          "inputs": [
+            {
+              "type": "text",
+              "name": "",
+              "placeholder": "Try asking: 'Analyze my Facebook posts table' or 'Create a formula to calculate engagement rate'",
+              "required": false,
+              "hasLabel": false
+            }
+          ]
+        }
+      ]
+    },
+    "visualDesign": {
+      "colorScheme": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "textColor": "rgb(2, 8, 23)",
+        "accentColors": [
+          "rgb(37, 99, 235)"
+        ]
+      },
+      "typography": {
+        "bodyFontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+        "bodyFontSize": "16px",
+        "headingFonts": [
+          "__Inter_e8ce0c, __Inter_Fallback_e8ce0c"
+        ]
+      },
+      "spacing": {
+        "containerMaxWidth": "1400px",
+        "hasPadding": false,
+        "hasMargin": false
+      }
+    },
+    "interactionElements": {
+      "clickableElements": 1,
+      "focusableElements": 2,
+      "hasHoverStates": false,
+      "hasAnimations": true
+    },
+    "mobileFriendliness": {
+      "hasViewportMeta": true,
+      "viewportContent": "width=device-width, initial-scale=1",
+      "hasTouchTargets": 2,
+      "usesFlexbox": true,
+      "usesGrid": true
+    },
+    "accessibility": {
+      "hasSkipLink": false,
+      "hasLandmarks": 0,
+      "hasAriaLabels": 0,
+      "hasProperHeadingStructure": true,
+      "keyboardNavigable": 2
+    },
+    "performance": {
+      "totalElements": 185,
+      "totalImages": 0,
+      "totalScripts": 12,
+      "totalStylesheets": 1,
+      "hasLazyLoading": false,
+      "usesWebp": false
+    }
+  },
+  "mobile": {
+    "elementOverflow": 0,
+    "tooSmallText": 37,
+    "touchTargetSize": [
+      {
+        "width": 255,
+        "height": 40,
+        "tooSmall": true
+      },
+      {
+        "width": 40,
+        "height": 40,
+        "tooSmall": true
+      }
+    ]
+  },
+  "formInteractions": [
+    {
+      "type": "unknown",
+      "error": "locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input, select, textarea').first()\u001b[22m\n\u001b[2m    - locator resolved to <input disabled value=\"\" maxlength=\"2000\" placeholder=\"Try asking: 'Analyze my Facebook posts table' or 'Create a formula to calculate engagement rate'\" class=\"flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity…/>\u001b[22m\n\u001b[2m    - fill(\"test input\")\u001b[22m\n\u001b[2m  - attempting fill action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying fill action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying fill action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    60 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m       - element is not enabled\u001b[22m\n\u001b[2m     - retrying fill action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+    }
+  ],
+  "nielsenHeuristics": {
+    "visibilityOfSystemStatus": {
+      "score": 7,
+      "findings": [
+        "Form validation feedback present",
+        "Loading states visible"
+      ],
+      "issues": [
+        "Could improve progress indicators"
+      ]
+    },
+    "matchBetweenSystemAndRealWorld": {
+      "score": 8,
+      "findings": [
+        "Natural language used",
+        "Familiar UI patterns"
+      ],
+      "issues": [
+        "Some technical jargon could be simplified"
+      ]
+    },
+    "userControlAndFreedom": {
+      "score": 6,
+      "findings": [
+        "Basic navigation present"
+      ],
+      "issues": [
+        "Limited undo functionality",
+        "No clear exit paths"
+      ]
+    },
+    "consistencyAndStandards": {
+      "score": 8,
+      "findings": [
+        "Consistent button styles",
+        "Standard form patterns"
+      ],
+      "issues": [
+        "Some inconsistent spacing"
+      ]
+    },
+    "errorPrevention": {
+      "score": 7,
+      "findings": [
+        "Form validation present",
+        "Required field indicators"
+      ],
+      "issues": [
+        "Could add confirmation dialogs for important actions"
+      ]
+    },
+    "recognitionRatherThanRecall": {
+      "score": 8,
+      "findings": [
+        "Clear labels",
+        "Visual cues present"
+      ],
+      "issues": [
+        "Could improve with more icons and visual aids"
+      ]
+    },
+    "flexibilityAndEfficiencyOfUse": {
+      "score": 6,
+      "findings": [
+        "Basic functionality works"
+      ],
+      "issues": [
+        "No keyboard shortcuts",
+        "Limited customization options"
+      ]
+    },
+    "aestheticAndMinimalistDesign": {
+      "score": 9,
+      "findings": [
+        "Clean design",
+        "Good use of whitespace",
+        "Minimal clutter"
+      ],
+      "issues": [
+        "Some areas could be more streamlined"
+      ]
+    },
+    "helpUsersRecognizeDiagnoseAndRecoverFromErrors": {
+      "score": 7,
+      "findings": [
+        "Error messages present"
+      ],
+      "issues": [
+        "Error messages could be more helpful and specific"
+      ]
+    },
+    "helpAndDocumentation": {
+      "score": 5,
+      "findings": [
+        "Basic help text in forms"
+      ],
+      "issues": [
+        "No comprehensive help system",
+        "Limited documentation"
+      ]
+    }
+  },
+  "nielsenOverallScore": 7
+}

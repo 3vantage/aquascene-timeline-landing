@@ -1,0 +1,2697 @@
+{
+  "config": {
+    "configFile": "/Users/kg/aquascene-waitlist-evaluation/playwright.config.ts",
+    "rootDir": "/Users/kg/aquascene-waitlist-evaluation/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 4
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/kg/aquascene-waitlist-evaluation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/kg/aquascene-waitlist-evaluation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/kg/aquascene-waitlist-evaluation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/kg/aquascene-waitlist-evaluation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/kg/aquascene-waitlist-evaluation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/kg/aquascene-waitlist-evaluation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/kg/aquascene-waitlist-evaluation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "Mobile Chrome",
+        "name": "Mobile Chrome",
+        "testDir": "/Users/kg/aquascene-waitlist-evaluation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/kg/aquascene-waitlist-evaluation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 4
+        },
+        "id": "Mobile Safari",
+        "name": "Mobile Safari",
+        "testDir": "/Users/kg/aquascene-waitlist-evaluation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.54.2",
+    "workers": 4,
+    "webServer": {
+      "command": "npm run dev -- --port 3006",
+      "port": 3006,
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "performance.spec.ts",
+      "file": "performance.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Performance Tests",
+          "file": "performance.spec.ts",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Lighthouse Performance Audit",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 397,
+                      "error": {
+                        "message": "Error: Browser was not found at the configured executablePath (/Applications/Google Chrome.app/Contents/MacOS/Google Chrome)",
+                        "stack": "Error: Browser was not found at the configured executablePath (/Applications/Google Chrome.app/Contents/MacOS/Google Chrome)\n    at ChromeLauncher.launch (/Users/kg/aquascene-waitlist-evaluation/node_modules/puppeteer-core/src/node/BrowserLauncher.ts:109:13)\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:7:21",
+                        "location": {
+                          "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                          "column": 21,
+                          "line": 7
+                        },
+                        "snippet": "   5 | test.describe('Performance Tests', () => {\n   6 |   test('Lighthouse Performance Audit', async ({ page }) => {\n>  7 |     const browser = await launch({\n     |                     ^\n   8 |       executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',\n   9 |       headless: true,\n  10 |       args: ['--remote-debugging-port=9222']"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                            "column": 21,
+                            "line": 7
+                          },
+                          "message": "Error: Browser was not found at the configured executablePath (/Applications/Google Chrome.app/Contents/MacOS/Google Chrome)\n\n   5 | test.describe('Performance Tests', () => {\n   6 |   test('Lighthouse Performance Audit', async ({ page }) => {\n>  7 |     const browser = await launch({\n     |                     ^\n   8 |       executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',\n   9 |       headless: true,\n  10 |       args: ['--remote-debugging-port=9222']\n    at ChromeLauncher.launch (/Users/kg/aquascene-waitlist-evaluation/node_modules/puppeteer-core/src/node/BrowserLauncher.ts:109:13)\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:7:21"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:21:28.870Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Performance-Tests-Lighthouse-Performance-Audit-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Performance-Tests-Lighthouse-Performance-Audit-chromium/video.webm"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                        "column": 21,
+                        "line": 7
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-191d34dfab8da65f89ce",
+              "file": "performance.spec.ts",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "Page Load Time",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 4400,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:21:28.870Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-90e0d7048c926cf9bae7",
+              "file": "performance.spec.ts",
+              "line": 35,
+              "column": 7
+            },
+            {
+              "title": "Mobile Performance",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 4258,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:21:28.870Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-7312f57c0c18ba28eac7",
+              "file": "performance.spec.ts",
+              "line": 43,
+              "column": 7
+            },
+            {
+              "title": "Resource Loading",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 4429,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:21:28.871Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-4a0809ed52b345ac6bae",
+              "file": "performance.spec.ts",
+              "line": 53,
+              "column": 7
+            },
+            {
+              "title": "Lighthouse Performance Audit",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 1080,
+                      "error": {
+                        "message": "Error: Browser was not found at the configured executablePath (/Applications/Google Chrome.app/Contents/MacOS/Google Chrome)",
+                        "stack": "Error: Browser was not found at the configured executablePath (/Applications/Google Chrome.app/Contents/MacOS/Google Chrome)\n    at ChromeLauncher.launch (/Users/kg/aquascene-waitlist-evaluation/node_modules/puppeteer-core/src/node/BrowserLauncher.ts:109:13)\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:7:21",
+                        "location": {
+                          "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                          "column": 21,
+                          "line": 7
+                        },
+                        "snippet": "   5 | test.describe('Performance Tests', () => {\n   6 |   test('Lighthouse Performance Audit', async ({ page }) => {\n>  7 |     const browser = await launch({\n     |                     ^\n   8 |       executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',\n   9 |       headless: true,\n  10 |       args: ['--remote-debugging-port=9222']"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                            "column": 21,
+                            "line": 7
+                          },
+                          "message": "Error: Browser was not found at the configured executablePath (/Applications/Google Chrome.app/Contents/MacOS/Google Chrome)\n\n   5 | test.describe('Performance Tests', () => {\n   6 |   test('Lighthouse Performance Audit', async ({ page }) => {\n>  7 |     const browser = await launch({\n     |                     ^\n   8 |       executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',\n   9 |       headless: true,\n  10 |       args: ['--remote-debugging-port=9222']\n    at ChromeLauncher.launch (/Users/kg/aquascene-waitlist-evaluation/node_modules/puppeteer-core/src/node/BrowserLauncher.ts:109:13)\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:7:21"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:04.293Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Performance-Tests-Lighthouse-Performance-Audit-firefox/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Performance-Tests-Lighthouse-Performance-Audit-firefox/video.webm"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                        "column": 21,
+                        "line": 7
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-aa220b460c3661112c36",
+              "file": "performance.spec.ts",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "Page Load Time",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 2251,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:05.740Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-bc38d108d5c2adb97d44",
+              "file": "performance.spec.ts",
+              "line": 35,
+              "column": 7
+            },
+            {
+              "title": "Mobile Performance",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 4783,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:06.065Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-2d97bd5261f138c5e268",
+              "file": "performance.spec.ts",
+              "line": 43,
+              "column": 7
+            },
+            {
+              "title": "Resource Loading",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4149,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoHaveLength\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected length: \u001b[32m0\u001b[39m\nReceived length: \u001b[31m1\u001b[39m\nReceived array:  \u001b[31m[{\"size\": undefined, \"status\": 404, \"url\": \"http://localhost:3006/api/metrics\"}]\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoHaveLength\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected length: \u001b[32m0\u001b[39m\nReceived length: \u001b[31m1\u001b[39m\nReceived array:  \u001b[31m[{\"size\": undefined, \"status\": 404, \"url\": \"http://localhost:3006/api/metrics\"}]\u001b[39m\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:68:29",
+                        "location": {
+                          "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                          "column": 29,
+                          "line": 68
+                        },
+                        "snippet": "  66 |     // Check for failed resources\n  67 |     const failedResources = resources.filter(r => r.status >= 400);\n> 68 |     expect(failedResources).toHaveLength(0);\n     |                             ^\n  69 |     \n  70 |     // Check bundle sizes\n  71 |     const jsResources = resources.filter(r => r.url.endsWith('.js'));"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                            "column": 29,
+                            "line": 68
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoHaveLength\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected length: \u001b[32m0\u001b[39m\nReceived length: \u001b[31m1\u001b[39m\nReceived array:  \u001b[31m[{\"size\": undefined, \"status\": 404, \"url\": \"http://localhost:3006/api/metrics\"}]\u001b[39m\n\n  66 |     // Check for failed resources\n  67 |     const failedResources = resources.filter(r => r.status >= 400);\n> 68 |     expect(failedResources).toHaveLength(0);\n     |                             ^\n  69 |     \n  70 |     // Check bundle sizes\n  71 |     const jsResources = resources.filter(r => r.url.endsWith('.js'));\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:68:29"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:07.109Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Performance-Tests-Resource-Loading-firefox/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Performance-Tests-Resource-Loading-firefox/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Performance-Tests-Resource-Loading-firefox/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                        "column": 29,
+                        "line": 68
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-a582dd872704ddabce18",
+              "file": "performance.spec.ts",
+              "line": 53,
+              "column": 7
+            },
+            {
+              "title": "Lighthouse Performance Audit",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 1106,
+                      "error": {
+                        "message": "Error: Browser was not found at the configured executablePath (/Applications/Google Chrome.app/Contents/MacOS/Google Chrome)",
+                        "stack": "Error: Browser was not found at the configured executablePath (/Applications/Google Chrome.app/Contents/MacOS/Google Chrome)\n    at ChromeLauncher.launch (/Users/kg/aquascene-waitlist-evaluation/node_modules/puppeteer-core/src/node/BrowserLauncher.ts:109:13)\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:7:21",
+                        "location": {
+                          "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                          "column": 21,
+                          "line": 7
+                        },
+                        "snippet": "   5 | test.describe('Performance Tests', () => {\n   6 |   test('Lighthouse Performance Audit', async ({ page }) => {\n>  7 |     const browser = await launch({\n     |                     ^\n   8 |       executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',\n   9 |       headless: true,\n  10 |       args: ['--remote-debugging-port=9222']"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                            "column": 21,
+                            "line": 7
+                          },
+                          "message": "Error: Browser was not found at the configured executablePath (/Applications/Google Chrome.app/Contents/MacOS/Google Chrome)\n\n   5 | test.describe('Performance Tests', () => {\n   6 |   test('Lighthouse Performance Audit', async ({ page }) => {\n>  7 |     const browser = await launch({\n     |                     ^\n   8 |       executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',\n   9 |       headless: true,\n  10 |       args: ['--remote-debugging-port=9222']\n    at ChromeLauncher.launch (/Users/kg/aquascene-waitlist-evaluation/node_modules/puppeteer-core/src/node/BrowserLauncher.ts:109:13)\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:7:21"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:17.937Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Performance-Tests-Lighthouse-Performance-Audit-webkit/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Performance-Tests-Lighthouse-Performance-Audit-webkit/video.webm"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                        "column": 21,
+                        "line": 7
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-26e8ca99910d230a5d27",
+              "file": "performance.spec.ts",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "Page Load Time",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 1169,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:20.844Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-7ab2565e90efb1919782",
+              "file": "performance.spec.ts",
+              "line": 35,
+              "column": 7
+            },
+            {
+              "title": "Mobile Performance",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 582,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:23.313Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-d98ee6251814165b7c97",
+              "file": "performance.spec.ts",
+              "line": 43,
+              "column": 7
+            },
+            {
+              "title": "Resource Loading",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 16,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 851,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:24.291Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-47040e9217d2141b0a7f",
+              "file": "performance.spec.ts",
+              "line": 53,
+              "column": 7
+            },
+            {
+              "title": "Lighthouse Performance Audit",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 19,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 424,
+                      "error": {
+                        "message": "Error: Browser was not found at the configured executablePath (/Applications/Google Chrome.app/Contents/MacOS/Google Chrome)",
+                        "stack": "Error: Browser was not found at the configured executablePath (/Applications/Google Chrome.app/Contents/MacOS/Google Chrome)\n    at ChromeLauncher.launch (/Users/kg/aquascene-waitlist-evaluation/node_modules/puppeteer-core/src/node/BrowserLauncher.ts:109:13)\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:7:21",
+                        "location": {
+                          "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                          "column": 21,
+                          "line": 7
+                        },
+                        "snippet": "   5 | test.describe('Performance Tests', () => {\n   6 |   test('Lighthouse Performance Audit', async ({ page }) => {\n>  7 |     const browser = await launch({\n     |                     ^\n   8 |       executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',\n   9 |       headless: true,\n  10 |       args: ['--remote-debugging-port=9222']"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                            "column": 21,
+                            "line": 7
+                          },
+                          "message": "Error: Browser was not found at the configured executablePath (/Applications/Google Chrome.app/Contents/MacOS/Google Chrome)\n\n   5 | test.describe('Performance Tests', () => {\n   6 |   test('Lighthouse Performance Audit', async ({ page }) => {\n>  7 |     const browser = await launch({\n     |                     ^\n   8 |       executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',\n   9 |       headless: true,\n  10 |       args: ['--remote-debugging-port=9222']\n    at ChromeLauncher.launch (/Users/kg/aquascene-waitlist-evaluation/node_modules/puppeteer-core/src/node/BrowserLauncher.ts:109:13)\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:7:21"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:28.885Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Performance-Tests-Lighthouse-Performance-Audit-Mobile-Chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Performance-Tests-Lighthouse-Performance-Audit-Mobile-Chrome/video.webm"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                        "column": 21,
+                        "line": 7
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-8899d991c756454d5c02",
+              "file": "performance.spec.ts",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "Page Load Time",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 20,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 3029,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:28.877Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-506bbba82955f5de1739",
+              "file": "performance.spec.ts",
+              "line": 35,
+              "column": 7
+            },
+            {
+              "title": "Mobile Performance",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 21,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3336,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:28.945Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-35b98b21e57142aaa8b7",
+              "file": "performance.spec.ts",
+              "line": 43,
+              "column": 7
+            },
+            {
+              "title": "Resource Loading",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 22,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 9571,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoHaveLength\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected length: \u001b[32m0\u001b[39m\nReceived length: \u001b[31m1\u001b[39m\nReceived array:  \u001b[31m[{\"size\": undefined, \"status\": 404, \"url\": \"http://localhost:3006/api/metrics\"}]\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoHaveLength\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected length: \u001b[32m0\u001b[39m\nReceived length: \u001b[31m1\u001b[39m\nReceived array:  \u001b[31m[{\"size\": undefined, \"status\": 404, \"url\": \"http://localhost:3006/api/metrics\"}]\u001b[39m\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:68:29",
+                        "location": {
+                          "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                          "column": 29,
+                          "line": 68
+                        },
+                        "snippet": "  66 |     // Check for failed resources\n  67 |     const failedResources = resources.filter(r => r.status >= 400);\n> 68 |     expect(failedResources).toHaveLength(0);\n     |                             ^\n  69 |     \n  70 |     // Check bundle sizes\n  71 |     const jsResources = resources.filter(r => r.url.endsWith('.js'));"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                            "column": 29,
+                            "line": 68
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoHaveLength\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected length: \u001b[32m0\u001b[39m\nReceived length: \u001b[31m1\u001b[39m\nReceived array:  \u001b[31m[{\"size\": undefined, \"status\": 404, \"url\": \"http://localhost:3006/api/metrics\"}]\u001b[39m\n\n  66 |     // Check for failed resources\n  67 |     const failedResources = resources.filter(r => r.status >= 400);\n> 68 |     expect(failedResources).toHaveLength(0);\n     |                             ^\n  69 |     \n  70 |     // Check bundle sizes\n  71 |     const jsResources = resources.filter(r => r.url.endsWith('.js'));\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:68:29"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:33.600Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Performance-Tests-Resource-Loading-Mobile-Chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Performance-Tests-Resource-Loading-Mobile-Chrome/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Performance-Tests-Resource-Loading-Mobile-Chrome/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                        "column": 29,
+                        "line": 68
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-ab1d7bea277e8057342b",
+              "file": "performance.spec.ts",
+              "line": 53,
+              "column": 7
+            },
+            {
+              "title": "Lighthouse Performance Audit",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 26,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 1737,
+                      "error": {
+                        "message": "Error: Browser was not found at the configured executablePath (/Applications/Google Chrome.app/Contents/MacOS/Google Chrome)",
+                        "stack": "Error: Browser was not found at the configured executablePath (/Applications/Google Chrome.app/Contents/MacOS/Google Chrome)\n    at ChromeLauncher.launch (/Users/kg/aquascene-waitlist-evaluation/node_modules/puppeteer-core/src/node/BrowserLauncher.ts:109:13)\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:7:21",
+                        "location": {
+                          "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                          "column": 21,
+                          "line": 7
+                        },
+                        "snippet": "   5 | test.describe('Performance Tests', () => {\n   6 |   test('Lighthouse Performance Audit', async ({ page }) => {\n>  7 |     const browser = await launch({\n     |                     ^\n   8 |       executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',\n   9 |       headless: true,\n  10 |       args: ['--remote-debugging-port=9222']"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                            "column": 21,
+                            "line": 7
+                          },
+                          "message": "Error: Browser was not found at the configured executablePath (/Applications/Google Chrome.app/Contents/MacOS/Google Chrome)\n\n   5 | test.describe('Performance Tests', () => {\n   6 |   test('Lighthouse Performance Audit', async ({ page }) => {\n>  7 |     const browser = await launch({\n     |                     ^\n   8 |       executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',\n   9 |       headless: true,\n  10 |       args: ['--remote-debugging-port=9222']\n    at ChromeLauncher.launch (/Users/kg/aquascene-waitlist-evaluation/node_modules/puppeteer-core/src/node/BrowserLauncher.ts:109:13)\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:7:21"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:51.652Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Performance-Tests-Lighthouse-Performance-Audit-Mobile-Safari/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Performance-Tests-Lighthouse-Performance-Audit-Mobile-Safari/video.webm"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                        "column": 21,
+                        "line": 7
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-49f0f94353f916126349",
+              "file": "performance.spec.ts",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "Page Load Time",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 27,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 691,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:23:00.533Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-f892fd2901a6b7200b83",
+              "file": "performance.spec.ts",
+              "line": 35,
+              "column": 7
+            },
+            {
+              "title": "Mobile Performance",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 28,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1233,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:23:01.437Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-c7a603e7735acdacf14e",
+              "file": "performance.spec.ts",
+              "line": 43,
+              "column": 7
+            },
+            {
+              "title": "Resource Loading",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 29,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 963,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:23:01.629Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-95bcf20a1ac07d383678",
+              "file": "performance.spec.ts",
+              "line": 53,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "Accessibility Tests",
+          "file": "performance.spec.ts",
+          "line": 77,
+          "column": 6,
+          "specs": [
+            {
+              "title": "WCAG AA Compliance",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 26396,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:88:24",
+                        "location": {
+                          "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                          "column": 24,
+                          "line": 88
+                        },
+                        "snippet": "  86 |         return !!document.querySelector(`label[for=\"${id}\"]`) || !!el.getAttribute('aria-label');\n  87 |       });\n> 88 |       expect(hasLabel).toBeTruthy();\n     |                        ^\n  89 |     }\n  90 |     \n  91 |     // Check focus indicators"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                            "column": 24,
+                            "line": 88
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n\n  86 |         return !!document.querySelector(`label[for=\"${id}\"]`) || !!el.getAttribute('aria-label');\n  87 |       });\n> 88 |       expect(hasLabel).toBeTruthy();\n     |                        ^\n  89 |     }\n  90 |     \n  91 |     // Check focus indicators\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:88:24"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:21:33.886Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Accessibility-Tests-WCAG-AA-Compliance-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Accessibility-Tests-WCAG-AA-Compliance-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Accessibility-Tests-WCAG-AA-Compliance-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                        "column": 24,
+                        "line": 88
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-e2543da220c97e55149d",
+              "file": "performance.spec.ts",
+              "line": 78,
+              "column": 7
+            },
+            {
+              "title": "Keyboard Navigation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 26296,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:21:33.637Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-028b2c5933d962e19616",
+              "file": "performance.spec.ts",
+              "line": 114,
+              "column": 7
+            },
+            {
+              "title": "WCAG AA Compliance",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 5114,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:88:24",
+                        "location": {
+                          "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                          "column": 24,
+                          "line": 88
+                        },
+                        "snippet": "  86 |         return !!document.querySelector(`label[for=\"${id}\"]`) || !!el.getAttribute('aria-label');\n  87 |       });\n> 88 |       expect(hasLabel).toBeTruthy();\n     |                        ^\n  89 |     }\n  90 |     \n  91 |     // Check focus indicators"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                            "column": 24,
+                            "line": 88
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n\n  86 |         return !!document.querySelector(`label[for=\"${id}\"]`) || !!el.getAttribute('aria-label');\n  87 |       });\n> 88 |       expect(hasLabel).toBeTruthy();\n     |                        ^\n  89 |     }\n  90 |     \n  91 |     // Check focus indicators\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:88:24"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:09.510Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Accessibility-Tests-WCAG-AA-Compliance-firefox/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Accessibility-Tests-WCAG-AA-Compliance-firefox/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Accessibility-Tests-WCAG-AA-Compliance-firefox/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                        "column": 24,
+                        "line": 88
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-a4987cc627cc4e8666ea",
+              "file": "performance.spec.ts",
+              "line": 78,
+              "column": 7
+            },
+            {
+              "title": "Keyboard Navigation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 3195,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:08.689Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-600fdaf3cd44bf41eeaf",
+              "file": "performance.spec.ts",
+              "line": 114,
+              "column": 7
+            },
+            {
+              "title": "WCAG AA Compliance",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 787,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:88:24",
+                        "location": {
+                          "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                          "column": 24,
+                          "line": 88
+                        },
+                        "snippet": "  86 |         return !!document.querySelector(`label[for=\"${id}\"]`) || !!el.getAttribute('aria-label');\n  87 |       });\n> 88 |       expect(hasLabel).toBeTruthy();\n     |                        ^\n  89 |     }\n  90 |     \n  91 |     // Check focus indicators"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                            "column": 24,
+                            "line": 88
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n\n  86 |         return !!document.querySelector(`label[for=\"${id}\"]`) || !!el.getAttribute('aria-label');\n  87 |       });\n> 88 |       expect(hasLabel).toBeTruthy();\n     |                        ^\n  89 |     }\n  90 |     \n  91 |     // Check focus indicators\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:88:24"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:22.272Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Accessibility-Tests-WCAG-AA-Compliance-webkit/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Accessibility-Tests-WCAG-AA-Compliance-webkit/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Accessibility-Tests-WCAG-AA-Compliance-webkit/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                        "column": 24,
+                        "line": 88
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-18f4b81323d928f58fc3",
+              "file": "performance.spec.ts",
+              "line": 78,
+              "column": 7
+            },
+            {
+              "title": "Keyboard Navigation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 17,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 1164,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:24.809Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-cd28bf2838ddf376131c",
+              "file": "performance.spec.ts",
+              "line": 114,
+              "column": 7
+            },
+            {
+              "title": "WCAG AA Compliance",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 20,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 8967,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:88:24",
+                        "location": {
+                          "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                          "column": 24,
+                          "line": 88
+                        },
+                        "snippet": "  86 |         return !!document.querySelector(`label[for=\"${id}\"]`) || !!el.getAttribute('aria-label');\n  87 |       });\n> 88 |       expect(hasLabel).toBeTruthy();\n     |                        ^\n  89 |     }\n  90 |     \n  91 |     // Check focus indicators"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                            "column": 24,
+                            "line": 88
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n\n  86 |         return !!document.querySelector(`label[for=\"${id}\"]`) || !!el.getAttribute('aria-label');\n  87 |       });\n> 88 |       expect(hasLabel).toBeTruthy();\n     |                        ^\n  89 |     }\n  90 |     \n  91 |     // Check focus indicators\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:88:24"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:32.246Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Accessibility-Tests-WCAG-AA-Compliance-Mobile-Chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Accessibility-Tests-WCAG-AA-Compliance-Mobile-Chrome/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Accessibility-Tests-WCAG-AA-Compliance-Mobile-Chrome/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                        "column": 24,
+                        "line": 88
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-4c0cda08bf8185054a25",
+              "file": "performance.spec.ts",
+              "line": 78,
+              "column": 7
+            },
+            {
+              "title": "Keyboard Navigation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 21,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 9319,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:32.571Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-a50ed6ea73774b12777a",
+              "file": "performance.spec.ts",
+              "line": 114,
+              "column": 7
+            },
+            {
+              "title": "WCAG AA Compliance",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 30,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 913,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:88:24",
+                        "location": {
+                          "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                          "column": 24,
+                          "line": 88
+                        },
+                        "snippet": "  86 |         return !!document.querySelector(`label[for=\"${id}\"]`) || !!el.getAttribute('aria-label');\n  87 |       });\n> 88 |       expect(hasLabel).toBeTruthy();\n     |                        ^\n  89 |     }\n  90 |     \n  91 |     // Check focus indicators"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                            "column": 24,
+                            "line": 88
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n\n  86 |         return !!document.querySelector(`label[for=\"${id}\"]`) || !!el.getAttribute('aria-label');\n  87 |       });\n> 88 |       expect(hasLabel).toBeTruthy();\n     |                        ^\n  89 |     }\n  90 |     \n  91 |     // Check focus indicators\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:88:24"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:23:01.918Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Accessibility-Tests-WCAG-AA-Compliance-Mobile-Safari/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Accessibility-Tests-WCAG-AA-Compliance-Mobile-Safari/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-Accessibility-Tests-WCAG-AA-Compliance-Mobile-Safari/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                        "column": 24,
+                        "line": 88
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-e3fad80aeaf84a6765ce",
+              "file": "performance.spec.ts",
+              "line": 78,
+              "column": 7
+            },
+            {
+              "title": "Keyboard Navigation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 27,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 547,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:23:01.397Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-0f0e93066bf84c08d801",
+              "file": "performance.spec.ts",
+              "line": 114,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "User Flow Tests",
+          "file": "performance.spec.ts",
+          "line": 131,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Email Signup Flow",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 26701,
+                      "error": {
+                        "message": "TypeError: emailInput.clear is not a function",
+                        "stack": "TypeError: emailInput.clear is not a function\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:146:22",
+                        "location": {
+                          "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                          "column": 22,
+                          "line": 146
+                        },
+                        "snippet": "  144 |     \n  145 |     // Test valid email\n> 146 |     await emailInput.clear();\n      |                      ^\n  147 |     await emailInput.fill('test@example.com');\n  148 |     \n  149 |     // Submit form"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                            "column": 22,
+                            "line": 146
+                          },
+                          "message": "TypeError: emailInput.clear is not a function\n\n  144 |     \n  145 |     // Test valid email\n> 146 |     await emailInput.clear();\n      |                      ^\n  147 |     await emailInput.fill('test@example.com');\n  148 |     \n  149 |     // Submit form\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:146:22"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:21:33.774Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-User-Flow-Tests-Email-Signup-Flow-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-User-Flow-Tests-Email-Signup-Flow-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-User-Flow-Tests-Email-Signup-Flow-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                        "column": 22,
+                        "line": 146
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-504144c2af9903ef0b54",
+              "file": "performance.spec.ts",
+              "line": 132,
+              "column": 7
+            },
+            {
+              "title": "Mobile Menu Navigation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 26136,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:21:33.813Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-283b1deb4f074f498f9f",
+              "file": "performance.spec.ts",
+              "line": 157,
+              "column": 7
+            },
+            {
+              "title": "Email Signup Flow",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 4097,
+                      "error": {
+                        "message": "TypeError: emailInput.clear is not a function",
+                        "stack": "TypeError: emailInput.clear is not a function\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:146:22",
+                        "location": {
+                          "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                          "column": 22,
+                          "line": 146
+                        },
+                        "snippet": "  144 |     \n  145 |     // Test valid email\n> 146 |     await emailInput.clear();\n      |                      ^\n  147 |     await emailInput.fill('test@example.com');\n  148 |     \n  149 |     // Submit form"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                            "column": 22,
+                            "line": 146
+                          },
+                          "message": "TypeError: emailInput.clear is not a function\n\n  144 |     \n  145 |     // Test valid email\n> 146 |     await emailInput.clear();\n      |                      ^\n  147 |     await emailInput.fill('test@example.com');\n  148 |     \n  149 |     // Submit form\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:146:22"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:11.708Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-User-Flow-Tests-Email-Signup-Flow-firefox/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-User-Flow-Tests-Email-Signup-Flow-firefox/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-User-Flow-Tests-Email-Signup-Flow-firefox/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                        "column": 22,
+                        "line": 146
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-890a5c96a225558b1409",
+              "file": "performance.spec.ts",
+              "line": 132,
+              "column": 7
+            },
+            {
+              "title": "Mobile Menu Navigation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 1492,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:11.890Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-d5422c75b097874d4a65",
+              "file": "performance.spec.ts",
+              "line": 157,
+              "column": 7
+            },
+            {
+              "title": "Email Signup Flow",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 18,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 1667,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:143:26",
+                        "location": {
+                          "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                          "column": 26,
+                          "line": 143
+                        },
+                        "snippet": "  141 |     await page.keyboard.press('Tab');\n  142 |     const errorMessage = await page.$('.error, [role=\"alert\"]');\n> 143 |     expect(errorMessage).toBeTruthy();\n      |                          ^\n  144 |     \n  145 |     // Test valid email\n  146 |     await emailInput.clear();"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                            "column": 26,
+                            "line": 143
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m\n\n  141 |     await page.keyboard.press('Tab');\n  142 |     const errorMessage = await page.$('.error, [role=\"alert\"]');\n> 143 |     expect(errorMessage).toBeTruthy();\n      |                          ^\n  144 |     \n  145 |     // Test valid email\n  146 |     await emailInput.clear();\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:143:26"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:25.638Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-User-Flow-Tests-Email-Signup-Flow-webkit/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-User-Flow-Tests-Email-Signup-Flow-webkit/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-User-Flow-Tests-Email-Signup-Flow-webkit/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                        "column": 26,
+                        "line": 143
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-7629a45cf06950432adf",
+              "file": "performance.spec.ts",
+              "line": 132,
+              "column": 7
+            },
+            {
+              "title": "Mobile Menu Navigation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 465,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:24.095Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-863978033acc1bcd2058",
+              "file": "performance.spec.ts",
+              "line": 157,
+              "column": 7
+            },
+            {
+              "title": "Email Signup Flow",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 23,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 3185,
+                      "error": {
+                        "message": "TypeError: emailInput.clear is not a function",
+                        "stack": "TypeError: emailInput.clear is not a function\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:146:22",
+                        "location": {
+                          "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                          "column": 22,
+                          "line": 146
+                        },
+                        "snippet": "  144 |     \n  145 |     // Test valid email\n> 146 |     await emailInput.clear();\n      |                      ^\n  147 |     await emailInput.fill('test@example.com');\n  148 |     \n  149 |     // Submit form"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                            "column": 22,
+                            "line": 146
+                          },
+                          "message": "TypeError: emailInput.clear is not a function\n\n  144 |     \n  145 |     // Test valid email\n> 146 |     await emailInput.clear();\n      |                      ^\n  147 |     await emailInput.fill('test@example.com');\n  148 |     \n  149 |     // Submit form\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:146:22"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:44.320Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-User-Flow-Tests-Email-Signup-Flow-Mobile-Chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-User-Flow-Tests-Email-Signup-Flow-Mobile-Chrome/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-User-Flow-Tests-Email-Signup-Flow-Mobile-Chrome/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                        "column": 22,
+                        "line": 146
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-7f32df8bff4a2751f5b8",
+              "file": "performance.spec.ts",
+              "line": 132,
+              "column": 7
+            },
+            {
+              "title": "Mobile Menu Navigation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 21,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1771,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:41.900Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-d70cceca0dc39ad64e4a",
+              "file": "performance.spec.ts",
+              "line": 157,
+              "column": 7
+            },
+            {
+              "title": "Email Signup Flow",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 27,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 1100,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:143:26",
+                        "location": {
+                          "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                          "column": 26,
+                          "line": 143
+                        },
+                        "snippet": "  141 |     await page.keyboard.press('Tab');\n  142 |     const errorMessage = await page.$('.error, [role=\"alert\"]');\n> 143 |     expect(errorMessage).toBeTruthy();\n      |                          ^\n  144 |     \n  145 |     // Test valid email\n  146 |     await emailInput.clear();"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                            "column": 26,
+                            "line": 143
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mnull\u001b[39m\n\n  141 |     await page.keyboard.press('Tab');\n  142 |     const errorMessage = await page.$('.error, [role=\"alert\"]');\n> 143 |     expect(errorMessage).toBeTruthy();\n      |                          ^\n  144 |     \n  145 |     // Test valid email\n  146 |     await emailInput.clear();\n    at /Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts:143:26"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:23:01.948Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-User-Flow-Tests-Email-Signup-Flow-Mobile-Safari/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-User-Flow-Tests-Email-Signup-Flow-Mobile-Safari/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/kg/aquascene-waitlist-evaluation/test-results/performance-User-Flow-Tests-Email-Signup-Flow-Mobile-Safari/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/kg/aquascene-waitlist-evaluation/tests/performance.spec.ts",
+                        "column": 26,
+                        "line": 143
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-78b4549cec800e39ec0b",
+              "file": "performance.spec.ts",
+              "line": 132,
+              "column": 7
+            },
+            {
+              "title": "Mobile Menu Navigation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 28,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 719,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:23:02.842Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-0963e6060d6cf7e0947a",
+              "file": "performance.spec.ts",
+              "line": 157,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "Visual Regression Tests",
+          "file": "performance.spec.ts",
+          "line": 173,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Desktop Screenshot",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 4236,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:00.120Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-a00d80f742aac4a342c0",
+              "file": "performance.spec.ts",
+              "line": 174,
+              "column": 7
+            },
+            {
+              "title": "Mobile Screenshot",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 3758,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:00.240Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-2c0a1463812b4b2cf06d",
+              "file": "performance.spec.ts",
+              "line": 184,
+              "column": 7
+            },
+            {
+              "title": "Dark Mode Screenshot",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1044,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:04.297Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-d397bbaf20db22d74e03",
+              "file": "performance.spec.ts",
+              "line": 195,
+              "column": 7
+            },
+            {
+              "title": "Desktop Screenshot",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5208,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:15.515Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-486c2ad18ae9189d7e35",
+              "file": "performance.spec.ts",
+              "line": 174,
+              "column": 7
+            },
+            {
+              "title": "Mobile Screenshot",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 3712,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:13.388Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-73768bef884711953358",
+              "file": "performance.spec.ts",
+              "line": 184,
+              "column": 7
+            },
+            {
+              "title": "Dark Mode Screenshot",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 4433,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:17.960Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-cd79db1312ab3802e1cd",
+              "file": "performance.spec.ts",
+              "line": 195,
+              "column": 7
+            },
+            {
+              "title": "Desktop Screenshot",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 18591,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:24.566Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-773a5e75c8e9a7f121b7",
+              "file": "performance.spec.ts",
+              "line": 174,
+              "column": 7
+            },
+            {
+              "title": "Mobile Screenshot",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 16,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2127,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:25.303Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-d3882ffa1bbfb55991f1",
+              "file": "performance.spec.ts",
+              "line": 184,
+              "column": 7
+            },
+            {
+              "title": "Dark Mode Screenshot",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 17,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 1246,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:26.250Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-c262ffdebf43d13988c1",
+              "file": "performance.spec.ts",
+              "line": 195,
+              "column": 7
+            },
+            {
+              "title": "Desktop Screenshot",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 24,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 15200,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:45.095Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-103f99ae4e4f65ebedec",
+              "file": "performance.spec.ts",
+              "line": 174,
+              "column": 7
+            },
+            {
+              "title": "Mobile Screenshot",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 25,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 14948,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:45.153Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-35676e5e5106ce14183b",
+              "file": "performance.spec.ts",
+              "line": 184,
+              "column": 7
+            },
+            {
+              "title": "Dark Mode Screenshot",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 21,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1382,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:22:43.676Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-1636bab3d0ce379f460c",
+              "file": "performance.spec.ts",
+              "line": 195,
+              "column": 7
+            },
+            {
+              "title": "Desktop Screenshot",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 29,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3252,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:23:02.857Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-49ebee65e8b7ffef9b0a",
+              "file": "performance.spec.ts",
+              "line": 174,
+              "column": 7
+            },
+            {
+              "title": "Mobile Screenshot",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 31,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 3189,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:23:04.029Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-fb524c2f42afc6e27a27",
+              "file": "performance.spec.ts",
+              "line": 184,
+              "column": 7
+            },
+            {
+              "title": "Dark Mode Screenshot",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 32,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 839,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-08T22:23:04.028Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b15d6361b2fc38288977-13f3767970b1898bac57",
+              "file": "performance.spec.ts",
+              "line": 195,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-08-08T22:21:26.729Z",
+    "duration": 100803.49100000001,
+    "expected": 38,
+    "skipped": 0,
+    "unexpected": 17,
+    "flaky": 0
+  }
+}

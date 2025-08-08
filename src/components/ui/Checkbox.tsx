@@ -19,7 +19,7 @@ export interface CheckboxProps {
   className?: string;
 }
 
-const Checkbox = forwardRef<HTMLButtonElement, CheckboxProps>(({
+const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({
   id,
   checked,
   onChange,
@@ -46,7 +46,7 @@ const Checkbox = forwardRef<HTMLButtonElement, CheckboxProps>(({
   };
 
   const checkboxClasses = clsx(
-    'relative flex items-center justify-center w-5 h-5 rounded border-2 transition-all duration-200 focus:outline-none focus-visible:ring-3 focus-visible:ring-accent-emerald focus-visible:ring-offset-2',
+    'relative flex items-center justify-center w-6 h-6 min-w-[48px] min-h-[48px] p-3 rounded border-2 transition-all duration-200 focus:outline-none focus-visible:ring-3 focus-visible:ring-accent-emerald focus-visible:ring-offset-2',
     {
       // Default variant
       'glass-underwater border-primary/30 hover:border-primary': 
@@ -99,20 +99,25 @@ const Checkbox = forwardRef<HTMLButtonElement, CheckboxProps>(({
 
   return (
     <div className={clsx('flex items-start gap-3', className)}>
-      <motion.button
-        ref={ref}
-        type="button"
-        id={id}
-        role="checkbox"
-        aria-checked={checked}
-        aria-required={required}
-        aria-invalid={!!error}
-        aria-describedby={description ? `${id}-description` : undefined}
-        className={checkboxClasses}
-        onClick={handleToggle}
-        disabled={disabled}
-        {...motionProps}
-      >
+      <div className="relative flex-shrink-0">
+        <input
+          ref={ref}
+          type="checkbox"
+          id={id}
+          checked={checked}
+          onChange={(e) => onChange(e.target.checked)}
+          disabled={disabled}
+          required={required}
+          aria-invalid={!!error}
+          aria-describedby={error ? `${id}-error` : description ? `${id}-description` : undefined}
+          className="sr-only peer"
+        />
+        <motion.label
+          htmlFor={id}
+          className={clsx(checkboxClasses, 'cursor-pointer peer-focus-visible:ring-3 peer-focus-visible:ring-accent-emerald peer-focus-visible:ring-offset-2')}
+          onClick={handleToggle}
+          {...motionProps}
+        >
         {/* Checkmark */}
         <motion.div
           initial={false}
@@ -123,7 +128,7 @@ const Checkbox = forwardRef<HTMLButtonElement, CheckboxProps>(({
           transition={{ duration: 0.2, ease: 'easeInOut' }}
           className="absolute inset-0 flex items-center justify-center"
         >
-          <CheckIcon className="w-3 h-3" strokeWidth={3} />
+          <CheckIcon className="w-4 h-4" strokeWidth={3} />
         </motion.div>
 
         {/* Focus ring for underwater variant */}
@@ -135,7 +140,8 @@ const Checkbox = forwardRef<HTMLButtonElement, CheckboxProps>(({
             transition={{ duration: 0.2 }}
           />
         )}
-      </motion.button>
+        </motion.label>
+      </div>
 
       {/* Label and description */}
       {(label || description) && (
@@ -170,12 +176,15 @@ const Checkbox = forwardRef<HTMLButtonElement, CheckboxProps>(({
           
           {error && (
             <motion.p
+              id={`${id}-error`}
               className="mt-1 text-xs text-error flex items-center gap-1"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.2 }}
+              role="alert"
+              aria-live="polite"
             >
-              <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+              <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                 <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
               </svg>
               {error}

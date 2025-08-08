@@ -2,43 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import Enhanced Typography */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Source+Sans+Pro:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+/* Import Modern Design System */
+@import '../styles/aquascene-theme.css';
+
+/* Import Accessibility and Mobile Fixes */
+@import '../styles/accessibility-fixes.css';
+@import '../styles/mobile-fixes.css';
+
+/* Import Browser Compatibility CSS */
+@import '../styles/browser-compatibility.css';
 
 :root {
-  /* VIBRANT NEON COLOR PALETTE - DESIGNED TO POP ON BLACK BACKGROUND */
-  --color-primary: #00FF88; /* Electric Green */
-  --color-primary-light: #33FFAA;   /* Bright Mint */
-  --color-primary-dark: #00CC6A;    /* Deep Electric Green */
-  --color-secondary: #00D4FF; /* Electric Cyan */
-  --color-secondary-light: #33E0FF;   /* Bright Sky Blue */
-  --color-secondary-dark: #00AACC;    /* Deep Electric Cyan */
-  --color-accent: #FF4081; /* Hot Pink */
-  --color-accent-light: #FF6BB3;   /* Electric Pink */
-  --color-accent-mint: #00FFD4;    /* Neon Mint */
-  --color-accent-wood: #FFAA33;    /* Bright Orange */
-  --color-success: #00FF66;
-  --color-warning: #FFD700; /* Bright Gold */
-  --color-error: #FF3366; /* Hot Red */
-  --color-info: #33AAFF; /* Bright Blue */
-  --color-plant-green: #44FF44; /* Neon Green */
-  --color-plant-red: #FF4444; /* Bright Red */
-  --color-substrate-brown: #FF8844; /* Bright Orange */
-  --color-rock-gray: #CCCCCC; /* Light Gray */
+  /* MODERN AQUASCAPING PALETTE - PROFESSIONAL & VIBRANT */
+  --color-primary: #00B4A6; /* Professional teal - main brand */
+  --color-primary-light: #2de5a3;   /* Bright aqua accent */
+  --color-primary-dark: #0a7f75;    /* Deep teal - sophisticated */
+  --color-secondary: #FF6B47; /* Warm coral - energy & CTAs */
+  --color-secondary-light: #f18a48;   /* Bright coral accent */
+  --color-secondary-dark: #ba3c1a;    /* Deep coral - grounded */
+  --color-accent: #88D8A3; /* Sea foam green - natural */
+  --color-accent-light: #a7f9d7;   /* Bright sea foam */
+  --color-accent-mint: #6df2c1;    /* Mint green - fresh */
+  --color-accent-wood: #f6b47d;    /* Natural wood tone */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b; /* Warm amber */
+  --color-error: #ef4444; /* Clear red */
+  --color-info: #3b82f6; /* Ocean blue */
+  --color-plant-green: #16a34a; /* Natural green */
+  --color-plant-red: #dc2626; /* Natural red */
+  --color-substrate-brown: #a16207; /* Natural brown */
+  --color-rock-gray: #6b7280; /* Natural gray */
   
-  /* High Contrast Neutral Colors for Black Background */
-  --color-background: #000000; /* Pure Black */
-  --color-foreground: #FFFFFF; /* Pure White */
-  --color-muted: #1A1A1A; /* Dark Gray */
-  --color-surface: #2A2A2A; /* Medium Gray */
-  --color-border: #444444; /* Light Gray Border */
+  /* MODERN NEUTRAL SYSTEM - AQUATIC INSPIRED */
+  --color-background: #000000; /* Pure black for depth */
+  --color-foreground: #FFFFFF; /* Pure white for contrast */
+  --color-muted: #0f1419; /* Ocean depths */
+  --color-surface: #1a2332; /* Deep water */
+  --color-border: #2D3748; /* Charcoal - sophisticated */
   
   
-  /* Professional Typography Stack */
-  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-accent: 'Source Serif Pro', Georgia, 'Times New Roman', serif;
-  --font-display: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* MODERN TYPOGRAPHY STACK - RIDE ENGINE INSPIRED */
+  --font-primary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: 'Montserrat', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   
   /* Premium Spacing System - Based on 8px grid */
   --space-xs: 0.5rem;   /* 8px */
@@ -84,7 +91,7 @@
   --ease-spring: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* AQUARIUM MODE - IMMERSIVE UNDERWATER EXPERIENCE */
+/* AQUARIUM MODE - IMMERSIVE UNDERWATER EXPERIENCE WITH MODERN COLORS */
 @media (prefers-color-scheme: dark), (prefers-color-scheme: light) {
   :root {
     --color-background: rgba(15, 50, 80, 0.4); /* Deep Ocean Blue */
@@ -92,12 +99,382 @@
     --color-muted: rgba(25, 80, 120, 0.6); /* Ocean Depth */
     --color-surface: rgba(70, 130, 180, 0.4); /* Steel Blue Surface */
     --color-border: rgba(135, 206, 250, 0.5); /* Light Blue Border */
-    --color-primary: #00FF88; /* Electric Green */
-    --color-secondary: #00D4FF; /* Electric Cyan */
-    --color-accent: #FF4081; /* Hot Pink */
-    --color-accent-light: #FF6BB3; /* Electric Pink */
-    --color-accent-mint: #00FFD4; /* Neon Mint */
+    
+    /* Modern aquatic colors that pop underwater */
+    --color-primary: #00B4A6; /* Professional teal */
+    --color-secondary: #FF6B47; /* Warm coral */
+    --color-accent: #88D8A3; /* Sea foam */
+    --color-accent-light: #a7f9d7; /* Bright sea foam */
+    --color-accent-mint: #6df2c1; /* Mint accent */
   }
+}
+
+/* ===============================================
+   DARK MODE SUPPORT - MODERN AQUATIC THEMES
+   =============================================== */
+
+.dark {
+  /* Dark mode color overrides */
+  --color-background: #0f1419; /* Ocean depths */
+  --color-foreground: #f8fffe; /* Pearl white */
+  --color-muted: #1a2332; /* Deep water */
+  --color-surface: #2d3748; /* Charcoal */
+  --color-border: #4a5568; /* Lighter charcoal */
+}
+
+.dark body {
+  background: linear-gradient(135deg, #0f1419 0%, #1a2332 50%, #2d3748 100%) !important;
+}
+
+.dark .glass-modern {
+  background: rgba(0, 17, 51, 0.2);
+  border: 1px solid rgba(136, 216, 163, 0.2);
+}
+
+.dark .glass-aqua {
+  background: rgba(0, 180, 166, 0.15);
+  border: 1px solid rgba(0, 180, 166, 0.3);
+}
+
+.dark .form-input {
+  background: rgba(0, 17, 51, 0.3) !important;
+  border-color: rgba(136, 216, 163, 0.3) !important;
+}
+
+.dark .form-input:focus {
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 3px rgba(0, 180, 166, 0.2) !important;
+}
+
+/* ===============================================
+   MODERN ANIMATION SYSTEM - AQUATIC MICRO-INTERACTIONS
+   =============================================== */
+
+/* Underwater current effect */
+@keyframes current-flow {
+  0%, 100% {
+    transform: translateX(0px) translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateX(3px) translateY(-2px) rotate(0.5deg);
+  }
+  50% {
+    transform: translateX(0px) translateY(-4px) rotate(0deg);
+  }
+  75% {
+    transform: translateX(-2px) translateY(-2px) rotate(-0.3deg);
+  }
+}
+
+/* Gentle floating animation */
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.02);
+  }
+}
+
+/* Water ripple effect */
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* Caustic light patterns */
+@keyframes caustic-light {
+  0%, 100% {
+    transform: translateX(0) scale(1) rotate(0deg);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translateX(10px) scale(1.05) rotate(1deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateX(5px) scale(1.1) rotate(0deg);
+    opacity: 0.7;
+  }
+  75% {
+    transform: translateX(-5px) scale(1.05) rotate(-1deg);
+    opacity: 0.5;
+  }
+}
+
+/* Bubble rise animation */
+@keyframes bubble-rise-modern {
+  0% {
+    transform: translateY(100vh) translateX(0px) scale(0.3);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  25% {
+    transform: translateY(75vh) translateX(5px) scale(0.6);
+  }
+  50% {
+    transform: translateY(50vh) translateX(-3px) scale(0.8);
+  }
+  75% {
+    transform: translateY(25vh) translateX(8px) scale(1);
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-10vh) translateX(-5px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Animation utility classes */
+.animate-current {
+  animation: current-flow 8s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float-gentle 4s ease-in-out infinite;
+}
+
+.animate-ripple {
+  animation: ripple 0.8s ease-out;
+}
+
+.animate-caustics {
+  animation: caustic-light 12s ease-in-out infinite;
+}
+
+.animate-bubble {
+  animation: bubble-rise-modern 10s linear infinite;
+}
+
+/* CONVERSION OPTIMIZATION ANIMATIONS */
+
+/* Fade in up animation for staggered reveals */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Scale in animation for counters */
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.4s ease-out forwards;
+}
+
+/* Slide in from left for activity feed */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.5s ease-out forwards;
+}
+
+/* Pulse animation for live indicators */
+@keyframes pulse-gentle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-gentle {
+  animation: pulse-gentle 2s ease-in-out infinite;
+}
+
+/* Bounce animation for badges */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-bounceIn {
+  animation: bounceIn 0.6s ease-out forwards;
+}
+
+/* Glow animation for urgency elements */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(255, 107, 71, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 107, 71, 0.6), 0 0 30px rgba(255, 107, 71, 0.4);
+  }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Number counting animation */
+@keyframes countUp {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-countUp {
+  animation: countUp 0.3s ease-out forwards;
+}
+
+/* Testimonial slide animation */
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slideInFromRight {
+  animation: slideInFromRight 0.6s ease-out forwards;
+}
+
+/* Shake animation for urgency */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-2px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(2px);
+  }
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Heartbeat animation for CTAs */
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.1);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(1);
+  }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+/* Stagger delay utilities for coordinated animations */
+.animate-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animate-delay-500 {
+  animation-delay: 500ms;
+}
+
+.animate-delay-700 {
+  animation-delay: 700ms;
+}
+
+.animate-delay-1000 {
+  animation-delay: 1000ms;
+}
+
+/* Hover animations */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.hover-glow {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(0, 180, 166, 0.4);
+}
+
+.hover-coral-glow:hover {
+  box-shadow: 0 0 20px rgba(255, 107, 71, 0.4);
 }
 
 /* Base Styles */
@@ -114,10 +491,12 @@ body {
   padding: 0;
   background: #000000 !important; /* Black base for aquarium depth */
   color: var(--color-foreground) !important;
-  font-family: var(--font-primary);
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   overflow-x: hidden;
   min-height: 100vh;
 }
@@ -209,48 +588,66 @@ p, span, div, label {
   color: var(--color-accent-mint) !important;
 }
 
-/* VIBRANT NEON GLOW EFFECTS */
-.neon-glow-primary {
+/* MODERN AQUATIC GLOW EFFECTS - PROFESSIONAL YET VIBRANT */
+.aqua-glow-primary {
   color: var(--color-primary) !important;
-  text-shadow: 0 0 5px var(--color-primary), 0 0 10px var(--color-primary), 0 0 15px var(--color-primary) !important;
+  text-shadow: 0 0 8px rgba(0, 180, 166, 0.5), 0 0 16px rgba(0, 180, 166, 0.3) !important;
 }
 
-.neon-glow-secondary {
+.aqua-glow-coral {
   color: var(--color-secondary) !important;
-  text-shadow: 0 0 5px var(--color-secondary), 0 0 10px var(--color-secondary), 0 0 15px var(--color-secondary) !important;
+  text-shadow: 0 0 8px rgba(255, 107, 71, 0.5), 0 0 16px rgba(255, 107, 71, 0.3) !important;
 }
 
-.neon-glow-accent {
+.aqua-glow-seafoam {
   color: var(--color-accent) !important;
-  text-shadow: 0 0 5px var(--color-accent), 0 0 10px var(--color-accent), 0 0 15px var(--color-accent) !important;
+  text-shadow: 0 0 8px rgba(136, 216, 163, 0.5), 0 0 16px rgba(136, 216, 163, 0.3) !important;
 }
 
-/* PULSING COLORS FOR INTERACTIVE ELEMENTS */
-.pulse-primary {
-  animation: pulse-primary 2s ease-in-out infinite;
+/* MODERN PULSING EFFECTS FOR INTERACTIVE ELEMENTS */
+.pulse-aqua {
+  animation: pulse-aqua 3s ease-in-out infinite;
 }
 
-.pulse-secondary {
-  animation: pulse-secondary 2s ease-in-out infinite;
+.pulse-coral {
+  animation: pulse-coral 3s ease-in-out infinite;
 }
 
-.pulse-accent {
-  animation: pulse-accent 2s ease-in-out infinite;
+.pulse-seafoam {
+  animation: pulse-seafoam 3s ease-in-out infinite;
 }
 
-@keyframes pulse-primary {
-  0%, 100% { color: var(--color-primary); text-shadow: 0 0 5px var(--color-primary); }
-  50% { color: var(--color-primary-light); text-shadow: 0 0 15px var(--color-primary), 0 0 25px var(--color-primary); }
+@keyframes pulse-aqua {
+  0%, 100% { 
+    color: var(--color-primary); 
+    text-shadow: 0 0 8px rgba(0, 180, 166, 0.3); 
+  }
+  50% { 
+    color: var(--color-primary-light); 
+    text-shadow: 0 0 16px rgba(0, 180, 166, 0.6), 0 0 24px rgba(0, 180, 166, 0.4); 
+  }
 }
 
-@keyframes pulse-secondary {
-  0%, 100% { color: var(--color-secondary); text-shadow: 0 0 5px var(--color-secondary); }
-  50% { color: var(--color-secondary-light); text-shadow: 0 0 15px var(--color-secondary), 0 0 25px var(--color-secondary); }
+@keyframes pulse-coral {
+  0%, 100% { 
+    color: var(--color-secondary); 
+    text-shadow: 0 0 8px rgba(255, 107, 71, 0.3); 
+  }
+  50% { 
+    color: var(--color-secondary-light); 
+    text-shadow: 0 0 16px rgba(255, 107, 71, 0.6), 0 0 24px rgba(255, 107, 71, 0.4); 
+  }
 }
 
-@keyframes pulse-accent {
-  0%, 100% { color: var(--color-accent); text-shadow: 0 0 5px var(--color-accent); }
-  50% { color: var(--color-accent-light); text-shadow: 0 0 15px var(--color-accent), 0 0 25px var(--color-accent); }
+@keyframes pulse-seafoam {
+  0%, 100% { 
+    color: var(--color-accent); 
+    text-shadow: 0 0 8px rgba(136, 216, 163, 0.3); 
+  }
+  50% { 
+    color: var(--color-accent-light); 
+    text-shadow: 0 0 16px rgba(136, 216, 163, 0.6), 0 0 24px rgba(136, 216, 163, 0.4); 
+  }
 }
 
 /* ENSURE ALL LINKS AND INTERACTIVE ELEMENTS ARE BRIGHT */
@@ -269,68 +666,93 @@ a:hover, button:hover {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* MODERN FORM STYLING */
 .waitlist-form {
-  background: rgba(255, 255, 255, 0.15) !important;
-  backdrop-filter: blur(20px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(24px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
 }
 
 .form-input {
   color: #FFFFFF !important;
-  background: rgba(255, 255, 255, 0.1) !important;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  font-family: var(--font-body) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.form-input:focus {
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 3px rgba(0, 180, 166, 0.1) !important;
 }
 
 .form-input::placeholder {
-  color: rgba(255, 255, 255, 0.7) !important;
+  color: rgba(255, 255, 255, 0.6) !important;
 }
 
 .form-label {
   color: #FFFFFF !important;
   font-weight: 500 !important;
+  font-family: var(--font-body) !important;
 }
 
-/* Improved focus states for accessibility */
+/* MODERN FOCUS STATES FOR ACCESSIBILITY */
 *:focus-visible {
-  outline: 3px solid var(--color-accent-emerald);
+  outline: 3px solid var(--color-primary);
   outline-offset: 2px;
-  border-radius: var(--radius-sm);
+  border-radius: 4px;
 }
 
-/* Glass morphism utility classes */
-.glass-effect {
+/* Specific focus states for buttons */
+button:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+/* Specific focus states for form elements */
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* MODERN GLASS MORPHISM - PROFESSIONAL & REFINED */
+.glass-modern {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: var(--shadow-glass);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
-.glass-underwater {
-  background: rgba(6, 182, 212, 0.1);
+.glass-aqua {
+  background: rgba(0, 180, 166, 0.1);
   backdrop-filter: blur(24px);
-  border: 1px solid rgba(103, 232, 249, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(8, 145, 178, 0.4);
+  border: 1px solid rgba(0, 180, 166, 0.2);
+  box-shadow: 0 12px 40px rgba(0, 180, 166, 0.2);
 }
 
-.glass-deep-water {
-  background: rgba(16, 185, 129, 0.15);
+.glass-coral {
+  background: rgba(255, 107, 71, 0.1);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 107, 71, 0.2);
+  box-shadow: 0 12px 40px rgba(255, 107, 71, 0.2);
+}
+
+.glass-seafoam {
+  background: rgba(136, 216, 163, 0.1);
+  backdrop-filter: blur(28px);
+  border: 1px solid rgba(136, 216, 163, 0.2);
+  box-shadow: 0 10px 35px rgba(136, 216, 163, 0.25);
+}
+
+.glass-ocean {
+  background: rgba(0, 17, 51, 0.15);
   backdrop-filter: blur(32px);
-  border: 1px solid rgba(110, 231, 183, 0.25);
-  box-shadow: 0 12px 40px 0 rgba(5, 150, 105, 0.4);
-}
-
-.glass-emerald {
-  background: rgba(16, 185, 129, 0.12);
-  backdrop-filter: blur(28px);
-  border: 1px solid rgba(110, 231, 183, 0.3);
-  box-shadow: 0 10px 35px 0 rgba(5, 150, 105, 0.35);
-}
-
-.glass-cyan {
-  background: rgba(6, 182, 212, 0.12);
-  backdrop-filter: blur(28px);
-  border: 1px solid rgba(103, 232, 249, 0.3);
-  box-shadow: 0 10px 35px 0 rgba(8, 145, 178, 0.35);
+  border: 1px solid rgba(136, 216, 163, 0.3);
+  box-shadow: 0 16px 48px rgba(0, 17, 51, 0.3);
 }
 
 /* Water ripple effect */
@@ -1008,7 +1430,7 @@ a:hover, button:hover {
   }
 }
 
-/* Safe area support for modern mobile devices */
+/* SAFE AREA SUPPORT FOR MODERN DEVICES */
 .safe-area-top {
   padding-top: max(1rem, env(safe-area-inset-top));
 }
@@ -1023,6 +1445,27 @@ a:hover, button:hover {
 
 .safe-area-right {
   padding-right: max(1rem, env(safe-area-inset-right));
+}
+
+/* MODERN LAYOUT UTILITIES */
+.container-aqua {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 3rem);
+}
+
+.section-modern {
+  padding: clamp(4rem, 8vw, 8rem) 0;
+}
+
+.hero-modern {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #000000 0%, #0f1419 50%, #1a2332 100%);
 }
 
 /* Mobile button improvements */

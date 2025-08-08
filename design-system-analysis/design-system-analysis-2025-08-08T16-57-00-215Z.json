@@ -1,0 +1,689 @@
+{
+  "timestamp": "2025-08-08T16:57:00.211Z",
+  "url": "http://localhost:3000",
+  "designSystem": {
+    "colors": [
+      "rgb(0, 0, 0)",
+      "rgb(226, 232, 240)",
+      "rgb(255, 255, 255)",
+      "rgb(2, 8, 23)",
+      "rgba(37, 99, 235, 0.1)",
+      "rgb(37, 99, 235)",
+      "rgb(100, 116, 139)",
+      "rgb(241, 245, 249)",
+      "rgb(75, 85, 99)",
+      "rgb(248, 250, 252)",
+      "rgb(245, 158, 11)",
+      "rgb(220, 252, 231)",
+      "rgb(22, 101, 52)"
+    ],
+    "typography": {
+      "fontFamilies": [
+        "__Inter_e8ce0c, __Inter_Fallback_e8ce0c"
+      ],
+      "fontSizes": [
+        "36px",
+        "24px",
+        "18px",
+        "14px",
+        "16px",
+        "20px",
+        "12px"
+      ],
+      "fontWeights": [
+        "700",
+        "600",
+        "500",
+        "400"
+      ],
+      "lineHeights": [
+        "40px",
+        "24px",
+        "28px",
+        "20px",
+        "16px"
+      ],
+      "headings": [
+        {
+          "tag": "H1",
+          "text": "PyAirtable AI Assistant",
+          "fontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+          "fontSize": "36px",
+          "fontWeight": "700",
+          "lineHeight": "40px",
+          "color": "rgba(0, 0, 0, 0)",
+          "marginTop": "0px",
+          "marginBottom": "0px"
+        },
+        {
+          "tag": "H3",
+          "text": "PyAirtable Assistant",
+          "fontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+          "fontSize": "24px",
+          "fontWeight": "600",
+          "lineHeight": "24px",
+          "color": "rgb(2, 8, 23)",
+          "marginTop": "0px",
+          "marginBottom": "0px"
+        },
+        {
+          "tag": "H3",
+          "text": "Try These Examples",
+          "fontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+          "fontSize": "18px",
+          "fontWeight": "600",
+          "lineHeight": "28px",
+          "color": "rgb(2, 8, 23)",
+          "marginTop": "0px",
+          "marginBottom": "0px"
+        },
+        {
+          "tag": "H4",
+          "text": "Data Analysis",
+          "fontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+          "fontSize": "14px",
+          "fontWeight": "500",
+          "lineHeight": "20px",
+          "color": "rgb(2, 8, 23)",
+          "marginTop": "0px",
+          "marginBottom": "0px"
+        },
+        {
+          "tag": "H4",
+          "text": "Formula Creation",
+          "fontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+          "fontSize": "14px",
+          "fontWeight": "500",
+          "lineHeight": "20px",
+          "color": "rgb(2, 8, 23)",
+          "marginTop": "0px",
+          "marginBottom": "0px"
+        },
+        {
+          "tag": "H4",
+          "text": "Automation Ideas",
+          "fontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+          "fontSize": "14px",
+          "fontWeight": "500",
+          "lineHeight": "20px",
+          "color": "rgb(2, 8, 23)",
+          "marginTop": "0px",
+          "marginBottom": "0px"
+        },
+        {
+          "tag": "H3",
+          "text": "💡 Pro Tips",
+          "fontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+          "fontSize": "18px",
+          "fontWeight": "600",
+          "lineHeight": "28px",
+          "color": "rgb(2, 8, 23)",
+          "marginTop": "0px",
+          "marginBottom": "0px"
+        },
+        {
+          "tag": "H3",
+          "text": "🚀 System Status",
+          "fontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+          "fontSize": "18px",
+          "fontWeight": "600",
+          "lineHeight": "28px",
+          "color": "rgb(2, 8, 23)",
+          "marginTop": "0px",
+          "marginBottom": "0px"
+        }
+      ],
+      "bodyText": [
+        {
+          "tag": "DIV",
+          "text": "PyAirtable AI AssistantAsk questions about your Ai",
+          "fontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "color": "rgb(2, 8, 23)"
+        },
+        {
+          "tag": "DIV",
+          "text": "PyAirtable AI AssistantAsk questions about your Ai",
+          "fontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "color": "rgb(2, 8, 23)"
+        },
+        {
+          "tag": "DIV",
+          "text": "PyAirtable AI AssistantAsk questions about your Ai",
+          "fontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "color": "rgb(2, 8, 23)"
+        },
+        {
+          "tag": "DIV",
+          "text": "PyAirtable AI Assistant",
+          "fontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "color": "rgb(2, 8, 23)"
+        },
+        {
+          "tag": "P",
+          "text": "Ask questions about your Airtable data, create for",
+          "fontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+          "fontSize": "20px",
+          "fontWeight": "400",
+          "lineHeight": "28px",
+          "color": "rgb(100, 116, 139)"
+        },
+        {
+          "tag": "DIV",
+          "text": "Data AnalysisFormula CreationSmart InsightsNatural",
+          "fontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "color": "rgb(2, 8, 23)"
+        },
+        {
+          "tag": "DIV",
+          "text": "Data Analysis",
+          "fontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+          "fontSize": "12px",
+          "fontWeight": "600",
+          "lineHeight": "16px",
+          "color": "rgb(2, 8, 23)"
+        },
+        {
+          "tag": "DIV",
+          "text": "Formula Creation",
+          "fontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+          "fontSize": "12px",
+          "fontWeight": "600",
+          "lineHeight": "16px",
+          "color": "rgb(2, 8, 23)"
+        },
+        {
+          "tag": "DIV",
+          "text": "Smart Insights",
+          "fontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+          "fontSize": "12px",
+          "fontWeight": "600",
+          "lineHeight": "16px",
+          "color": "rgb(2, 8, 23)"
+        },
+        {
+          "tag": "DIV",
+          "text": "Natural Language",
+          "fontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+          "fontSize": "12px",
+          "fontWeight": "600",
+          "lineHeight": "16px",
+          "color": "rgb(2, 8, 23)"
+        },
+        {
+          "tag": "DIV",
+          "text": "PyAirtable Assistantdisconnected[data-radix-scroll",
+          "fontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "color": "rgb(2, 8, 23)"
+        },
+        {
+          "tag": "DIV",
+          "text": "PyAirtable Assistantdisconnected[data-radix-scroll",
+          "fontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "color": "rgb(2, 8, 23)"
+        },
+        {
+          "tag": "DIV",
+          "text": "PyAirtable Assistantdisconnected[data-radix-scroll",
+          "fontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "color": "rgb(2, 8, 23)"
+        },
+        {
+          "tag": "DIV",
+          "text": "PyAirtable Assistantdisconnected",
+          "fontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "color": "rgb(2, 8, 23)"
+        },
+        {
+          "tag": "DIV",
+          "text": "PyAirtable Assistantdisconnected",
+          "fontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "color": "rgb(2, 8, 23)"
+        },
+        {
+          "tag": "DIV",
+          "text": "disconnected",
+          "fontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "color": "rgb(2, 8, 23)"
+        },
+        {
+          "tag": "DIV",
+          "text": "disconnected",
+          "fontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+          "fontSize": "12px",
+          "fontWeight": "600",
+          "lineHeight": "16px",
+          "color": "rgb(75, 85, 99)"
+        },
+        {
+          "tag": "SPAN",
+          "text": "disconnected",
+          "fontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+          "fontSize": "12px",
+          "fontWeight": "600",
+          "lineHeight": "16px",
+          "color": "rgb(75, 85, 99)"
+        },
+        {
+          "tag": "DIV",
+          "text": "[data-radix-scroll-area-viewport]{scrollbar-width:",
+          "fontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "lineHeight": "24px",
+          "color": "rgb(2, 8, 23)"
+        }
+      ]
+    },
+    "spacing": {
+      "margins": [
+        "257px",
+        "32px",
+        "16px",
+        "12px",
+        "24px",
+        "348px",
+        "44px",
+        "4px"
+      ],
+      "paddings": [
+        "32px",
+        "16px",
+        "12px",
+        "2px",
+        "10px",
+        "24px"
+      ],
+      "gaps": [
+        "8px",
+        "4px",
+        "32px",
+        "12px"
+      ],
+      "borderRadius": [
+        "9999px",
+        "8px"
+      ]
+    },
+    "components": {
+      "buttons": [
+        {
+          "text": "",
+          "classes": "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10",
+          "backgroundColor": "rgb(37, 99, 235)",
+          "color": "rgb(248, 250, 252)",
+          "borderRadius": "6px",
+          "padding": "0px",
+          "fontSize": "14px",
+          "fontWeight": "500",
+          "border": "0px solid rgb(226, 232, 240)",
+          "cursor": "default"
+        }
+      ],
+      "inputs": [
+        {
+          "type": "text",
+          "placeholder": "Try asking: 'Analyze my Facebook posts table' or 'Create a formula to calculate engagement rate'",
+          "classes": "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 flex-1",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(2, 8, 23)",
+          "borderRadius": "6px",
+          "padding": "8px 12px",
+          "fontSize": "14px",
+          "border": "1px solid rgb(226, 232, 240)",
+          "width": "760.664px",
+          "height": "40px"
+        }
+      ],
+      "cards": [
+        {
+          "classes": "rounded-lg border bg-card text-card-foreground shadow-sm flex flex-col max-h-[600px] h-[600px]",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "padding": "0px",
+          "margin": "0px",
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
+          "border": "1px solid rgb(226, 232, 240)"
+        },
+        {
+          "classes": "rounded-lg border bg-card text-card-foreground shadow-sm",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "padding": "0px",
+          "margin": "0px",
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
+          "border": "1px solid rgb(226, 232, 240)"
+        },
+        {
+          "classes": "rounded-lg border bg-card text-card-foreground shadow-sm",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "padding": "0px",
+          "margin": "24px 0px 0px",
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
+          "border": "1px solid rgb(226, 232, 240)"
+        },
+        {
+          "classes": "rounded-lg border bg-card text-card-foreground shadow-sm",
+          "backgroundColor": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "padding": "0px",
+          "margin": "24px 0px 0px",
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
+          "border": "1px solid rgb(226, 232, 240)"
+        }
+      ]
+    },
+    "layout": {
+      "layoutMethod": {
+        "flexbox": true,
+        "grid": true,
+        "float": false
+      },
+      "bodyStyles": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "fontFamily": "__Inter_e8ce0c, __Inter_Fallback_e8ce0c",
+        "fontSize": "16px",
+        "lineHeight": "24px",
+        "color": "rgb(2, 8, 23)",
+        "margin": "0px",
+        "padding": "0px"
+      },
+      "mainContainer": {
+        "maxWidth": "1400px",
+        "width": "1400px",
+        "margin": "0px 257px",
+        "padding": "32px 16px",
+        "display": "block"
+      },
+      "breakpoints": {
+        "hasMediaQueries": true
+      }
+    },
+    "accessibility": {
+      "colorContrast": {
+        "potentialIssues": [
+          {
+            "element": "HTML",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "needsAnalysis": true
+          },
+          {
+            "element": "HEAD",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "needsAnalysis": true
+          },
+          {
+            "element": "META",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "needsAnalysis": true
+          },
+          {
+            "element": "META",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "needsAnalysis": true
+          },
+          {
+            "element": "LINK",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "needsAnalysis": true
+          },
+          {
+            "element": "LINK",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "needsAnalysis": true
+          },
+          {
+            "element": "SCRIPT",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "needsAnalysis": true
+          },
+          {
+            "element": "SCRIPT",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "needsAnalysis": true
+          },
+          {
+            "element": "SCRIPT",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "needsAnalysis": true
+          },
+          {
+            "element": "SCRIPT",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "needsAnalysis": true
+          },
+          {
+            "element": "SCRIPT",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "needsAnalysis": true
+          },
+          {
+            "element": "TITLE",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "needsAnalysis": true
+          },
+          {
+            "element": "META",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "needsAnalysis": true
+          },
+          {
+            "element": "META",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "needsAnalysis": true
+          },
+          {
+            "element": "LINK",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "needsAnalysis": true
+          },
+          {
+            "element": "META",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "needsAnalysis": true
+          },
+          {
+            "element": "META",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "needsAnalysis": true
+          },
+          {
+            "element": "META",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "needsAnalysis": true
+          },
+          {
+            "element": "META",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "needsAnalysis": true
+          },
+          {
+            "element": "META",
+            "backgroundColor": "rgba(0, 0, 0, 0)",
+            "color": "rgb(0, 0, 0)",
+            "needsAnalysis": true
+          }
+        ]
+      },
+      "focusIndicators": {
+        "customFocusStyles": true,
+        "focusableElements": 2
+      },
+      "semanticStructure": {
+        "landmarks": 1,
+        "headingHierarchy": [
+          {
+            "level": "H1",
+            "text": "PyAirtable AI Assistant"
+          },
+          {
+            "level": "H3",
+            "text": "PyAirtable Assistant"
+          },
+          {
+            "level": "H3",
+            "text": "Try These Examples"
+          },
+          {
+            "level": "H4",
+            "text": "Data Analysis"
+          },
+          {
+            "level": "H4",
+            "text": "Formula Creation"
+          },
+          {
+            "level": "H4",
+            "text": "Automation Ideas"
+          },
+          {
+            "level": "H3",
+            "text": "💡 Pro Tips"
+          },
+          {
+            "level": "H3",
+            "text": "🚀 System Status"
+          }
+        ]
+      }
+    },
+    "meta": {
+      "totalElements": 185,
+      "totalStylesheets": 1,
+      "totalInlineStyles": 6,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      }
+    }
+  },
+  "responsive": {
+    "Mobile": {
+      "breakpoint": "Mobile",
+      "viewport": {
+        "width": 375,
+        "height": 667
+      },
+      "elementsOffScreen": 0,
+      "horizontalScroll": false,
+      "verticalScroll": true,
+      "touchTargets": [
+        {
+          "width": 255,
+          "height": 40,
+          "meetsMobileStandards": false
+        },
+        {
+          "width": 40,
+          "height": 40,
+          "meetsMobileStandards": false
+        }
+      ]
+    },
+    "Tablet": {
+      "breakpoint": "Tablet",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "elementsOffScreen": 0,
+      "horizontalScroll": false,
+      "verticalScroll": true,
+      "touchTargets": [
+        {
+          "width": 648,
+          "height": 40,
+          "meetsMobileStandards": false
+        },
+        {
+          "width": 40,
+          "height": 40,
+          "meetsMobileStandards": false
+        }
+      ]
+    },
+    "Desktop": {
+      "breakpoint": "Desktop",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "elementsOffScreen": 0,
+      "horizontalScroll": false,
+      "verticalScroll": true,
+      "touchTargets": [
+        {
+          "width": 760.6640625,
+          "height": 40,
+          "meetsMobileStandards": false
+        },
+        {
+          "width": 40,
+          "height": 40,
+          "meetsMobileStandards": false
+        }
+      ]
+    }
+  },
+  "scores": {
+    "colorConsistency": 100,
+    "typographyConsistency": 100,
+    "spacingConsistency": 100,
+    "componentConsistency": 75,
+    "responsiveDesign": 90,
+    "accessibilityCompliance": 90,
+    "overallDesignSystemScore": 79
+  }
+}

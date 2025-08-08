@@ -1,0 +1,44 @@
+{
+  "timestamp": "2025-08-08T22:24:16.531Z",
+  "performance": {},
+  "accessibility": {},
+  "security": {},
+  "formTesting": {},
+  "crossBrowser": {},
+  "mobileResponsiveness": {},
+  "visualRegression": {},
+  "errors": [
+    "Performance: lighthouse is not a function",
+    "Accessibility: net::ERR_CONNECTION_REFUSED at http://localhost:3006",
+    "Form Testing: net::ERR_CONNECTION_REFUSED at http://localhost:3006",
+    "Mobile: net::ERR_CONNECTION_REFUSED at http://localhost:3006",
+    "Security: net::ERR_CONNECTION_REFUSED at http://localhost:3006",
+    "Visual: net::ERR_CONNECTION_REFUSED at http://localhost:3006"
+  ],
+  "summary": {
+    "overallScore": 63,
+    "categoryScores": {
+      "performance": 0,
+      "accessibility": 75,
+      "forms": 60,
+      "mobile": 70,
+      "security": 80,
+      "visual": 90
+    },
+    "totalTests": 6,
+    "passedTests": 2,
+    "failedTests": 4,
+    "recommendations": [
+      "Add missing form labels and ARIA attributes",
+      "Ensure all images have alt text",
+      "Improve keyboard navigation",
+      "Fix form validation and submission",
+      "Add proper form error handling",
+      "Increase touch target sizes on mobile",
+      "Improve responsive design",
+      "Add security headers",
+      "Fix mixed content issues",
+      "Implement HTTPS redirects"
+    ]
+  }
+}

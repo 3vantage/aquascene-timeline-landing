@@ -1,0 +1,121 @@
+{
+  "timestamp": "2025-08-08T22:28:57.710Z",
+  "performance": {
+    "loadTime": 972,
+    "performanceMetrics": {
+      "domContentLoaded": 0.20000004768371582,
+      "loadComplete": 0,
+      "firstPaint": 228,
+      "firstContentfulPaint": 228
+    },
+    "resourceCount": {
+      "total": 10,
+      "css": 2,
+      "js": 4,
+      "images": 0
+    },
+    "passed": true,
+    "score": 95
+  },
+  "accessibility": {},
+  "security": {
+    "headers": {
+      "x-frame-options": null,
+      "x-content-type-options": null,
+      "x-xss-protection": null,
+      "strict-transport-security": null,
+      "content-security-policy": null,
+      "referrer-policy": null,
+      "permissions-policy": null
+    },
+    "analysis": {
+      "protocol": "http:",
+      "mixedContent": [
+        {
+          "element": "script",
+          "src": "http://localhost:3006/aquascene-waitlist//_next/static/chunks/vendors-b7cd1637cb6a1efb.js"
+        },
+        {
+          "element": "script",
+          "src": "http://localhost:3006/aquascene-waitlist//_next/static/chunks/main-app-8927f2e8701040d5.js"
+        },
+        {
+          "element": "script",
+          "src": "http://localhost:3006/aquascene-waitlist/_next/static/chunks/app/layout-ac80479c5b8ee00a.js"
+        },
+        {
+          "element": "script",
+          "src": "http://localhost:3006/aquascene-waitlist//_next/static/chunks/polyfills-42372ed130431b0a.js"
+        },
+        {
+          "element": "script",
+          "src": "http://localhost:3006/aquascene-waitlist//_next/static/chunks/webpack-3134fdd72c2471b5.js"
+        },
+        {
+          "element": "link",
+          "src": "http://localhost:3006/aquascene-waitlist//_next/static/css/f77fb259145d5c3d.css"
+        },
+        {
+          "element": "link",
+          "src": "http://localhost:3006/aquascene-waitlist//_next/static/css/05de6ca8d95c0077.css"
+        },
+        {
+          "element": "link",
+          "src": "http://localhost:3006/aquascene-waitlist//_next/static/chunks/webpack-3134fdd72c2471b5.js"
+        },
+        {
+          "element": "link",
+          "src": "http://localhost:3006/favicon.ico"
+        }
+      ],
+      "externalResources": [],
+      "potentialXSSVectors": [],
+      "formSecurity": {}
+    },
+    "score": 19,
+    "passed": false,
+    "issues": [
+      "Site not served over HTTPS",
+      "9 mixed content resources found",
+      "Missing X-Frame-Options header (clickjacking protection)",
+      "Missing X-Content-Type-Options header",
+      "Missing Content-Security-Policy header"
+    ],
+    "recommendations": [
+      "Enable HTTPS for all pages",
+      "Fix mixed content by using HTTPS for all resources",
+      "Add X-Frame-Options: DENY or SAMEORIGIN header",
+      "Implement Content Security Policy (CSP) header"
+    ]
+  },
+  "formTesting": {},
+  "mobileResponsiveness": {},
+  "visualRegression": {},
+  "summary": {
+    "overallScore": 19,
+    "categoryScores": {
+      "performance": 95,
+      "accessibility": 0,
+      "forms": 0,
+      "mobile": 0,
+      "security": 19,
+      "visual": 0
+    },
+    "totalTests": 6,
+    "passedTests": 1,
+    "failedTests": 5,
+    "recommendations": [
+      "Enable HTTPS for all pages",
+      "Fix mixed content by using HTTPS for all resources",
+      "Add X-Frame-Options: DENY or SAMEORIGIN header",
+      "Implement Content Security Policy (CSP) header"
+    ],
+    "testStatus": "REQUIRES_FIXES"
+  },
+  "errors": [
+    "Accessibility: page.waitForTimeout is not a function",
+    "Form Testing: page.waitForTimeout is not a function",
+    "Mobile: page.waitForTimeout is not a function",
+    "Visual: page.waitForTimeout is not a function"
+  ]
+}

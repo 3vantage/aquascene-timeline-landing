@@ -4,6 +4,7 @@ import React from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { staggerContainer, staggerItem } from '@/lib/animation-config';
+import { FeatureCardsGrid } from '@/components/animations/FeatureCards';
 import { 
   CubeIcon, 
   CalculatorIcon, 
@@ -74,6 +75,17 @@ const FeaturesSection: React.FC = () => {
       isPartnership: true
     }
   ] : baseFeatures;
+  
+  // Convert features for FeatureCardsGrid
+  const featureCardsData = features.map(feature => ({
+    title: feature.title,
+    description: feature.description,
+    icon: feature.title.includes('3D') ? 'plant' as const : 
+          feature.title.includes('Calculator') ? 'calculator' as const :
+          feature.title.includes('Community') ? 'fish' as const :
+          feature.title.includes('Partnership') ? 'fish' as const :
+          'ai' as const
+  }));
 
   const floatingIcons = [
     { icon: SparklesIcon, x: '10%', y: '20%', delay: 0 },
@@ -140,97 +152,13 @@ const FeaturesSection: React.FC = () => {
             </p>
           </motion.div>
 
-          {/* Enhanced features grid */}
-          <div className="grid md:grid-cols-2 gap-10 lg:gap-16">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                variants={staggerItem}
-                className="group"
-              >
-                <div className={`card-hover glass-deep-water p-10 rounded-3xl h-full relative overflow-hidden transition-all duration-300 ${
-                  feature.isPartnership ? 'border-2 border-orange-400/50 hover:border-orange-400/70' : 'border border-emerald-500/20 hover:border-emerald-500/40'
-                }`}>
-                  {/* Partnership badge */}
-                  {feature.isPartnership && (
-                    <div className="absolute top-4 right-4 flex items-center gap-2 px-3 py-1 bg-orange-500/20 rounded-full border border-orange-400/50">
-                      <HandshakeIcon className="w-4 h-4 text-orange-400" />
-                      <span className="text-xs font-semibold text-orange-300">PARTNER</span>
-                    </div>
-                  )}
-                  
-                  {/* Animated background gradient */}
-                  <motion.div
-                    className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}
-                    initial={false}
-                  />
-                  
-                  {/* Enhanced icon container */}
-                  <motion.div
-                    className={`inline-flex p-5 rounded-3xl bg-gradient-to-br ${feature.color} mb-8 relative shadow-lg`}
-                    whileHover={{ 
-                      scale: 1.1,
-                      rotate: feature.isPartnership ? [0, 5, -5, 0] : 5
-                    }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <feature.icon className="w-10 h-10 text-white" />
-                    
-                    {/* Enhanced icon glow effect */}
-                    <motion.div
-                      className={`absolute inset-0 bg-gradient-to-br ${feature.color} rounded-2xl blur-xl -z-10`}
-                      animate={{
-                        scale: [1, 1.3, 1],
-                        opacity: [0.4, 0.7, 0.4]
-                      }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: 'easeInOut',
-                        delay: feature.delay
-                      }}
-                    />
-                  </motion.div>
-
-                  <h3 className={`heading-h3 text-white mb-4 group-hover:${feature.isPartnership ? 'text-orange-300' : 'text-emerald-300'} transition-colors duration-300`}>
-                    {feature.title}
-                  </h3>
-                  
-                  <p className="text-body text-white/80 leading-relaxed text-pretty mb-6">
-                    {feature.description}
-                  </p>
-
-                  {/* Benefit highlight */}
-                  <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg ${
-                    feature.isPartnership ? 'bg-orange-500/20 border border-orange-400/30' : 'bg-emerald-500/20 border border-emerald-400/30'
-                  }`}>
-                    <TagIcon className={`w-4 h-4 ${feature.isPartnership ? 'text-orange-400' : 'text-emerald-400'}`} />
-                    <span className={`text-sm font-semibold ${feature.isPartnership ? 'text-orange-300' : 'text-emerald-300'}`}>
-                      {feature.benefit}
-                    </span>
-                  </div>
-
-                  {/* Enhanced hover effects */}
-                  <motion.div
-                    className={`absolute inset-0 rounded-2xl border-2 ${
-                      feature.isPartnership 
-                        ? 'border-orange-400/0 group-hover:border-orange-400/60' 
-                        : 'border-emerald-400/0 group-hover:border-emerald-400/60'
-                    } transition-colors duration-300 pointer-events-none`}
-                    initial={false}
-                  />
-
-                  {/* Caustic water effect on hover */}
-                  <motion.div
-                    className={`absolute inset-0 bg-gradient-to-r from-transparent ${
-                      feature.isPartnership ? 'via-orange-400/10' : 'via-emerald-400/10'
-                    } to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none`}
-                    initial={false}
-                  />
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          {/* Enhanced features grid with new FeatureCards */}
+          <motion.div variants={staggerItem}>
+            <FeatureCardsGrid 
+              features={featureCardsData}
+              className="gap-8 lg:gap-10"
+            />
+          </motion.div>
 
           {/* Regional partnership showcase for Hungarian users */}
           {isHungarian && (

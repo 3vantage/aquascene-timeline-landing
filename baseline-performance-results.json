@@ -1,0 +1,63 @@
+{
+  "timestamp": "2025-08-08T15:20:53.867Z",
+  "pageLoad": {
+    "totalLoadTime": 4812,
+    "domContentLoaded": null,
+    "loadComplete": null,
+    "ttfb": 3296,
+    "firstPaint": 4228,
+    "firstContentfulPaint": 4228
+  },
+  "bundleSizes": {
+    "total": 2535,
+    "javascript": 2520,
+    "css": 16,
+    "images": 0,
+    "resourceCount": 5
+  },
+  "memory": {
+    "used": 78,
+    "total": 87,
+    "limit": 2222
+  },
+  "interactions": {
+    "formInteractionTime": 637
+  },
+  "resourceDetails": [
+    {
+      "name": "layout.css?v=1754666450312",
+      "size": 16,
+      "duration": 314,
+      "type": "link"
+    },
+    {
+      "name": "webpack.js?v=1754666450312",
+      "size": 28,
+      "duration": 322,
+      "type": "link"
+    },
+    {
+      "name": "main-app.js?v=1754666450312",
+      "size": 1605,
+      "duration": 863,
+      "type": "script"
+    },
+    {
+      "name": "app-pages-internals.js",
+      "size": 63,
+      "duration": 338,
+      "type": "script"
+    },
+    {
+      "name": "page.js",
+      "size": 823,
+      "duration": 684,
+      "type": "script"
+    }
+  ],
+  "grades": {
+    "loadTime": "B",
+    "fcp": "C",
+    "ttfb": "C"
+  }
+}

@@ -81,7 +81,7 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>(({
 
   const selectClasses = clsx(
     'relative w-full px-4 py-3 text-left bg-transparent border-2 rounded-lg transition-all duration-200 focus:outline-none focus-visible:ring-3 focus-visible:ring-accent-emerald focus-visible:ring-offset-2',
-    'flex items-center justify-between cursor-pointer',
+    'flex items-center justify-between cursor-pointer min-h-[48px]',
     {
       // Default variant
       'glass-underwater border-primary/30 hover:border-primary focus:border-primary': 
@@ -141,7 +141,7 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>(({
   );
 
   const optionClasses = (option: SelectOption, isSelected: boolean) => clsx(
-    'w-full px-4 py-3 text-left text-base cursor-pointer transition-colors duration-150 flex items-center justify-between',
+    'w-full px-4 py-3 text-left text-base cursor-pointer transition-colors duration-150 flex items-center justify-between min-h-[48px]',
     {
       'text-white hover:bg-primary/20': variant === 'default' && !isSelected && !option.disabled,
       'text-primary bg-primary/20 neon-glow-primary': variant === 'default' && isSelected,
@@ -173,6 +173,9 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>(({
           disabled={disabled}
           aria-expanded={isOpen}
           aria-haspopup="listbox"
+          aria-invalid={!!error}
+          aria-describedby={error ? `select-${name || id}-error` : undefined}
+          aria-labelledby={label ? `select-${name || id}-label` : undefined}
         >
           <span className={textClasses}>
             {selectedOption ? selectedOption.label : placeholder}
@@ -199,6 +202,7 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>(({
         {/* Animated label */}
         {label && (
           <motion.label
+            id={`select-${name || id}-label`}
             className={labelClasses}
             animate={isFocused || selectedOption ? {
               y: -20,
@@ -265,13 +269,16 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>(({
       <AnimatePresence>
         {error && (
           <motion.div
+            id={`select-${name || id}-error`}
             className="mt-2 text-sm text-error flex items-center gap-1"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
+            role="alert"
+            aria-live="polite"
           >
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
               <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
             </svg>
             {error}

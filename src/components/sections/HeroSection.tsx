@@ -1,11 +1,25 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from '@/components/ui/Button';
-import AquariumBuilderPreview from '@/components/sections/AquariumBuilderPreview';
 import { staggerContainer, staggerItem } from '@/lib/animation-config';
 import { ArrowRightIcon, SparklesIcon, PlayIcon, CubeTransparentIcon } from '@heroicons/react/24/outline';
+import HeroBackground from '@/components/animations/HeroBackground';
+import WaterRipples from '@/components/animations/WaterRipples';
+
+// Lazy load the heavy AquariumBuilderPreview component
+const AquariumBuilderPreview = dynamic(() => import('@/components/sections/AquariumBuilderPreview'), {
+  ssr: false, // Disable SSR for this heavy interactive component
+  loading: () => (
+    <div className="relative aspect-[4/3] max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto">
+      <div className="h-full glass-deep-water rounded-2xl sm:rounded-3xl p-6 sm:p-8 animate-pulse">
+        <div className="h-full bg-gradient-to-br from-accent-mint/20 to-transparent rounded-xl" />
+      </div>
+    </div>
+  ),
+});
 
 const HeroSection: React.FC = () => {
   const [isDemoActive, setIsDemoActive] = useState(false);
@@ -30,9 +44,12 @@ const HeroSection: React.FC = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden section-spacing">
-      {/* Professional natural background */}
+      {/* Enhanced Aquarium Background */}
+      <HeroBackground className="absolute inset-0" />
+      <WaterRipples className="absolute inset-0" intensity={1.2} count={6} />
+      
+      {/* Additional atmospheric effects */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/15 to-accent-mint/10" />
         <div className="absolute inset-0 bg-gradient-radial from-transparent via-accent-light/5 to-primary-dark/10" />
         
         {/* Natural caustic effects */}

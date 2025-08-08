@@ -4,6 +4,13 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import AquariumBackground from '@/components/animations/AquariumBackground';
 
+// Initialize keyboard navigation on client side
+if (typeof window !== 'undefined') {
+  import('@/lib/keyboard-navigation').then(({ keyboardNavigation }) => {
+    // Keyboard navigation is automatically initialized
+  });
+}
+
 interface AquariumLayoutProps {
   children: React.ReactNode;
 }
