@@ -83,7 +83,7 @@ const FeaturesSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative py-20 lg:py-32 overflow-hidden">
+    <section className="relative section-spacing overflow-hidden section-gap">
       {/* Enhanced background elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-900/10 to-transparent" />
       
@@ -109,7 +109,7 @@ const FeaturesSection: React.FC = () => {
         </motion.div>
       ))}
 
-      <div className="container mx-auto px-6 lg:px-8" ref={ref}>
+      <div className="container mx-auto container-padding" ref={ref}>
         <motion.div
           variants={staggerContainer}
           initial="initial"
@@ -119,7 +119,7 @@ const FeaturesSection: React.FC = () => {
           {/* Enhanced section header */}
           <motion.div
             variants={staggerItem}
-            className="text-center mb-16 lg:mb-20"
+            className="text-center mb-20 lg:mb-24"
           >
             <motion.div
               className="inline-flex items-center gap-2 glass-underwater px-6 py-3 rounded-full mb-6 border border-cyan-400/30"
@@ -131,28 +131,24 @@ const FeaturesSection: React.FC = () => {
               <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
             </motion.div>
             
-            <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 text-balance">
+            <h2 className="heading-h2 text-white mb-8 text-balance">
               Stop Wasting Money on Failed Aquascapes
             </h2>
             
-            <p className="text-xl text-cyan-100/80 max-w-3xl mx-auto text-pretty">
+            <p className="text-lead text-cyan-100/80 max-w-3xl mx-auto text-pretty">
               See exactly what works before you spend a single lev or forint
             </p>
           </motion.div>
 
           {/* Enhanced features grid */}
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-16">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
                 variants={staggerItem}
-                whileHover={{ 
-                  y: -8,
-                  transition: { duration: 0.3, ease: 'easeOut' }
-                }}
                 className="group"
               >
-                <div className={`glass-deep-water p-8 rounded-2xl h-full relative overflow-hidden hover:shadow-2xl transition-all duration-300 ${
+                <div className={`card-hover glass-deep-water p-10 rounded-3xl h-full relative overflow-hidden transition-all duration-300 ${
                   feature.isPartnership ? 'border-2 border-orange-400/50 hover:border-orange-400/70' : 'border border-emerald-500/20 hover:border-emerald-500/40'
                 }`}>
                   {/* Partnership badge */}
@@ -171,14 +167,14 @@ const FeaturesSection: React.FC = () => {
                   
                   {/* Enhanced icon container */}
                   <motion.div
-                    className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${feature.color} mb-6 relative shadow-lg`}
+                    className={`inline-flex p-5 rounded-3xl bg-gradient-to-br ${feature.color} mb-8 relative shadow-lg`}
                     whileHover={{ 
                       scale: 1.1,
                       rotate: feature.isPartnership ? [0, 5, -5, 0] : 5
                     }}
                     transition={{ duration: 0.3 }}
                   >
-                    <feature.icon className="w-8 h-8 text-white" />
+                    <feature.icon className="w-10 h-10 text-white" />
                     
                     {/* Enhanced icon glow effect */}
                     <motion.div
@@ -196,11 +192,11 @@ const FeaturesSection: React.FC = () => {
                     />
                   </motion.div>
 
-                  <h3 className={`text-2xl font-bold text-white mb-3 group-hover:${feature.isPartnership ? 'text-orange-300' : 'text-emerald-300'} transition-colors duration-300`}>
+                  <h3 className={`heading-h3 text-white mb-4 group-hover:${feature.isPartnership ? 'text-orange-300' : 'text-emerald-300'} transition-colors duration-300`}>
                     {feature.title}
                   </h3>
                   
-                  <p className="text-white/80 leading-relaxed text-pretty mb-4">
+                  <p className="text-body text-white/80 leading-relaxed text-pretty mb-6">
                     {feature.description}
                   </p>
 
@@ -280,19 +276,19 @@ const FeaturesSection: React.FC = () => {
           {/* Enhanced bottom CTA section */}
           <motion.div
             variants={staggerItem}
-            className="text-center mt-16 lg:mt-20"
+            className="text-center mt-20 lg:mt-24"
           >
-            <div className="glass-underwater p-8 rounded-2xl max-w-3xl mx-auto border border-cyan-400/30">
-              <h3 className="text-3xl font-bold text-white mb-4">
+            <div className="premium-hover glass-underwater p-10 rounded-3xl max-w-4xl mx-auto border border-cyan-400/30">
+              <h3 className="heading-h3 text-white mb-6">
                 Ready to Stop Wasting Money on Failed Aquascapes?
               </h3>
-              <p className="text-cyan-100/80 mb-6 text-lg">
+              <p className="text-lead text-cyan-100/80 mb-8">
                 Join 2,500+ smart aquascapers who design with confidence and save 60% on plant costs.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <motion.button
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-2xl hover:shadow-emerald-500/50 transition-all duration-300"
+                  className="button-premium inline-flex items-center gap-3 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-10 py-5 rounded-2xl font-bold text-lg"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => {

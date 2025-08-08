@@ -80,7 +80,7 @@ const TestimonialsSection: React.FC = () => {
   };
 
   return (
-    <section className="relative py-20 lg:py-32 overflow-hidden">
+    <section className="relative section-spacing overflow-hidden section-gap">
       {/* Enhanced background effects */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary-dark/30 to-transparent" />
@@ -109,7 +109,7 @@ const TestimonialsSection: React.FC = () => {
         ))}
       </div>
 
-      <div className="container mx-auto px-6 lg:px-8" ref={ref}>
+      <div className="container mx-auto container-padding" ref={ref}>
         <motion.div
           variants={staggerContainer}
           initial="initial"
@@ -119,7 +119,7 @@ const TestimonialsSection: React.FC = () => {
           {/* Enhanced section header */}
           <motion.div
             variants={staggerItem}
-            className="text-center mb-16 lg:mb-20"
+            className="text-center mb-20 lg:mb-24"
           >
             <motion.div
               className="inline-flex items-center gap-2 glass-underwater px-6 py-3 rounded-full mb-6 border border-emerald-400/30"
@@ -135,28 +135,24 @@ const TestimonialsSection: React.FC = () => {
               />
             </motion.div>
             
-            <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 text-balance">
+            <h2 className="heading-h2 text-white mb-8 text-balance">
               Real Results from Central European Aquascapers
             </h2>
             
-            <p className="text-xl text-emerald-100/80 max-w-3xl mx-auto text-pretty">
+            <p className="text-lead text-emerald-100/80 max-w-3xl mx-auto text-pretty">
               See how local aquascapers are already winning contests and saving money
             </p>
           </motion.div>
 
           {/* Enhanced testimonials grid */}
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 mb-16">
+          <div className="grid md:grid-cols-2 gap-10 lg:gap-16 mb-20">
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={index}
                 variants={staggerItem}
-                whileHover={{ 
-                  y: -8,
-                  transition: { duration: 0.3, ease: 'easeOut' }
-                }}
                 className="group"
               >
-                <div className="glass-deep-water p-8 rounded-2xl h-full relative overflow-hidden border border-emerald-500/20 hover:border-emerald-500/40 transition-all duration-300 hover:shadow-2xl hover:shadow-emerald-500/20">
+                <div className="card-hover glass-deep-water p-10 rounded-3xl h-full relative overflow-hidden border border-emerald-500/20 hover:border-emerald-500/40 transition-all duration-300">
                   {/* Enhanced background gradient on hover */}
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
@@ -164,12 +160,12 @@ const TestimonialsSection: React.FC = () => {
                   />
                   
                   {/* Quote decoration */}
-                  <div className="absolute top-4 right-4 text-emerald-400/30 text-4xl font-serif">
+                  <div className="absolute top-6 right-6 text-emerald-400/30 text-5xl font-serif">
                     "
                   </div>
                   
                   {/* Special badges */}
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <div className="flex flex-wrap gap-3 mb-6">
                     {testimonial.contest && (
                       <div className="inline-flex items-center gap-1 px-3 py-1 bg-yellow-500/20 border border-yellow-400/40 rounded-full">
                         <TrophyIcon className="w-4 h-4 text-yellow-400" />
@@ -185,30 +181,30 @@ const TestimonialsSection: React.FC = () => {
                   </div>
 
                   {/* Star Rating with enhanced animation */}
-                  <div className="flex items-center gap-1 mb-4">
+                  <div className="flex items-center gap-1 mb-6">
                     {renderStars(testimonial.rating)}
                   </div>
 
                   {/* Testimonial content */}
-                  <blockquote className="text-white/90 leading-relaxed text-pretty mb-6 relative z-10">
+                  <blockquote className="text-body text-white/90 leading-relaxed text-pretty mb-8 relative z-10">
                     {testimonial.content}
                   </blockquote>
 
                   {/* Special metrics */}
                   {(testimonial.highlight || testimonial.stat || testimonial.efficiency) && (
-                    <div className="mb-4 p-3 rounded-lg bg-emerald-500/10 border border-emerald-400/30">
-                      <div className="flex items-center gap-2 text-emerald-300 text-sm font-semibold">
-                        <SparklesIcon className="w-4 h-4" />
+                    <div className="mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-400/30">
+                      <div className="flex items-center gap-3 text-emerald-300 text-body font-semibold">
+                        <SparklesIcon className="w-5 h-5" />
                         {testimonial.highlight || testimonial.stat || testimonial.efficiency}
                       </div>
                     </div>
                   )}
 
                   {/* Author info */}
-                  <div className="flex items-center gap-4 mt-auto">
+                  <div className="flex items-center gap-5 mt-auto">
                     {/* Avatar with initials */}
                     <motion.div
-                      className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center font-bold text-white text-lg shadow-lg flex-shrink-0"
+                      className="w-14 h-14 rounded-full bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center font-bold text-white text-xl shadow-lg flex-shrink-0"
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       transition={{ duration: 0.2 }}
                     >
@@ -216,10 +212,10 @@ const TestimonialsSection: React.FC = () => {
                     </motion.div>
                     
                     <div className="min-w-0 flex-1">
-                      <div className="font-semibold text-white truncate">
+                      <div className="font-semibold text-white text-lg truncate">
                         {testimonial.name}
                       </div>
-                      <div className="text-emerald-200 text-sm truncate">
+                      <div className="text-emerald-200 text-body truncate">
                         {testimonial.role}
                       </div>
                     </div>
@@ -240,16 +236,16 @@ const TestimonialsSection: React.FC = () => {
             variants={staggerItem}
             className="text-center"
           >
-            <div className="glass-underwater p-8 rounded-2xl max-w-4xl mx-auto border border-emerald-400/30">
-              <h3 className="text-3xl font-bold text-white mb-4">
+            <div className="premium-hover glass-underwater p-12 rounded-3xl max-w-5xl mx-auto border border-emerald-400/30">
+              <h3 className="heading-h3 text-white mb-6">
                 Join These Successful Aquascapers
               </h3>
-              <p className="text-emerald-100/80 mb-6 text-lg">
+              <p className="text-lead text-emerald-100/80 mb-8">
                 Be part of Central Europe's most advanced aquascaping community and see real results like these.
               </p>
               
               <motion.button
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-2xl hover:shadow-emerald-500/50 transition-all duration-300"
+                className="button-premium inline-flex items-center gap-3 bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white px-10 py-5 rounded-2xl font-bold text-lg"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => {

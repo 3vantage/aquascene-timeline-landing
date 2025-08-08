@@ -33,7 +33,7 @@ const WaitlistSection: React.FC = () => {
   ];
 
   return (
-    <section id="waitlist" className="relative py-20 lg:py-32 overflow-hidden">
+    <section id="waitlist" className="relative section-spacing overflow-hidden section-gap">
       {/* Background effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-secondary-dark/20 via-primary/30 to-secondary-dark/20" />
       
@@ -53,33 +53,33 @@ const WaitlistSection: React.FC = () => {
         />
       </div>
 
-      <div className="container mx-auto px-6 lg:px-8 relative z-10" ref={ref}>
+      <div className="container mx-auto container-padding relative z-10" ref={ref}>
         <motion.div
           variants={staggerContainer}
           initial="initial"
           animate={isInView ? "animate" : "initial"}
           className="max-w-7xl mx-auto"
         >
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-start">
             {/* Left side - Content */}
             <div className="lg:sticky lg:top-8">
               <motion.div variants={staggerItem}>
-                <div className="inline-flex items-center gap-2 glass-underwater px-4 py-2 rounded-full mb-6">
-                  <SparklesIcon className="w-4 h-4 text-accent-emerald" />
-                  <span className="text-sm font-medium text-white">Join the Waitlist</span>
+                <div className="inline-flex items-center gap-3 glass-underwater px-6 py-3 rounded-full mb-8">
+                  <SparklesIcon className="w-5 h-5 text-accent-emerald" />
+                  <span className="text-sm font-semibold text-white tracking-wide">JOIN THE WAITLIST</span>
                 </div>
               </motion.div>
 
               <motion.h2
                 variants={staggerItem}
-                className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 text-balance"
+                className="heading-h2 text-white mb-8 text-balance"
               >
                 Join 2,500+ Smart Aquascapers
               </motion.h2>
 
               <motion.p
                 variants={staggerItem}
-                className="text-xl text-white/80 mb-8 text-pretty"
+                className="text-lead text-white/80 mb-10 text-pretty"
               >
                 Stop guessing. Start designing with confidence.
               </motion.p>
@@ -87,7 +87,7 @@ const WaitlistSection: React.FC = () => {
               {/* Stats */}
               <motion.div
                 variants={staggerItem}
-                className="grid grid-cols-3 gap-6 mb-8"
+                className="grid grid-cols-3 gap-8 mb-12"
               >
                 {stats.map((stat, index) => (
                   <motion.div
@@ -96,9 +96,9 @@ const WaitlistSection: React.FC = () => {
                     whileHover={{ scale: 1.05, y: -5 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <div className="glass-underwater p-4 rounded-xl mb-3 hover:shadow-lg transition-shadow duration-300">
+                    <div className="premium-hover glass-underwater p-5 rounded-2xl mb-4 transition-all duration-300">
                       <motion.div
-                        className={`inline-flex p-2 rounded-lg bg-gradient-to-br ${stat.color} mb-2`}
+                        className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${stat.color} mb-3`}
                         animate={{
                           rotate: [0, 5, -5, 0],
                         }}
@@ -109,17 +109,17 @@ const WaitlistSection: React.FC = () => {
                           delay: index * 0.5
                         }}
                       >
-                        <stat.icon className="w-5 h-5 text-white" />
+                        <stat.icon className="w-6 h-6 text-white" />
                       </motion.div>
-                      <div className="text-2xl font-bold text-white">{stat.value}</div>
-                      <div className="text-sm text-white/70">{stat.label}</div>
+                      <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
+                      <div className="text-small text-white/70">{stat.label}</div>
                     </div>
                   </motion.div>
                 ))}
               </motion.div>
 
               {/* Benefits list */}
-              <motion.div variants={staggerItem} className="space-y-4">
+              <motion.div variants={staggerItem} className="space-y-5">
                 {[
                   'Priority access to beta features',
                   'Exclusive aquascaping guides and tips',
@@ -128,17 +128,17 @@ const WaitlistSection: React.FC = () => {
                 ].map((benefit, index) => (
                   <motion.div
                     key={index}
-                    className="flex items-center gap-3"
+                    className="flex items-center gap-4"
                     initial={{ opacity: 0, x: -20 }}
                     animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                     transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
                   >
-                    <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-accent-emerald to-primary rounded-full flex items-center justify-center">
-                      <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="flex-shrink-0 w-7 h-7 bg-gradient-to-br from-accent-emerald to-primary rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <span className="text-white/90">{benefit}</span>
+                    <span className="text-body text-white/90">{benefit}</span>
                   </motion.div>
                 ))}
               </motion.div>
@@ -146,7 +146,7 @@ const WaitlistSection: React.FC = () => {
               {/* Social proof */}
               <motion.div
                 variants={staggerItem}
-                className="mt-8 p-6 glass-underwater rounded-xl"
+                className="mt-10 p-8 premium-hover glass-underwater rounded-2xl"
               >
                 <div className="flex items-center gap-4">
                   <div className="flex -space-x-2">
@@ -171,15 +171,15 @@ const WaitlistSection: React.FC = () => {
                     ))}
                   </div>
                   <div>
-                    <div className="text-white font-medium">Join the Community</div>
-                    <div className="text-white/70 text-sm">2,500+ aquascapers already signed up</div>
+                    <div className="text-white font-semibold text-lg">Join the Community</div>
+                    <div className="text-white/70 text-body">2,500+ aquascapers already signed up</div>
                   </div>
                 </div>
               </motion.div>
             </div>
 
             {/* Right side - Form */}
-            <motion.div variants={staggerItem} className="lg:pt-16">
+            <motion.div variants={staggerItem} className="lg:pt-20">
               <WaitlistForm />
             </motion.div>
           </div>

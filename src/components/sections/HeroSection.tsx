@@ -29,7 +29,7 @@ const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden section-spacing">
       {/* Professional natural background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/15 to-accent-mint/10" />
@@ -77,21 +77,21 @@ const HeroSection: React.FC = () => {
         ))}
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 container mx-auto container-padding">
         <motion.div
           className="max-w-7xl mx-auto"
           variants={staggerContainer}
           initial="initial"
           animate="animate"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-20 items-center">
             {/* Left Content */}
-            <div className="text-center lg:text-left px-2 sm:px-0">
+            <div className="text-center lg:text-left">
               <motion.div
                 variants={staggerItem}
-                className="flex items-center justify-center lg:justify-start mb-6"
+                className="flex items-center justify-center lg:justify-start mb-8"
               >
-                <div className="glass-underwater px-3 sm:px-6 py-2 sm:py-3 rounded-full flex items-center gap-2 sm:gap-3 border border-accent-light/30">
+                <div className="glass-underwater px-4 sm:px-6 py-3 sm:py-4 rounded-full flex items-center gap-3 sm:gap-4 border border-accent-light/30">
                   <motion.div
                     animate={{ rotate: 360 }}
                     transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
@@ -111,7 +111,7 @@ const HeroSection: React.FC = () => {
 
               <motion.h1
                 variants={staggerItem}
-                className="hero-text-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold text-white mb-4 sm:mb-6 leading-tight"
+                className="hero-text-primary heading-display text-white mb-6 sm:mb-8 text-balance"
               >
                 <span className="block text-balance">
                   <span className="bg-gradient-to-r from-primary via-accent-mint to-secondary bg-clip-text text-transparent">
@@ -133,16 +133,16 @@ const HeroSection: React.FC = () => {
 
               <motion.p
                 variants={staggerItem}
-                className="text-base sm:text-lg md:text-xl lg:text-2xl text-neutral-50/90 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 text-pretty font-light leading-relaxed px-2 sm:px-0"
+                className="text-lead text-neutral-50/90 mb-8 sm:mb-10 max-w-2xl mx-auto lg:mx-0 text-pretty"
               >
                 Plan Before You Plant <span className="hidden sm:inline">• Save Money, Avoid Mistakes</span> • Join {aquascaperCount}+ <span className="hidden sm:inline">Bulgarian & Hungarian </span>Aquascapers
               </motion.p>
 
               <motion.div
                 variants={staggerItem}
-                className="mb-8 sm:mb-10 max-w-xl mx-auto lg:mx-0"
+                className="mb-10 sm:mb-12 max-w-xl mx-auto lg:mx-0"
               >
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 text-xs sm:text-sm">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 text-sm sm:text-base">
                   <div className="flex items-center justify-center sm:justify-start gap-2 text-accent-mint">
                     <div className="w-2 h-2 bg-accent-mint rounded-full flex-shrink-0" />
                     <span>3D Visualization</span>
@@ -160,13 +160,13 @@ const HeroSection: React.FC = () => {
 
               <motion.div
                 variants={staggerItem}
-                className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start px-2 sm:px-0"
+                className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start"
               >
                 <Button
                   size="xl"
                   onClick={scrollToWaitlist}
                   rightIcon={<ArrowRightIcon className="w-4 h-4 sm:w-5 sm:h-5" />}
-                  className="bg-gradient-to-r from-accent to-accent-light hover:from-accent/90 hover:to-accent-light/90 shadow-2xl hover:shadow-accent/30 text-white border-0 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base lg:text-lg font-semibold transform hover:scale-105 transition-all duration-200 min-h-[48px] touch-manipulation"
+                  className="button-premium bg-gradient-to-r from-accent to-accent-light hover:from-accent/90 hover:to-accent-light/90 text-white border-0 px-8 sm:px-10 py-4 sm:py-5 text-base sm:text-lg font-semibold min-h-[56px] touch-manipulation"
                 >
                   <span className="hidden sm:inline">Start Designing Now</span>
                   <span className="sm:hidden">Start Designing</span>
@@ -176,7 +176,7 @@ const HeroSection: React.FC = () => {
                   variant="secondary"
                   size="xl"
                   onClick={startDemo}
-                  className="glass-underwater border-accent-light/50 text-white hover:bg-accent-light/20 hover:border-accent-light/70 px-6 sm:px-8 py-3 sm:py-4 min-h-[48px] touch-manipulation"
+                  className="premium-hover glass-underwater border-accent-light/50 text-white hover:bg-accent-light/20 hover:border-accent-light/70 px-8 sm:px-10 py-4 sm:py-5 min-h-[56px] touch-manipulation"
                   rightIcon={<PlayIcon className="w-4 h-4 sm:w-5 sm:h-5" />}
                 >
                   <span className="hidden sm:inline">Watch 3D Demo</span>
@@ -187,7 +187,7 @@ const HeroSection: React.FC = () => {
               {/* Enhanced trust indicator with live data */}
               <motion.div
                 variants={staggerItem}
-                className="mt-8 sm:mt-12 space-y-3 sm:space-y-4"
+                className="mt-12 sm:mt-16 space-y-4 sm:space-y-6"
               >
                 <div className="flex items-center justify-center lg:justify-start gap-3 sm:gap-4">
                   <div className="flex -space-x-2 sm:-space-x-3">
@@ -247,20 +247,20 @@ const HeroSection: React.FC = () => {
             {/* Revolutionary 3D Aquascape Preview */}
             <motion.div
               variants={staggerItem}
-              className="relative mt-8 lg:mt-0"
+              className="relative mt-12 lg:mt-0"
             >
               <AnimatePresence mode="wait">
                 {!isDemoActive ? (
                   <motion.div
                     key="preview"
-                    className="relative aspect-[4/3] max-w-sm sm:max-w-lg md:max-w-xl lg:max-w-2xl mx-auto"
+                    className="relative aspect-[4/3] max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto"
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.9 }}
                   >
                     {/* 3D Aquarium Container */}
                     <motion.div
-                      className="relative h-full glass-deep-water rounded-xl sm:rounded-2xl p-4 sm:p-6 overflow-hidden border border-accent-light/20"
+                      className="card-hover relative h-full glass-deep-water rounded-2xl sm:rounded-3xl p-6 sm:p-8 overflow-hidden border border-accent-light/20"
                       animate={{
                         boxShadow: [
                           '0 25px 50px rgba(231, 111, 81, 0.2)',

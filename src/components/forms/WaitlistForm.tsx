@@ -122,35 +122,35 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
   if (submissionResult?.success) {
     return (
       <motion.div
-        className={`glass-deep-water p-4 sm:p-6 md:p-8 rounded-2xl ${className}`}
+        className={`premium-hover glass-deep-water p-8 sm:p-10 md:p-12 rounded-3xl ${className}`}
         variants={fadeInUp}
         initial="initial"
         animate="animate"
       >
         <div className="text-center">
           <motion.div
-            className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-success to-accent-emerald rounded-full mb-4 sm:mb-6"
+            className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-success to-accent-emerald rounded-full mb-6 sm:mb-8"
             animate={{ scale: [0, 1.2, 1], rotate: [0, 360, 360] }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
-            <CheckCircleIcon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+            <CheckCircleIcon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
           </motion.div>
           
-          <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
+          <h3 className="heading-h3 text-white mb-6">
             Welcome, Fellow Aquascaper! 🌿
           </h3>
           
-          <p className="text-sm sm:text-base text-white/80 mb-4 sm:mb-6 px-2 sm:px-0">
+          <p className="text-body text-white/80 mb-8">
             You're now part of Central Europe's most advanced aquascaping community!
           </p>
           
-          <div className="glass-underwater p-3 sm:p-4 rounded-xl mb-4 sm:mb-6 border border-emerald-400/30">
-            <p className="text-sm sm:text-base text-emerald-300 font-semibold">
+          <div className="glass-underwater p-5 sm:p-6 rounded-2xl mb-6 sm:mb-8 border border-emerald-400/30">
+            <p className="text-body text-emerald-300 font-semibold">
               You're #{submissionResult.position} in line <span className="hidden sm:inline">• Early access coming soon!</span>
             </p>
           </div>
           
-          <p className="text-cyan-200 mb-4 sm:mb-6 text-xs sm:text-sm px-2 sm:px-0 leading-relaxed">
+          <p className="text-body text-cyan-200 mb-6 sm:mb-8 leading-relaxed">
             Check your email for your FREE aquascaping design guide <span className="hidden sm:inline">+ regional plant availability charts</span>
           </p>
           
@@ -179,19 +179,19 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
   if (submissionResult?.success === false) {
     return (
       <motion.div
-        className={`glass-deep-water p-4 sm:p-6 md:p-8 rounded-2xl border border-error/30 ${className}`}
+        className={`premium-hover glass-deep-water p-8 sm:p-10 md:p-12 rounded-3xl border border-error/30 ${className}`}
         variants={fadeInUp}
         initial="initial"
         animate="animate"
       >
         <div className="text-center">
-          <ExclamationCircleIcon className="w-10 h-10 sm:w-12 sm:h-12 text-error mx-auto mb-3 sm:mb-4" />
-          <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Something went wrong</h3>
-          <p className="text-sm sm:text-base text-white/80 mb-4 sm:mb-6 px-2 sm:px-0">{submissionResult.error}</p>
+          <ExclamationCircleIcon className="w-12 h-12 sm:w-16 sm:h-16 text-error mx-auto mb-6" />
+          <h3 className="heading-h3 text-white mb-4">Something went wrong</h3>
+          <p className="text-body text-white/80 mb-8">{submissionResult.error}</p>
           <Button
             onClick={() => setSubmissionResult(null)}
             variant="primary"
-            className="min-h-[48px] w-full sm:w-auto touch-manipulation"
+            className="button-premium min-h-[56px] w-full sm:w-auto touch-manipulation px-8 py-4"
           >
             Try Again
           </Button>
@@ -204,7 +204,7 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
   return (
     <motion.form
       onSubmit={handleSubmit(onSubmit)}
-      className={`waitlist-form glass-deep-water p-4 sm:p-6 md:p-8 rounded-2xl space-y-4 sm:space-y-6 ${className}`}
+      className={`waitlist-form premium-hover glass-deep-water p-8 sm:p-10 md:p-12 rounded-3xl space-y-6 sm:space-y-8 ${className}`}
       variants={staggerContainer}
       initial="initial"
       animate="animate"
@@ -253,10 +253,10 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
 
       {/* Interests */}
       <motion.div variants={staggerItem}>
-        <label className="block text-xs sm:text-sm font-medium text-white mb-2 sm:mb-3">
+        <label className="block text-sm font-semibold text-white mb-4">
           Interested Features
         </label>
-        <div className="space-y-2 sm:space-y-3">
+        <div className="space-y-3 sm:space-y-4">
           {interestOptions.map((interest) => (
             <Controller
               key={interest.id}
@@ -319,21 +319,21 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
       </motion.div>
 
       {/* Submit Button */}
-      <motion.div variants={staggerItem} className="pt-2 sm:pt-4">
+      <motion.div variants={staggerItem} className="pt-4 sm:pt-6">
         <Button
           type="submit"
           size="lg"
           disabled={!isValid || isSubmitting}
-          className="w-full bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 disabled:from-gray-600 disabled:to-gray-700 text-white border-0 font-semibold min-h-[48px] touch-manipulation"
-          leftIcon={<SparklesIcon className="w-4 h-4 sm:w-5 sm:h-5" />}
+          className="button-premium w-full bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 disabled:from-gray-600 disabled:to-gray-700 text-white border-0 font-semibold min-h-[56px] px-8 py-4 text-lg touch-manipulation"
+          leftIcon={<SparklesIcon className="w-5 h-5" />}
         >
           {isSubmitting ? 'Joining Waitlist...' : 'Reserve My Spot'}
         </Button>
       </motion.div>
 
       {/* Privacy Links */}
-      <motion.div variants={staggerItem} className="text-center pt-2 sm:pt-4">
-        <p className="text-xs text-white/60 leading-relaxed px-2 sm:px-0">
+      <motion.div variants={staggerItem} className="text-center pt-4 sm:pt-6">
+        <p className="text-small text-white/60 leading-relaxed">
           By joining, you agree to our{' '}
           <a href="#" className="text-cyan-400 hover:text-cyan-300 underline touch-target">
             Privacy Policy
