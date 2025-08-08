@@ -4,8 +4,8 @@ const isProd = process.env.NODE_ENV === 'production'
 
 const nextConfig = {
   output: 'export',
-  basePath: isProd ? '/aquascene-timeline-landing' : '',
-  assetPrefix: isProd ? '/aquascene-timeline-landing/' : '',
+  basePath: isProd ? '/aquascene-waitlist' : '',
+  assetPrefix: isProd ? '/aquascene-waitlist/' : '',
   images: {
     unoptimized: true,
     domains: ['images.unsplash.com', 'cdn.pixabay.com'],
