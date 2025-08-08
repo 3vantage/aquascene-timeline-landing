@@ -47,9 +47,9 @@ const Button: React.FC<ButtonProps> = ({
   );
 
   const variantClasses = {
-    primary: 'bg-gradient-to-r from-primary to-secondary text-black font-bold shadow-lg hover:shadow-primary/50 border-0 hover:from-primary/90 hover:to-secondary/90 hover:shadow-2xl',
+    primary: 'bg-gradient-to-r from-primary to-secondary text-white font-bold shadow-lg hover:shadow-primary/50 border-0 hover:from-primary/90 hover:to-secondary/90 hover:shadow-2xl neon-glow-primary',
     secondary: 'glass-underwater text-white border-2 border-accent-mint/60 hover:bg-accent-mint/20 hover:border-accent-mint/80 hover:shadow-xl hover:shadow-accent-mint/30',
-    outline: 'bg-transparent text-accent-light border-3 border-accent-light hover:bg-accent-light hover:text-black hover:shadow-xl hover:shadow-accent-light/40',
+    outline: 'bg-transparent text-accent-light border-3 border-accent-light hover:bg-accent-light hover:text-white hover:shadow-xl hover:shadow-accent-light/40',
     ghost: 'bg-transparent text-accent-mint hover:bg-accent-mint/20 hover:text-white border-0 hover:shadow-lg'
   };
 

@@ -126,7 +126,7 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>(({
       // Label positioning
       'top-3 text-base': !isFocused && !selectedOption,
       '-top-2 text-sm scale-90 origin-left px-1': (isFocused || selectedOption) && variant === 'default',
-      '-top-2 text-sm scale-90 origin-left px-1 bg-white': (isFocused || selectedOption) && variant === 'default',
+      '-top-2 text-sm scale-90 origin-left px-1 bg-black': (isFocused || selectedOption) && variant === 'default',
       '-top-2 text-sm scale-90 origin-left px-1': (isFocused || selectedOption) && (variant === 'glass' || variant === 'underwater'),
     }
   );
@@ -134,7 +134,7 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>(({
   const dropdownClasses = clsx(
     'absolute z-50 w-full mt-2 py-2 rounded-lg shadow-xl border max-h-60 overflow-y-auto',
     {
-      'bg-white border-neutral-200': variant === 'default',
+      'glass-underwater border-white/30': variant === 'default',
       'glass-underwater border-white/20': variant === 'glass',
       'glass-deep-water border-primary/30': variant === 'underwater',
     }
@@ -144,7 +144,7 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>(({
     'w-full px-4 py-3 text-left text-base cursor-pointer transition-colors duration-150 flex items-center justify-between',
     {
       'text-white hover:bg-primary/20': variant === 'default' && !isSelected && !option.disabled,
-      'text-primary bg-primary/10': variant === 'default' && isSelected,
+      'text-primary bg-primary/20 neon-glow-primary': variant === 'default' && isSelected,
       'text-white/90 hover:bg-white/10': (variant === 'glass' || variant === 'underwater') && !isSelected && !option.disabled,
       'text-accent-emerald bg-accent-emerald/20': (variant === 'glass' || variant === 'underwater') && isSelected,
       'opacity-50 cursor-not-allowed': option.disabled,

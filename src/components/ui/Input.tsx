@@ -105,7 +105,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
       // Label positioning
       'top-3 text-base': !isFocused && !hasValue,
       '-top-2 text-sm scale-90 origin-left px-1': (isFocused || hasValue) && variant === 'default',
-      '-top-2 text-sm scale-90 origin-left px-1 bg-white': (isFocused || hasValue) && variant === 'default',
+      '-top-2 text-sm scale-90 origin-left px-1 bg-black': (isFocused || hasValue) && variant === 'default',
       '-top-2 text-sm scale-90 origin-left px-1': (isFocused || hasValue) && (variant === 'glass' || variant === 'underwater'),
       'left-12': leftIcon && (!isFocused && !hasValue),
     }
