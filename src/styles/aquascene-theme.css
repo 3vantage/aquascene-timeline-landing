@@ -1,0 +1,874 @@
+/* ===============================================
+   AQUASCENE MODERN DESIGN SYSTEM
+   Inspired by Ride Engine & Mystic Boarding
+   Premium Aquascaping Theme with Glass Morphism
+   =============================================== */
+
+/* Import Google Fonts - Montserrat & Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+/* ===============================================
+   CSS CUSTOM PROPERTIES - DESIGN TOKENS
+   =============================================== */
+
+:root {
+  /* MODERN AQUASCAPING COLOR PALETTE */
+  
+  /* Primary Teal - Professional depth & trust */
+  --primary-50: #ecfff8;
+  --primary-100: #d1fde8;
+  --primary-200: #a7f9d7;
+  --primary-300: #6df2c1;
+  --primary-400: #2de5a3;
+  --primary-500: #00B4A6;
+  --primary-600: #059f8f;
+  --primary-700: #0a7f75;
+  --primary-800: #0e655e;
+  --primary-900: #12534e;
+  --primary-950: #032e2a;
+
+  /* Coral Accent - Warm energy & CTAs */
+  --coral-50: #fef7ee;
+  --coral-100: #fdecd8;
+  --coral-200: #fad5b0;
+  --coral-300: #f6b47d;
+  --coral-400: #f18a48;
+  --coral-500: #FF6B47;
+  --coral-600: #e04e23;
+  --coral-700: #ba3c1a;
+  --coral-800: #94301c;
+  --coral-900: #782a1a;
+  --coral-950: #41140c;
+
+  /* Ocean Blues - Deep sophistication */
+  --ocean-50: #f0f9ff;
+  --ocean-500: #001133;
+  --ocean-600: #0284c7;
+  --ocean-700: #0369a1;
+  --ocean-800: #075985;
+  --ocean-900: #0c4a6e;
+
+  /* Sea Foam - Natural growth */
+  --seafoam-50: #f0fdf4;
+  --seafoam-500: #88D8A3;
+  --seafoam-600: #16a34a;
+  --seafoam-700: #15803d;
+
+  /* Neutral Aquatic Tones */
+  --neutral-50: #f8fffe;   /* Pearl white */
+  --neutral-100: #f0fffe;
+  --neutral-200: #d9fffe;
+  --neutral-300: #c4fffe;
+  --neutral-800: #2D3748;  /* Charcoal - sophisticated text */
+  --neutral-900: #1a2332;
+  --neutral-950: #0f1419;  /* Ocean depths */
+
+  /* TYPOGRAPHY SYSTEM */
+  --font-display: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  /* Font weights */
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+  --font-black: 900;
+
+  /* SPACING SCALE - 8px grid system */
+  --space-0: 0;
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+  --space-20: 5rem;    /* 80px */
+  --space-24: 6rem;    /* 96px */
+  --space-32: 8rem;    /* 128px */
+
+  /* BORDER RADIUS SYSTEM */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+  --radius-4xl: 3rem;
+  --radius-full: 9999px;
+
+  /* SHADOWS & DEPTH */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  
+  /* Aquatic themed shadows */
+  --shadow-aqua: 0 12px 40px rgba(0, 180, 166, 0.25);
+  --shadow-coral: 0 12px 40px rgba(255, 107, 71, 0.25);
+  --shadow-ocean: 0 16px 48px rgba(0, 17, 51, 0.3);
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+  /* ANIMATION PROPERTIES */
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  --duration-slower: 750ms;
+
+  /* Easing functions */
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-bounce: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+  /* GLASS MORPHISM VALUES */
+  --glass-bg-light: rgba(255, 255, 255, 0.1);
+  --glass-bg-medium: rgba(255, 255, 255, 0.15);
+  --glass-bg-heavy: rgba(255, 255, 255, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-blur: blur(20px);
+  --glass-blur-heavy: blur(28px);
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --glass-bg-light: rgba(0, 17, 51, 0.15);
+    --glass-bg-medium: rgba(0, 17, 51, 0.25);
+    --glass-bg-heavy: rgba(0, 17, 51, 0.35);
+    --glass-border: rgba(0, 180, 166, 0.3);
+  }
+}
+
+/* ===============================================
+   BASE STYLES & RESETS
+   =============================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  line-height: 1.6;
+  color: var(--neutral-800);
+  background-color: var(--neutral-50);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ===============================================
+   MODERN TYPOGRAPHY SYSTEM
+   =============================================== */
+
+.heading-display {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: var(--font-bold);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.heading-h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: var(--font-bold);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.heading-h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: var(--font-semibold);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.heading-h3 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: var(--font-semibold);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.heading-h4 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: var(--font-medium);
+  line-height: 1.4;
+}
+
+.heading-h5 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  font-weight: var(--font-medium);
+  line-height: 1.4;
+}
+
+.heading-h6 {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: var(--font-medium);
+  line-height: 1.5;
+}
+
+/* Body text styles */
+.text-lead {
+  font-family: var(--font-body);
+  font-size: clamp(1.125rem, 3vw, 1.5rem);
+  font-weight: var(--font-regular);
+  line-height: 1.6;
+}
+
+.text-body {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  font-weight: var(--font-regular);
+  line-height: 1.7;
+}
+
+.text-small {
+  font-family: var(--font-body);
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  font-weight: var(--font-regular);
+  line-height: 1.6;
+}
+
+/* ===============================================
+   MODERN BUTTON SYSTEM
+   =============================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-heading);
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  font-weight: var(--font-semibold);
+  line-height: 1;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius-lg);
+  transition: all var(--duration-normal) var(--ease-in-out);
+  min-height: 48px; /* Touch target */
+  position: relative;
+  overflow: hidden;
+  touch-action: manipulation;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--primary-500);
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Primary button - Modern aqua gradient */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-500) 0%, var(--seafoam-500) 100%);
+  color: white;
+  border: none;
+  box-shadow: var(--shadow-aqua);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl), var(--shadow-aqua);
+}
+
+.btn-primary:active {
+  transform: translateY(-1px);
+}
+
+/* Secondary button - Outlined */
+.btn-secondary {
+  background: transparent;
+  color: var(--primary-600);
+  border: 2px solid var(--primary-500);
+}
+
+.btn-secondary:hover {
+  background: var(--primary-500);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Coral accent button */
+.btn-coral {
+  background: linear-gradient(135deg, var(--coral-500) 0%, var(--coral-400) 100%);
+  color: white;
+  border: none;
+  box-shadow: var(--shadow-coral);
+}
+
+.btn-coral:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl), var(--shadow-coral);
+}
+
+/* Glass button */
+.btn-glass {
+  background: var(--glass-bg-medium);
+  color: var(--neutral-800);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  box-shadow: var(--shadow-glass);
+}
+
+.btn-glass:hover {
+  background: var(--glass-bg-heavy);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg), var(--shadow-glass);
+}
+
+/* Button sizes */
+.btn-sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: clamp(0.75rem, 1.8vw, 0.875rem);
+  min-height: 40px;
+}
+
+.btn-lg {
+  padding: var(--space-4) var(--space-8);
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  min-height: 56px;
+}
+
+.btn-xl {
+  padding: var(--space-5) var(--space-10);
+  font-size: clamp(1.125rem, 3vw, 1.25rem);
+  min-height: 64px;
+}
+
+/* Full width button */
+.btn-full {
+  width: 100%;
+}
+
+/* ===============================================
+   MODERN FORM COMPONENTS
+   =============================================== */
+
+.form-group {
+  position: relative;
+  margin-bottom: var(--space-6);
+}
+
+.form-input {
+  width: 100%;
+  padding: var(--space-4) var(--space-4) var(--space-3);
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  color: var(--neutral-800);
+  background: var(--neutral-50);
+  border: 2px solid var(--neutral-300);
+  border-radius: var(--radius-lg);
+  transition: all var(--duration-normal) var(--ease-in-out);
+  min-height: 48px;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 3px rgba(0, 180, 166, 0.1);
+}
+
+/* Floating labels */
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+  transform: translateY(-1.75rem) scale(0.875);
+  color: var(--primary-600);
+  font-weight: var(--font-medium);
+}
+
+.form-label {
+  position: absolute;
+  left: var(--space-4);
+  top: var(--space-4);
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  color: var(--neutral-600);
+  pointer-events: none;
+  transform-origin: left top;
+  transition: all var(--duration-normal) var(--ease-in-out);
+}
+
+/* Error states */
+.form-input.error {
+  border-color: var(--coral-500);
+  box-shadow: 0 0 0 3px rgba(255, 107, 71, 0.1);
+}
+
+.form-error {
+  margin-top: var(--space-2);
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  color: var(--coral-600);
+  font-weight: var(--font-medium);
+}
+
+/* Glass form styling */
+.form-glass {
+  background: var(--glass-bg-light);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  box-shadow: var(--shadow-glass);
+}
+
+.form-glass .form-input {
+  background: var(--glass-bg-medium);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+}
+
+/* ===============================================
+   GLASS MORPHISM COMPONENTS
+   =============================================== */
+
+.glass-card {
+  background: var(--glass-bg-light);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-glass);
+  padding: var(--space-8);
+  transition: all var(--duration-normal) var(--ease-in-out);
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl), var(--shadow-glass);
+}
+
+.glass-heavy {
+  background: var(--glass-bg-heavy);
+  backdrop-filter: var(--glass-blur-heavy);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-aquatic {
+  background: rgba(0, 180, 166, 0.1);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid rgba(0, 180, 166, 0.2);
+  box-shadow: var(--shadow-aqua);
+}
+
+.glass-ocean {
+  background: rgba(0, 17, 51, 0.15);
+  backdrop-filter: var(--glass-blur-heavy);
+  border: 1px solid rgba(136, 216, 163, 0.3);
+  box-shadow: var(--shadow-ocean);
+}
+
+/* ===============================================
+   MODERN CARD SYSTEM
+   =============================================== */
+
+.card {
+  background: var(--neutral-50);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: all var(--duration-normal) var(--ease-in-out);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.card-body {
+  padding: var(--space-8);
+}
+
+.card-header {
+  padding: var(--space-8) var(--space-8) 0;
+}
+
+.card-footer {
+  padding: 0 var(--space-8) var(--space-8);
+}
+
+/* Feature card with icon */
+.card-feature {
+  text-align: center;
+  background: linear-gradient(135deg, var(--neutral-50) 0%, var(--primary-50) 100%);
+  border: 1px solid var(--primary-200);
+}
+
+.card-feature-icon {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto var(--space-4);
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--primary-500) 0%, var(--seafoam-500) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: white;
+  box-shadow: var(--shadow-aqua);
+}
+
+/* ===============================================
+   UNDERWATER ANIMATIONS
+   =============================================== */
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes sway-underwater {
+  0%, 100% { transform: rotate(0deg) scaleY(1); }
+  25% { transform: rotate(2deg) scaleY(1.02); }
+  75% { transform: rotate(-1.5deg) scaleY(0.98); }
+}
+
+@keyframes bubble-rise {
+  0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes water-flow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes caustic-dance {
+  0%, 100% {
+    transform: translateX(0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateX(20px) scale(1.1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Animation utility classes */
+.animate-float-gentle {
+  animation: float-gentle 4s ease-in-out infinite;
+}
+
+.animate-sway {
+  animation: sway-underwater 6s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.animate-bubble-rise {
+  animation: bubble-rise 8s linear infinite;
+}
+
+.animate-water-flow {
+  animation: water-flow 6s linear infinite;
+  background-size: 200% 200%;
+}
+
+.animate-caustics {
+  animation: caustic-dance 12s ease-in-out infinite;
+}
+
+.animate-gradient {
+  animation: gradient-shift 3s ease-in-out infinite;
+  background-size: 200% 200%;
+}
+
+/* ===============================================
+   LAYOUT UTILITIES
+   =============================================== */
+
+.container-modern {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-6);
+  padding-right: var(--space-6);
+}
+
+@media (min-width: 640px) {
+  .container-modern {
+    padding-left: var(--space-8);
+    padding-right: var(--space-8);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-modern {
+    padding-left: var(--space-12);
+    padding-right: var(--space-12);
+  }
+}
+
+.section-modern {
+  padding-top: var(--space-20);
+  padding-bottom: var(--space-20);
+}
+
+@media (min-width: 768px) {
+  .section-modern {
+    padding-top: var(--space-24);
+    padding-bottom: var(--space-24);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-modern {
+    padding-top: var(--space-32);
+    padding-bottom: var(--space-32);
+  }
+}
+
+.hero-modern {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===============================================
+   GRADIENT TEXT EFFECTS
+   =============================================== */
+
+.text-gradient-aqua {
+  background: linear-gradient(135deg, var(--primary-500), var(--seafoam-500));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 200% 200%;
+}
+
+.text-gradient-coral {
+  background: linear-gradient(135deg, var(--coral-500), var(--coral-300));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 200% 200%;
+}
+
+.text-gradient-ocean {
+  background: linear-gradient(135deg, var(--ocean-500), var(--primary-500), var(--seafoam-500));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 200% 200%;
+}
+
+.text-gradient-animated {
+  background: linear-gradient(135deg, var(--primary-500), var(--seafoam-500), var(--coral-500));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease-in-out infinite;
+}
+
+/* ===============================================
+   RESPONSIVE DESIGN UTILITIES
+   =============================================== */
+
+/* Hide on mobile */
+.hidden-mobile {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hidden-mobile {
+    display: block;
+  }
+  
+  .hidden-desktop {
+    display: none;
+  }
+}
+
+/* Touch-friendly sizing for mobile */
+@media (max-width: 767px) {
+  .btn {
+    min-height: 48px;
+    padding: var(--space-4) var(--space-6);
+  }
+  
+  .form-input {
+    min-height: 48px;
+    font-size: 16px; /* Prevent iOS zoom */
+  }
+}
+
+/* ===============================================
+   ACCESSIBILITY & PERFORMANCE
+   =============================================== */
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .btn-primary,
+  .btn-coral {
+    border: 2px solid white;
+  }
+  
+  .form-input {
+    border-width: 3px;
+  }
+  
+  .glass-card,
+  .glass-heavy,
+  .glass-aquatic,
+  .glass-ocean {
+    background: var(--neutral-50);
+    border: 2px solid var(--neutral-800);
+    backdrop-filter: none;
+  }
+}
+
+/* Focus-visible for keyboard navigation */
+.btn:focus-visible,
+.form-input:focus-visible {
+  outline: 3px solid var(--coral-500);
+  outline-offset: 2px;
+}
+
+/* ===============================================
+   PRINT STYLES
+   =============================================== */
+
+@media print {
+  .glass-card,
+  .glass-heavy,
+  .glass-aquatic,
+  .glass-ocean {
+    background: white;
+    border: 1px solid #ccc;
+    backdrop-filter: none;
+    box-shadow: none;
+  }
+  
+  .animate-float-gentle,
+  .animate-sway,
+  .animate-bubble-rise,
+  .animate-water-flow,
+  .animate-caustics,
+  .animate-gradient {
+    animation: none;
+  }
+  
+  .btn {
+    box-shadow: none;
+  }
+}
+
+/* ===============================================
+   CUSTOM SCROLLBAR
+   =============================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--neutral-200);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--primary-500), var(--seafoam-500));
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--primary-600), var(--seafoam-600));
+}
+
+/* ===============================================
+   SELECTION STYLING
+   =============================================== */
+
+::selection {
+  background: rgba(0, 180, 166, 0.2);
+  color: var(--neutral-800);
+}
+
+/* ===============================================
+   MODERN LOADING STATES
+   =============================================== */
+
+.loading-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--neutral-200) 0%,
+    var(--neutral-300) 50%,
+    var(--neutral-200) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.loading-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}

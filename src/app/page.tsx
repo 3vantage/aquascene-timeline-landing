@@ -1,12 +1,23 @@
 import { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import HeroSection from '@/components/sections/HeroSection';
-import FeaturesSection from '@/components/sections/FeaturesSection';
-import WaitlistSection from '@/components/sections/WaitlistSection';
-import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import AquariumLayout from '@/components/layout/AquariumLayout';
 
+// Lazy load components that are below the fold to improve initial load time
+const FeaturesSection = dynamic(() => import('@/components/sections/FeaturesSection'), {
+  ssr: true, // Enable SSR for SEO
+});
+
+const WaitlistSection = dynamic(() => import('@/components/sections/WaitlistSection'), {
+  ssr: true, // Enable SSR for SEO since this is the main CTA
+});
+
+const TestimonialsSection = dynamic(() => import('@/components/sections/TestimonialsSection'), {
+  loading: () => <div className="h-64 animate-pulse bg-gradient-to-r from-accent/10 to-transparent" />,
+});
+
 // Force static generation for export
-export const dynamic = 'force-static';
+export const dynamicParams = false;
 
 // Generate metadata for SEO
 export const metadata: Metadata = {

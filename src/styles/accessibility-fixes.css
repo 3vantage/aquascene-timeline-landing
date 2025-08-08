@@ -1,0 +1,498 @@
+/* ===================================================================
+   ACCESSIBILITY FIXES CSS
+   Comprehensive accessibility improvements for WCAG AA compliance
+   =================================================================== */
+
+/* Screen Reader Only Content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: inherit;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Focus Management */
+.focus-trap {
+  position: relative;
+}
+
+/* Enhanced Focus Indicators */
+*:focus-visible {
+  outline: 3px solid var(--color-accent-emerald);
+  outline-offset: 2px;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+/* High contrast focus for form elements */
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-accent-emerald);
+  outline-offset: 2px;
+  box-shadow: 
+    0 0 0 1px rgba(255, 255, 255, 0.5),
+    0 0 0 4px rgba(16, 185, 129, 0.3);
+}
+
+/* Custom checkbox focus */
+input[type="checkbox"]:focus-visible + label {
+  outline: 3px solid var(--color-accent-emerald);
+  outline-offset: 2px;
+}
+
+/* Skip Navigation Link Enhancement */
+.skip-nav {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  z-index: 1000;
+  color: black;
+  background: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: top 0.2s ease;
+}
+
+.skip-nav:focus {
+  top: 6px;
+}
+
+/* ARIA Live Region Styling */
+[aria-live] {
+  position: relative;
+}
+
+[aria-live="polite"],
+[aria-live="assertive"] {
+  border-left: 3px solid var(--color-accent-emerald);
+  padding-left: 0.5rem;
+}
+
+/* Error Message Enhancement */
+[role="alert"] {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  background-color: rgba(255, 51, 102, 0.1);
+  border: 1px solid rgba(255, 51, 102, 0.3);
+  color: var(--color-error);
+}
+
+/* Form Validation States */
+[aria-invalid="true"] {
+  border-color: var(--color-error) !important;
+  box-shadow: 0 0 0 2px rgba(255, 51, 102, 0.2);
+}
+
+[aria-invalid="false"] {
+  border-color: var(--color-success) !important;
+}
+
+/* Required Field Indicators */
+[aria-required="true"] + label::after,
+.required::after {
+  content: " *";
+  color: var(--color-error);
+  font-weight: bold;
+  margin-left: 0.25rem;
+}
+
+/* Button States */
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  user-select: none;
+}
+
+button[aria-pressed="true"] {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+button[aria-expanded="true"] {
+  background-color: var(--color-surface);
+}
+
+/* Loading State Accessibility */
+[aria-busy="true"] {
+  cursor: wait;
+  position: relative;
+}
+
+[aria-busy="true"]::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid transparent;
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Dialog/Modal Accessibility */
+[role="dialog"] {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background: white;
+  border: 2px solid var(--color-primary);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+[role="dialog"] [role="document"] {
+  padding: 1.5rem;
+}
+
+/* Overlay for modals */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 999;
+}
+
+/* Listbox and Combobox Accessibility */
+[role="listbox"] {
+  max-height: 200px;
+  overflow-y: auto;
+  border: 2px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--color-background);
+}
+
+[role="option"] {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+[role="option"]:hover,
+[role="option"]:focus {
+  background-color: var(--color-surface);
+  outline: none;
+}
+
+[role="option"][aria-selected="true"] {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+[role="option"][aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Touch Target Improvements */
+@media (pointer: coarse) {
+  button,
+  input,
+  select,
+  textarea,
+  [role="button"],
+  [role="checkbox"],
+  [role="radio"],
+  a {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.75rem;
+  }
+  
+  /* Ensure adequate spacing between touch targets */
+  button + button,
+  button + a,
+  a + button,
+  a + a {
+    margin-left: 8px;
+  }
+}
+
+/* Color Contrast Utilities */
+.high-contrast {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+
+.high-contrast:focus-visible {
+  outline: 4px solid blue;
+  outline-offset: 2px;
+}
+
+/* Text Scaling Support */
+@media (min-resolution: 1.5dppx) {
+  body {
+    font-size: 18px;
+  }
+}
+
+/* Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  /* Keep essential accessibility animations */
+  [role="alert"],
+  [aria-live] {
+    animation: none !important;
+    transition: opacity 0.15s ease !important;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  :root {
+    --color-background: white;
+    --color-foreground: black;
+    --color-primary: blue;
+    --color-secondary: purple;
+    --color-error: red;
+    --color-success: green;
+    --color-warning: orange;
+  }
+  
+  * {
+    background-color: transparent !important;
+    border-color: currentColor !important;
+  }
+  
+  button,
+  input,
+  select,
+  textarea {
+    background-color: white !important;
+    color: black !important;
+    border: 2px solid black !important;
+  }
+  
+  a {
+    color: blue !important;
+    text-decoration: underline !important;
+  }
+  
+  [role="alert"],
+  .error {
+    background-color: red !important;
+    color: white !important;
+  }
+  
+  .glass-effect,
+  .glass-underwater,
+  .glass-deep-water {
+    background-color: white !important;
+    backdrop-filter: none !important;
+    border: 2px solid black !important;
+  }
+}
+
+/* Print Accessibility */
+@media print {
+  .no-print,
+  [aria-hidden="true"] {
+    display: none !important;
+  }
+  
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+  
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+}
+
+/* Keyboard Navigation Improvements */
+.keyboard-user button:focus,
+.keyboard-user input:focus,
+.keyboard-user select:focus,
+.keyboard-user textarea:focus,
+.keyboard-user [tabindex]:focus {
+  outline: 3px solid var(--color-accent-emerald);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+/* Form Fieldset Styling */
+fieldset {
+  border: 2px solid var(--color-border);
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+legend {
+  padding: 0 0.5rem;
+  font-weight: 600;
+  color: var(--color-foreground);
+}
+
+/* Screen Reader Announcements */
+.sr-announcement {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Status Messages */
+.status-message {
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1rem 0;
+  border-left: 4px solid;
+}
+
+.status-success {
+  background-color: rgba(0, 255, 102, 0.1);
+  border-left-color: var(--color-success);
+  color: var(--color-success);
+}
+
+.status-warning {
+  background-color: rgba(255, 215, 0, 0.1);
+  border-left-color: var(--color-warning);
+  color: var(--color-warning);
+}
+
+.status-error {
+  background-color: rgba(255, 51, 102, 0.1);
+  border-left-color: var(--color-error);
+  color: var(--color-error);
+}
+
+.status-info {
+  background-color: rgba(51, 170, 255, 0.1);
+  border-left-color: var(--color-info);
+  color: var(--color-info);
+}
+
+/* Improved Link Styling */
+a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--color-accent-emerald);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Accessible Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid var(--color-border);
+  padding: 0.75rem;
+  text-align: left;
+}
+
+th {
+  background-color: var(--color-surface);
+  font-weight: 600;
+}
+
+caption {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+/* Accessible Progress Indicators */
+[role="progressbar"] {
+  background-color: var(--color-surface);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+[role="progressbar"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: var(--color-primary);
+  width: var(--progress-value, 0%);
+  transition: width 0.3s ease;
+}
+
+/* Accessible Tooltips */
+[role="tooltip"] {
+  background-color: black;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  max-width: 200px;
+  word-wrap: break-word;
+  z-index: 1000;
+}
+
+[aria-describedby]:hover + [role="tooltip"],
+[aria-describedby]:focus + [role="tooltip"] {
+  visibility: visible;
+  opacity: 1;
+}

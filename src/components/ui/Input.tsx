@@ -149,12 +149,15 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
           onFocus={handleFocus}
           onBlur={handleBlur}
           disabled={disabled}
+          aria-invalid={!!error}
+          aria-describedby={error ? `${props.id || props.name}-error` : helperText ? `${props.id || props.name}-help` : undefined}
           {...props}
         />
 
         {/* Animated label */}
         {label && (
           <motion.label
+            htmlFor={props.id || props.name}
             className={labelClasses}
             animate={isFocused || hasValue ? {
               y: -20,
@@ -166,6 +169,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
             transition={{ duration: 0.2, ease: 'easeOut' }}
           >
             {label}
+            {props.required && <span className="text-error ml-1" aria-label="required">*</span>}
           </motion.label>
         )}
 
@@ -222,19 +226,27 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
             transition={{ duration: 0.2 }}
           >
             {error ? (
-              <span className="text-error flex items-center gap-1">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <span 
+                id={`${props.id || props.name}-error`}
+                className="text-error flex items-center gap-1"
+                role="alert"
+                aria-live="polite"
+              >
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                   <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
                 </svg>
                 {error}
               </span>
             ) : (
-              <span className={clsx(
-                {
-                  'text-accent-mint': variant === 'default',
-                  'text-white/70': variant === 'glass' || variant === 'underwater',
-                }
-              )}>
+              <span 
+                id={`${props.id || props.name}-help`}
+                className={clsx(
+                  {
+                    'text-accent-mint': variant === 'default',
+                    'text-white/70': variant === 'glass' || variant === 'underwater',
+                  }
+                )}
+              >
                 {helperText}
               </span>
             )}

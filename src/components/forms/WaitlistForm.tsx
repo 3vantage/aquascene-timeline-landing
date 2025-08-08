@@ -192,6 +192,7 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
             onClick={() => setSubmissionResult(null)}
             variant="primary"
             className="button-premium min-h-[56px] w-full sm:w-auto touch-manipulation px-8 py-4"
+            aria-describedby="submission-error"
           >
             Try Again
           </Button>
@@ -213,10 +214,14 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
       <motion.div variants={staggerItem}>
         <Input
           {...register('name')}
+          id="waitlist-name"
+          name="name"
           label="Your Name"
           placeholder="Enter your full name"
           error={errors.name?.message}
           variant="glass"
+          required
+          autoComplete="name"
         />
       </motion.div>
 
@@ -224,11 +229,15 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
       <motion.div variants={staggerItem}>
         <Input
           {...register('email')}
+          id="waitlist-email"
+          name="email"
           type="email"
           label="Email Address"
           placeholder="Enter your email address"
           error={errors.email?.message}
           variant="glass"
+          required
+          autoComplete="email"
         />
       </motion.div>
 
@@ -239,6 +248,7 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
           control={control}
           render={({ field }) => (
             <Select
+              name="experience"
               label="Experience Level"
               placeholder="Select your experience"
               options={experienceOptions}
@@ -246,6 +256,7 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
               onChange={field.onChange}
               error={errors.experience?.message}
               variant="glass"
+              required
             />
           )}
         />
@@ -253,9 +264,10 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
 
       {/* Interests */}
       <motion.div variants={staggerItem}>
-        <label className="block text-sm font-semibold text-white mb-4">
-          Interested Features
-        </label>
+        <fieldset>
+          <legend className="block text-sm font-semibold text-white mb-4">
+            Interested Features
+          </legend>
         <div className="space-y-3 sm:space-y-4">
           {interestOptions.map((interest) => (
             <Controller
@@ -281,6 +293,7 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
             />
           ))}
         </div>
+        </fieldset>
       </motion.div>
 
       {/* GDPR Consent */}

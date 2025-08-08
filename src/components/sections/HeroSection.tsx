@@ -1,11 +1,23 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from '@/components/ui/Button';
-import AquariumBuilderPreview from '@/components/sections/AquariumBuilderPreview';
 import { staggerContainer, staggerItem } from '@/lib/animation-config';
 import { ArrowRightIcon, SparklesIcon, PlayIcon, CubeTransparentIcon } from '@heroicons/react/24/outline';
+
+// Lazy load the heavy AquariumBuilderPreview component
+const AquariumBuilderPreview = dynamic(() => import('@/components/sections/AquariumBuilderPreview'), {
+  ssr: false, // Disable SSR for this heavy interactive component
+  loading: () => (
+    <div className="relative aspect-[4/3] max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto">
+      <div className="h-full glass-deep-water rounded-2xl sm:rounded-3xl p-6 sm:p-8 animate-pulse">
+        <div className="h-full bg-gradient-to-br from-accent-mint/20 to-transparent rounded-xl" />
+      </div>
+    </div>
+  ),
+});
 
 const HeroSection: React.FC = () => {
   const [isDemoActive, setIsDemoActive] = useState(false);
