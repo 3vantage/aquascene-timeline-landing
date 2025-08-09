@@ -26,52 +26,52 @@ export default function HomePage() {
   // Gallery images with detailed information - featuring real aquascaping artistry
   const galleryImages = [
     {
-      src: 'https://images.unsplash.com/photo-1520301255226-bf5f144451c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=90',
+      src: getImagePath('images/aquascaping/dutch-style-planted-tank.jpg'),
       alt: 'Dutch Style Planted Aquarium',
       caption: 'Dutch Masterpiece',
       description: 'A stunning example of Dutch-style aquascaping with terraced plant arrangements, vibrant colors, and perfect symmetry showcasing the art of underwater gardening.'
     },
     {
-      src: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=90',
+      src: getImagePath('images/aquascaping/iwagumi-style-aquascape.jpg'),
       alt: 'Iwagumi Rock Formation Aquascape',
       caption: 'Zen Minimalism',
       description: 'Classic Iwagumi style featuring carefully positioned stones and carpet plants, embodying the Japanese philosophy of simplicity and natural harmony.'
     },
     {
-      src: 'https://images.unsplash.com/photo-1571752726703-5e7d1f6a986d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=90',
+      src: getImagePath('images/aquascaping/nature-aquascape-layout.jpg'),
       alt: 'Nature Aquarium Takashi Amano Style',
       caption: 'Natural Wonder',
-      description: 'Takashi Amano inspired nature aquarium showcasing the beauty of recreating natural landscapes underwater with driftwood, stones, and lush vegetation.'
+      description: 'Takashi Amano inspired nature aquarium showcasing the beauty of recreating natural underwater landscapes with driftwood, stones, and lush vegetation.'
     },
     {
-      src: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=90',
-      alt: 'Biotope Aquarium Ecosystem',
+      src: getImagePath('images/aquascaping/community-aquarium-setup.jpg'),
+      alt: 'Community Aquarium Biotope',
       caption: 'Living Ecosystem',
-      description: 'Authentic biotope aquarium replicating a specific natural habitat with native plants, substrate, and water parameters from the original ecosystem.'
+      description: 'Authentic community aquarium replicating a specific natural habitat with native plants, substrate, and fish from the same ecosystem.'
     },
     {
-      src: 'https://images.unsplash.com/photo-1520637836862-4d197d17c55a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=90',
-      alt: 'Paludarium Setup',
-      caption: 'Land Meets Water',
-      description: 'Spectacular paludarium combining terrestrial and aquatic elements, featuring both submerged aquatic plants and emerged tropical vegetation.'
+      src: getImagePath('images/aquascaping/tropical-fish-collection-ahmed.jpg'),
+      alt: 'Tropical Fish Community Tank',
+      caption: 'Vibrant Life',
+      description: 'Spectacular community aquarium featuring tropical fish swimming among aquatic plants, creating a perfect balance of life and nature.'
     },
     {
-      src: 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=90',
-      alt: 'Jungle Style Dense Planted Tank',
-      caption: 'Tropical Jungle',
-      description: 'Dense jungle-style aquascape with wild, untamed plant growth creating a lush underwater forest teeming with natural beauty and life.'
+      src: getImagePath('images/aquascaping/underwater-plants-aquarium-pexels.jpg'),
+      alt: 'Dense Planted Aquarium',
+      caption: 'Aquatic Garden',
+      description: 'Dense planted aquascape with wild, natural plant growth creating a lush underwater forest teeming with natural beauty and aquatic life.'
     },
     {
-      src: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=90',
-      alt: 'Minimalist Zen Aquascape',
-      caption: 'Peaceful Serenity',
-      description: 'Minimalist zen aquascape featuring clean lines, negative space, and carefully chosen elements to create a sense of tranquility and meditation.'
+      src: getImagePath('images/aquascaping/modern-aquarium-setup.jpg'),
+      alt: 'Modern Minimalist Aquascape',
+      caption: 'Contemporary Design',
+      description: 'Modern aquascape featuring clean lines, negative space, and carefully chosen elements to create a sense of tranquility and sophisticated design.'
     },
     {
-      src: 'https://images.unsplash.com/photo-1586997721684-2f5b882583b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=90',
-      alt: 'Competition Winning Show Tank',
+      src: getImagePath('images/aquascaping/hero-aquascaped-tank-kazuend.jpg'),
+      alt: 'Competition Grade Aquascape',
       caption: 'Award Winner',
-      description: 'Competition-winning show tank displaying masterful aquascaping techniques with perfect plant health, stunning composition, and flawless execution.'
+      description: 'Competition-grade aquascape displaying masterful techniques with perfect plant health, stunning composition, and flawless underwater execution.'
     }
   ];
 
@@ -142,8 +142,8 @@ export default function HomePage() {
         <ParallaxContainer speed={0.3} className="absolute inset-0">
           <div className="absolute inset-0">
             <HeroImage
-              src="hero-aquascaped-tank-kazuend"
-              alt="Professional Aquascape"
+              src="colorful-fish-aquarium-delbert"
+              alt="Beautiful Planted Aquarium with Colorful Fish"
             />
           </div>
           {/* Underwater Light Rays */}
@@ -183,7 +183,7 @@ export default function HomePage() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 1 }}
               >
-                Join Bulgaria's premier aquascaping platform. Design, learn, and create stunning underwater landscapes that bring nature into your home.
+                Join Bulgaria's premier aquascaping platform. Design, learn, and create stunning underwater aquarium landscapes with aquatic plants, hardscape, and fish.
               </motion.p>
             </ScrollReveal>
 
