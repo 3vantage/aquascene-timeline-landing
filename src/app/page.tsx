@@ -5,19 +5,19 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowRightIcon, CheckIcon } from '@heroicons/react/24/outline';
 import { getImagePath } from '@/lib/utils';
+import { OptimizedImage, HeroImage, GalleryImage } from '@/components/ui/OptimizedImage';
 
 export default function HomePage() {
   return (
     <main className="bg-white">
-      {/* Hero Section - Full screen with real aquarium image */}
+      {/* Hero Section - Full screen with OPTIMIZED aquarium image */}
       <section className="relative h-screen">
-        <Image
-          src={getImagePath('images/aquascaping/hero-aquascaped-tank-kazuend.jpg')}
-          alt="Professional Aquascape"
-          fill
-          className="object-cover"
-          priority
-        />
+        <div className="absolute inset-0">
+          <HeroImage
+            src="hero-aquascaped-tank-kazuend"
+            alt="Professional Aquascape"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
         
         <div className="relative z-10 h-full flex flex-col justify-center px-8 md:px-16 lg:px-24">
@@ -185,20 +185,19 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              'images/aquascaping/colorful-fish-aquarium-delbert.jpg',
-              'images/aquascaping/underwater-view-karl.jpg',
-              'images/aquascaping/tropical-fish-collection-ahmed.jpg',
-              'images/aquascaping/modern-aquarium-setup.jpg',
-              'images/aquascaping/aquarium-plants-detail.jpg',
-              'images/aquascaping/underwater-plants-aquarium-pexels.jpg',
-              'images/aquascaping/goldfish-aquarium.jpg',
-              'images/aquascaping/aquatic-plants-closeup.jpg',
+              'colorful-fish-aquarium-delbert',
+              'underwater-view-karl',
+              'tropical-fish-collection-ahmed',
+              'modern-aquarium-setup',
+              'aquarium-plants-detail',
+              'underwater-plants-aquarium-pexels',
+              'goldfish-aquarium',
+              'dutch-style-planted-tank',
             ].map((src, index) => (
               <div key={index} className="relative h-64 group cursor-pointer overflow-hidden">
-                <Image
-                  src={getImagePath(src)}
+                <GalleryImage
+                  src={src}
                   alt={`Community Aquascape ${index + 1}`}
-                  fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300" />
