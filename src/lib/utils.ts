@@ -88,6 +88,18 @@ export function isBrowser(): boolean {
 }
 
 /**
+ * Get correct image path for production deployment
+ */
+export function getImagePath(imagePath: string): string {
+  // Remove leading slash if present
+  const cleanPath = imagePath.startsWith('/') ? imagePath.slice(1) : imagePath;
+  
+  // In production (GitHub Pages), add the base path
+  const isProd = process.env.NODE_ENV === 'production';
+  return isProd ? `/aquascene-waitlist/${cleanPath}` : `/${cleanPath}`;
+}
+
+/**
  * Get reading time estimate for text
  */
 export function getReadingTime(text: string, wordsPerMinute: number = 200): number {

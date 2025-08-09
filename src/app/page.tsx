@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowRightIcon, CheckIcon } from '@heroicons/react/24/outline';
+import { getImagePath } from '@/lib/utils';
 
 export default function HomePage() {
   return (
@@ -11,7 +12,7 @@ export default function HomePage() {
       {/* Hero Section - Full screen with real aquarium image */}
       <section className="relative h-screen">
         <Image
-          src="/images/aquascaping/hero-aquascaped-tank-kazuend.jpg"
+          src={getImagePath('images/aquascaping/hero-aquascaped-tank-kazuend.jpg')}
           alt="Professional Aquascape"
           fill
           className="object-cover"
@@ -64,7 +65,7 @@ export default function HomePage() {
             <div className="group cursor-pointer">
               <div className="relative h-80 overflow-hidden bg-gray-100">
                 <Image
-                  src="/images/aquascaping/green-aquatic-plants-gabor.jpg"
+                  src={getImagePath('images/aquascaping/green-aquatic-plants-gabor.jpg')}
                   alt="Nature Style Aquascape"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -81,7 +82,7 @@ export default function HomePage() {
             <div className="group cursor-pointer">
               <div className="relative h-80 overflow-hidden bg-gray-100">
                 <Image
-                  src="/images/aquascaping/iwagumi-style-aquascape.jpg"
+                  src={getImagePath('images/aquascaping/iwagumi-style-aquascape.jpg')}
                   alt="Iwagumi Style"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -98,7 +99,7 @@ export default function HomePage() {
             <div className="group cursor-pointer">
               <div className="relative h-80 overflow-hidden bg-gray-100">
                 <Image
-                  src="/images/aquascaping/dutch-style-planted-tank.jpg"
+                  src={getImagePath('images/aquascaping/dutch-style-planted-tank.jpg')}
                   alt="Dutch Style"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -120,7 +121,7 @@ export default function HomePage() {
           {/* Image Side */}
           <div className="relative h-96 lg:h-auto">
             <Image
-              src="/images/aquascaping/person-working-on-aquarium.jpg"
+              src={getImagePath('images/aquascaping/person-working-on-aquarium.jpg')}
               alt="Professional Aquascaper at Work"
               fill
               className="object-cover"
@@ -184,18 +185,18 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              '/images/aquascaping/colorful-fish-aquarium-delbert.jpg',
-              '/images/aquascaping/underwater-view-karl.jpg',
-              '/images/aquascaping/tropical-fish-collection-ahmed.jpg',
-              '/images/aquascaping/modern-aquarium-setup.jpg',
-              '/images/aquascaping/aquarium-plants-detail.jpg',
-              '/images/aquascaping/underwater-plants-aquarium-pexels.jpg',
-              '/images/aquascaping/goldfish-aquarium.jpg',
-              '/images/aquascaping/aquatic-plants-closeup.jpg',
+              'images/aquascaping/colorful-fish-aquarium-delbert.jpg',
+              'images/aquascaping/underwater-view-karl.jpg',
+              'images/aquascaping/tropical-fish-collection-ahmed.jpg',
+              'images/aquascaping/modern-aquarium-setup.jpg',
+              'images/aquascaping/aquarium-plants-detail.jpg',
+              'images/aquascaping/underwater-plants-aquarium-pexels.jpg',
+              'images/aquascaping/goldfish-aquarium.jpg',
+              'images/aquascaping/aquatic-plants-closeup.jpg',
             ].map((src, index) => (
               <div key={index} className="relative h-64 group cursor-pointer overflow-hidden">
                 <Image
-                  src={src}
+                  src={getImagePath(src)}
                   alt={`Community Aquascape ${index + 1}`}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
@@ -284,7 +285,7 @@ export default function HomePage() {
               <div className="space-y-4">
                 <div className="relative h-48">
                   <Image
-                    src="/images/aquascaping/aquascaping-hardscape-stones.jpg"
+                    src={getImagePath('images/aquascaping/aquascaping-hardscape-stones.jpg')}
                     alt="Hardscape Materials"
                     fill
                     className="object-cover"
@@ -292,7 +293,7 @@ export default function HomePage() {
                 </div>
                 <div className="relative h-64">
                   <Image
-                    src="/images/aquascaping/aquarium-tools-equipment.jpg"
+                    src={getImagePath('images/aquascaping/aquarium-tools-equipment.jpg')}
                     alt="Aquascaping Tools"
                     fill
                     className="object-cover"
@@ -302,7 +303,7 @@ export default function HomePage() {
               <div className="space-y-4 pt-8">
                 <div className="relative h-64">
                   <Image
-                    src="/images/aquascaping/aquatic-plants-closeup.jpg"
+                    src={getImagePath('images/aquascaping/aquatic-plants-closeup.jpg')}
                     alt="Aquatic Plants"
                     fill
                     className="object-cover"
@@ -310,7 +311,7 @@ export default function HomePage() {
                 </div>
                 <div className="relative h-48">
                   <Image
-                    src="/images/aquascaping/aquarium-maintenance-setup.jpg"
+                    src={getImagePath('images/aquascaping/aquarium-maintenance-setup.jpg')}
                     alt="Maintenance Setup"
                     fill
                     className="object-cover"
@@ -325,7 +326,7 @@ export default function HomePage() {
       {/* CTA Section */}
       <section className="relative h-96 flex items-center justify-center">
         <Image
-          src="/images/aquascaping/underwater-view-karl.jpg"
+          src={getImagePath('images/aquascaping/underwater-view-karl.jpg')}
           alt="Join Aquascene"
           fill
           className="object-cover"
