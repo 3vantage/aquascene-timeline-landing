@@ -1,9 +1,24 @@
 import type { Metadata } from "next";
+import { Inter, Source_Sans_3 } from 'next/font/google';
 import "./globals.css";
 
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap'
+});
+
+const sourceSans = Source_Sans_3({ 
+  weight: ['400', '600', '700'],
+  subsets: ['latin'],
+  variable: '--font-source-sans-pro',
+  display: 'swap'
+});
+
 export const metadata: Metadata = {
-  title: "Design Your Dream Aquascape - 3D Aquascaping Platform",
-  description: "Plan before you plant. Save money, avoid mistakes. Join 2,500+ Bulgarian & Hungarian aquascapers using our 3D design tools.",
+  title: "Aquascene - Professional Aquascaping Services Bulgaria",
+  description: "Bulgaria's premier professional aquascaping company. Authorized Green Aqua partner. Custom design, installation & maintenance services. Sofia, Bulgaria.",
+  keywords: "aquascaping Bulgaria, professional aquascaping, Green Aqua partner, aquarium design Sofia, aquascape installation, aquarium maintenance",
   icons: {
     icon: "/favicon.ico",
   },
@@ -16,7 +31,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="antialiased font-primary bg-background text-foreground overflow-x-hidden">
+      <body className={`antialiased ${inter.variable} ${sourceSans.variable} overflow-x-hidden`}>
         {/* Skip Navigation Link */}
         <a
           href="#main-content"
@@ -25,21 +40,10 @@ export default function RootLayout({
           Skip to main content
         </a>
         
-        {/* Underwater background effects */}
-        <div className="fixed inset-0 -z-50">
-          <div className="absolute inset-0 bg-gradient-to-b from-secondary-light/20 via-primary/10 to-secondary-dark/30" />
-          <div className="light-refraction absolute inset-0 opacity-30" />
-        </div>
-        
         {/* Main content */}
-        <main id="main-content" className="relative z-10">
+        <main id="main-content">
           {children}
         </main>
-        
-        {/* Bubble effects */}
-        <div className="fixed inset-0 pointer-events-none -z-40">
-          {/* Animated bubbles will be added via JavaScript */}
-        </div>
       </body>
     </html>
   );
