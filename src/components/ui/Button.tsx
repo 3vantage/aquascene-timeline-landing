@@ -4,7 +4,7 @@ import React from 'react';
 import { clsx } from 'clsx';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'professional' | 'professional-dark';
   size?: 'sm' | 'md' | 'lg' | 'xl';
   isLoading?: boolean;
   leftIcon?: React.ReactNode;
@@ -50,7 +50,9 @@ const Button: React.FC<ButtonProps> = ({
     primary: 'bg-gradient-to-r from-primary to-secondary text-white font-bold shadow-lg hover:shadow-primary/50 border-0 hover:from-primary/90 hover:to-secondary/90 hover:shadow-2xl neon-glow-primary',
     secondary: 'glass-underwater text-white border-2 border-accent-mint/60 hover:bg-accent-mint/20 hover:border-accent-mint/80 hover:shadow-xl hover:shadow-accent-mint/30',
     outline: 'bg-transparent text-accent-light border-3 border-accent-light hover:bg-accent-light hover:text-white hover:shadow-xl hover:shadow-accent-light/40',
-    ghost: 'bg-transparent text-accent-mint hover:bg-accent-mint/20 hover:text-white border-0 hover:shadow-lg'
+    ghost: 'bg-transparent text-accent-mint hover:bg-accent-mint/20 hover:text-white border-0 hover:shadow-lg',
+    professional: 'button-professional hover:scale-[1.02] active:scale-[0.98]',
+    'professional-dark': 'button-professional-dark hover:scale-[1.02] active:scale-[0.98]'
   };
 
   const sizeClasses = {

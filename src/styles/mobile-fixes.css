@@ -630,10 +630,63 @@ html {
 @media (max-width: 767px) and (prefers-reduced-motion: no-preference) {
   .mobile-animate {
     transition: transform 0.2s ease, opacity 0.2s ease;
+    will-change: transform;
   }
   
   .mobile-animate:active {
     transform: scale(0.98);
+  }
+}
+
+/* Performance Optimizations for All Devices */
+.aquarium-background {
+  will-change: opacity;
+  contain: layout style paint;
+}
+
+.aquarium-fish {
+  will-change: transform;
+  contain: layout style;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.aquarium-plant {
+  will-change: transform;
+  contain: layout;
+  transform: translateZ(0);
+}
+
+.aquarium-bubble {
+  will-change: transform, opacity;
+  contain: layout;
+  transform: translateZ(0);
+}
+
+.aquarium-coral {
+  will-change: transform;
+  contain: layout;
+  transform: translateZ(0);
+}
+
+/* Lazy loading and performance improvements */
+@media (max-width: 767px) {
+  /* Reduce animation complexity on mobile */
+  .aquarium-background {
+    animation-duration: 8s !important;
+  }
+  
+  .aquarium-fish {
+    animation-duration: 12s !important;
+  }
+  
+  /* Limit number of particles on mobile */
+  .aquarium-particle:nth-child(n+10) {
+    display: none;
+  }
+  
+  .aquarium-bubble:nth-child(n+8) {
+    display: none;
   }
 }
 
@@ -651,16 +704,66 @@ html {
     padding: 1.5rem !important;
     border-radius: 16px !important;
     margin: 1rem !important;
+    max-width: calc(100vw - 2rem) !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
   
-  .form-input {
-    min-height: 48px !important;
+  .form-input, 
+  .mobile-input {
+    min-height: 56px !important;
     font-size: 16px !important;
+    padding: 0.875rem 1rem !important;
+    margin-bottom: 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
   
   .form-label {
     font-size: 14px !important;
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0.75rem !important;
+    display: block !important;
+  }
+
+  /* Critical mobile spacing fixes */
+  .waitlist-form > div {
+    margin-bottom: 2rem !important;
+  }
+
+  .waitlist-form fieldset {
+    margin-bottom: 2rem !important;
+  }
+
+  /* Prevent overlapping elements */
+  .waitlist-form .relative {
+    position: relative !important;
+    z-index: 1 !important;
+  }
+
+  /* Ensure dropdown has proper z-index and doesn't overlap */
+  .waitlist-form [role="listbox"] {
+    z-index: 9999 !important;
+    position: fixed !important;
+    top: auto !important;
+    left: 1rem !important;
+    right: 1rem !important;
+    width: calc(100vw - 2rem) !important;
+    max-height: 200px !important;
+    overflow-y: auto !important;
+  }
+
+  /* Fix checkbox spacing */
+  .waitlist-form [type="checkbox"] + label {
+    margin-left: 0.5rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Fix button spacing */
+  .waitlist-form button {
+    margin-top: 1rem !important;
+    min-height: 56px !important;
+    width: 100% !important;
+    touch-action: manipulation !important;
   }
   
   /* Mobile hero adjustments */

@@ -136,7 +136,7 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
             <CheckCircleIcon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
           </motion.div>
           
-          <h3 className="heading-h3 text-white mb-6">
+          <h3 className="heading-h3 text-high-contrast mb-6">
             Welcome, Fellow Aquascaper! 🌿
           </h3>
           
@@ -205,70 +205,81 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
   return (
     <motion.form
       onSubmit={handleSubmit(onSubmit)}
-      className={`waitlist-form premium-hover glass-deep-water p-8 sm:p-10 md:p-12 rounded-3xl space-y-6 sm:space-y-8 ${className}`}
+      className={`waitlist-form premium-hover glass-deep-water p-4 sm:p-8 md:p-12 rounded-2xl sm:rounded-3xl space-y-8 sm:space-y-10 ${className}`}
+      style={{ minHeight: 'auto' }}
       variants={staggerContainer}
       initial="initial"
       animate="animate"
     >
       {/* Name Field */}
-      <motion.div variants={staggerItem}>
-        <Input
-          {...register('name')}
-          id="waitlist-name"
-          name="name"
-          label="Your Name"
-          placeholder="Enter your full name"
-          error={errors.name?.message}
-          variant="glass"
-          required
-          autoComplete="name"
-        />
+      <motion.div variants={staggerItem} className="w-full">
+        <div className="mb-2">
+          <Input
+            {...register('name')}
+            id="waitlist-name"
+            name="name"
+            label="Your Name"
+            placeholder="Enter your full name"
+            error={errors.name?.message}
+            variant="glass"
+            required
+            autoComplete="name"
+            className="mobile-input w-full"
+            style={{ marginBottom: '0.5rem' }}
+          />
+        </div>
       </motion.div>
 
       {/* Email Field */}
-      <motion.div variants={staggerItem}>
-        <Input
-          {...register('email')}
-          id="waitlist-email"
-          name="email"
-          type="email"
-          label="Email Address"
-          placeholder="Enter your email address"
-          error={errors.email?.message}
-          variant="glass"
-          required
-          autoComplete="email"
-        />
+      <motion.div variants={staggerItem} className="w-full">
+        <div className="mb-2">
+          <Input
+            {...register('email')}
+            id="waitlist-email"
+            name="email"
+            type="email"
+            label="Email Address"
+            placeholder="Enter your email address"
+            error={errors.email?.message}
+            variant="glass"
+            required
+            autoComplete="email"
+            className="mobile-input w-full"
+            style={{ marginBottom: '0.5rem' }}
+          />
+        </div>
       </motion.div>
 
       {/* Experience Level */}
-      <motion.div variants={staggerItem}>
-        <Controller
-          name="experience"
-          control={control}
-          render={({ field }) => (
-            <Select
-              name="experience"
-              label="Experience Level"
-              placeholder="Select your experience"
-              options={experienceOptions}
-              value={field.value}
-              onChange={field.onChange}
-              error={errors.experience?.message}
-              variant="glass"
-              required
-            />
-          )}
-        />
+      <motion.div variants={staggerItem} className="w-full">
+        <div className="mb-2">
+          <Controller
+            name="experience"
+            control={control}
+            render={({ field }) => (
+              <Select
+                name="experience"
+                label="Experience Level"
+                placeholder="Select your experience"
+                options={experienceOptions}
+                value={field.value}
+                onChange={field.onChange}
+                error={errors.experience?.message}
+                variant="glass"
+                required
+              />
+            )}
+          />
+        </div>
       </motion.div>
 
       {/* Interests */}
-      <motion.div variants={staggerItem}>
-        <fieldset>
-          <legend className="block text-sm font-semibold text-white mb-4">
+      <motion.div variants={staggerItem} className="w-full">
+        <fieldset className="mb-4">
+          <legend className="block text-sm font-semibold text-white mb-6">
             Interested Features
           </legend>
-        <div className="space-y-3 sm:space-y-4">
+        <div className="space-y-4 sm:space-y-5">
           {interestOptions.map((interest) => (
             <Controller
               key={interest.id}
@@ -297,47 +308,52 @@ const WaitlistForm: React.FC<WaitlistFormProps> = ({ className = '' }) => {
       </motion.div>
 
       {/* GDPR Consent */}
-      <motion.div variants={staggerItem}>
-        <Controller
-          name="gdprConsent"
-          control={control}
-          render={({ field }) => (
-            <Checkbox
-              id="gdprConsent"
-              label="I consent to receive updates about the 3vantage platform launch and understand I can unsubscribe at any time."
-              checked={field.value}
-              onChange={field.onChange}
-              error={errors.gdprConsent?.message}
-              variant="glass"
-            />
-          )}
-        />
+      <motion.div variants={staggerItem} className="w-full">
+        <div className="mb-4">
+          <Controller
+            name="gdprConsent"
+            control={control}
+            render={({ field }) => (
+              <Checkbox
+                id="gdprConsent"
+                label="I consent to receive updates about the 3vantage platform launch and understand I can unsubscribe at any time."
+                checked={field.value}
+                onChange={field.onChange}
+                error={errors.gdprConsent?.message}
+                variant="glass"
+              />
+            )}
+          />
+        </div>
       </motion.div>
 
       {/* Marketing Consent (Optional) */}
-      <motion.div variants={staggerItem}>
-        <Controller
-          name="marketingConsent"
-          control={control}
-          render={({ field }) => (
-            <Checkbox
-              id="marketingConsent"
-              label="I'd like to receive aquascaping tips and exclusive content (optional)."
-              checked={field.value || false}
-              onChange={field.onChange}
-              variant="glass"
-            />
-          )}
-        />
+      <motion.div variants={staggerItem} className="w-full">
+        <div className="mb-4">
+          <Controller
+            name="marketingConsent"
+            control={control}
+            render={({ field }) => (
+              <Checkbox
+                id="marketingConsent"
+                label="I'd like to receive aquascaping tips and exclusive content (optional)."
+                checked={field.value || false}
+                onChange={field.onChange}
+                variant="glass"
+              />
+            )}
+          />
+        </div>
       </motion.div>
 
       {/* Submit Button */}
       <motion.div variants={staggerItem} className="pt-4 sm:pt-6">
         <Button
           type="submit"
+          variant="professional"
           size="lg"
           disabled={!isValid || isSubmitting}
-          className="button-premium w-full bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 disabled:from-gray-600 disabled:to-gray-700 text-white border-0 font-semibold min-h-[56px] px-8 py-4 text-lg touch-manipulation"
+          className="w-full min-h-[56px] px-8 py-4 text-lg touch-manipulation"
           leftIcon={<SparklesIcon className="w-5 h-5" />}
         >
           {isSubmitting ? 'Joining Waitlist...' : 'Reserve My Spot'}

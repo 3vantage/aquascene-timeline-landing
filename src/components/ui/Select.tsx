@@ -81,7 +81,7 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>(({
 
   const selectClasses = clsx(
     'relative w-full px-4 py-3 text-left bg-transparent border-2 rounded-lg transition-all duration-200 focus:outline-none focus-visible:ring-3 focus-visible:ring-accent-emerald focus-visible:ring-offset-2',
-    'flex items-center justify-between cursor-pointer',
+    'flex items-center justify-between cursor-pointer min-h-[56px] touch-manipulation mobile-select',
     {
       // Default variant
       'glass-underwater border-primary/30 hover:border-primary focus:border-primary': 
@@ -132,7 +132,7 @@ const Select = forwardRef<HTMLButtonElement, SelectProps>(({
   );
 
   const dropdownClasses = clsx(
-    'absolute z-50 w-full mt-2 py-2 rounded-lg shadow-xl border max-h-60 overflow-y-auto',
+    'absolute z-[9999] w-full mt-2 py-2 rounded-lg shadow-xl border max-h-60 overflow-y-auto backdrop-blur-md',
     {
       'glass-underwater border-white/30': variant === 'default',
       'glass-underwater border-white/20': variant === 'glass',

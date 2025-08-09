@@ -84,14 +84,16 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
   );
 
   const inputClasses = clsx(
-    'flex-1 px-4 py-3 text-base bg-transparent border-0 outline-none placeholder-transparent form-input',
+    'flex-1 px-4 py-3 text-base bg-transparent border-0 outline-none placeholder-transparent form-input mobile-input',
     'disabled:cursor-not-allowed',
+    'w-full min-h-[56px] touch-manipulation',
     {
       'text-white': variant === 'default',
       'text-white placeholder-white/50': variant === 'glass' || variant === 'underwater',
       'pl-12': leftIcon,
       'pr-12': rightIcon,
-    }
+    },
+    className
   );
 
   const labelClasses = clsx(
