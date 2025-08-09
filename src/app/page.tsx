@@ -30,10 +30,24 @@ export default function HomePage() {
               Join Bulgaria's premier aquascaping platform. Design, learn, and create stunning underwater landscapes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="px-8 py-4 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-none transition-colors text-lg">
+              <button 
+                onClick={() => {
+                  const ctaSection = document.querySelector('section:has(form)');
+                  ctaSection?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="px-8 py-4 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-none transition-colors text-lg"
+              >
                 START YOUR JOURNEY
               </button>
-              <button className="px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-black font-semibold rounded-none transition-all text-lg">
+              <button 
+                onClick={() => {
+                  const gallerySection = Array.from(document.querySelectorAll('h2')).find(h2 => 
+                    h2.textContent?.includes('Community Showcase')
+                  )?.closest('section');
+                  gallerySection?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-black font-semibold rounded-none transition-all text-lg"
+              >
                 VIEW GALLERY
               </button>
             </div>
@@ -302,7 +316,7 @@ export default function HomePage() {
               <div className="space-y-4 pt-8">
                 <div className="relative h-64">
                   <Image
-                    src={getImagePath('images/aquascaping/aquatic-plants-closeup.jpg')}
+                    src={getImagePath('images/aquascaping/aquarium-plants-detail.jpg')}
                     alt="Aquatic Plants"
                     fill
                     className="object-cover"
