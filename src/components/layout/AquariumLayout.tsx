@@ -56,7 +56,7 @@ const AquariumLayout: React.FC<AquariumLayoutProps> = ({ children }) => {
       {/* Dynamic Aquarium Background */}
       <AquariumBackground 
         depth={getAquariumDepth(scrollDepth)} 
-        className="z-0" 
+        className="-z-10" 
       />
       
       {/* Content with dynamic contrast management */}
