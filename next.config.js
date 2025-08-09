@@ -15,7 +15,20 @@ const nextConfig = {
   // Image optimization
   images: {
     unoptimized: true,
-    domains: ['images.unsplash.com', 'cdn.pixabay.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/photo-*',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.pixabay.com',
+        port: '',
+        pathname: '/**',
+      }
+    ],
     formats: ['image/webp', 'image/avif'],
   },
   

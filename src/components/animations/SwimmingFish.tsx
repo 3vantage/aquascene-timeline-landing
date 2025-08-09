@@ -85,9 +85,18 @@ const SwimmingFish: React.FC<FishProps> = ({
     'goldfish': '#FFD700'
   };
 
-  const depthOpacity = 0.3 + (depth / 100) * 0.7;
-  const depthScale = 0.5 + (depth / 100) * 0.5;
-  const swimSpeed = 15 + Math.random() * 10; // 15-25 seconds per cycle
+  const depthOpacity = 0.2 + (depth / 100) * 0.6;
+  const depthScale = 0.4 + (depth / 100) * 0.8;
+  const swimSpeed = 20 + Math.random() * 15; // 20-35 seconds per cycle
+  
+  // More natural swimming path
+  const startY = typeof window !== 'undefined' ? 
+    Math.random() * window.innerHeight * 0.7 + window.innerHeight * 0.15 : 
+    Math.random() * 400 + 100;
+  
+  const endY = startY + (Math.random() - 0.5) * 300;
+  const midY1 = startY + (Math.random() - 0.5) * 150;
+  const midY2 = endY + (Math.random() - 0.5) * 150;
   
   return (
     <motion.div
@@ -100,15 +109,11 @@ const SwimmingFish: React.FC<FishProps> = ({
       }}
       initial={{ 
         x: -100,
-        y: typeof window !== 'undefined' ? Math.random() * window.innerHeight * 0.8 : Math.random() * 600,
+        y: startY,
       }}
       animate={{
-        x: typeof window !== 'undefined' ? window.innerWidth + 100 : 1200,
-        y: [
-          typeof window !== 'undefined' ? Math.random() * window.innerHeight * 0.8 : Math.random() * 600,
-          typeof window !== 'undefined' ? Math.random() * window.innerHeight * 0.8 + (Math.random() - 0.5) * 200 : Math.random() * 600 + (Math.random() - 0.5) * 200,
-          typeof window !== 'undefined' ? Math.random() * window.innerHeight * 0.8 : Math.random() * 600,
-        ],
+        x: typeof window !== 'undefined' ? window.innerWidth + 100 : 1300,
+        y: [startY, midY1, midY2, endY],
       }}
       transition={{
         duration: swimSpeed,
@@ -116,23 +121,36 @@ const SwimmingFish: React.FC<FishProps> = ({
         repeat: Infinity,
         ease: "linear",
         y: {
-          duration: swimSpeed / 3,
+          duration: swimSpeed,
           repeat: Infinity,
-          ease: "easeInOut"
+          ease: "easeInOut",
+          times: [0, 0.3, 0.7, 1]
         }
       }}
     >
       <motion.div
         animate={{
-          rotateY: [0, 5, -5, 0],
+          rotateY: [0, 3, -3, 0],
+          rotateZ: [0, 1, -1, 0],
         }}
         transition={{
-          duration: 2 + Math.random() * 2,
+          duration: 3 + Math.random() * 2,
           repeat: Infinity,
           ease: "easeInOut"
         }}
       >
-        <FishSVG type={type} className="drop-shadow-lg" />
+        <motion.div
+          animate={{
+            scale: [1, 1.05, 1],
+          }}
+          transition={{
+            duration: 1.5 + Math.random(),
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        >
+          <FishSVG type={type} className="drop-shadow-lg filter blur-[0.5px]" />
+        </motion.div>
       </motion.div>
     </motion.div>
   );
